@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="前言 HTML,CSS这些技术是实现网页开发的基本技术，通常情况下，设计师、WEB前端(HTML5开发)工程师、后台(PHP、JAVA)开发工程师的人员需要掌握，属于工作的必备技能。HTML（ HyperText Markup Language ）超文本标记语言，是一种告诉浏览器每个网页组成是什么的程式语言。你可以利用它来定义网站中的文章内容、标题、连结、图片等，让浏览器知道网站整个架构的呈现。C">
 <meta property="article:published_time" content="2020-02-11T03:01:28.000Z">
-<meta property="article:modified_time" content="2020-02-11T03:02:08.567Z">
+<meta property="article:modified_time" content="2020-02-13T08:48:54.845Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="语法">
 <meta name="twitter:card" content="summary">
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  815
+                  1.4k
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  6
                 </span>
               
             </div>
@@ -392,53 +392,74 @@
 </blockquote>
 <a id="more"></a>  
 <h2 id="一-组成结构"><a href="#一-组成结构" class="headerlink" title="一.组成结构"></a>一.组成结构</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">doctype...</span>&gt;</span> 说明文档类型分strict.dtd  transitional.dtd </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>     给机器 搜素引擎看</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>     给人看，主要写东西的地方</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-布局"><a href="#1-布局" class="headerlink" title="1.布局"></a>1.布局</h3><p>用div划分布局 用css来控制显示<br>div可以通过声明id和class来控制，id不能重复，class可重复。<br>float为漂浮标签，在需要并排显示的时候使用<br><strong>田字格布局实现</strong>  </p>
-<pre><code class="html"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="meta-string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;</span>
-<span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
-<span class="tag">&lt;<span class="name">head</span>&gt;</span>
-<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span>
-<span class="tag">&lt;<span class="name">title</span>&gt;</span>划分布局<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
-<span class="tag">&lt;<span class="name">style</span>&gt;</span>
-<span class="css">    <span class="selector-id">#main</span>{</span>
-        width: 200px;
-        height: 200px;
-        background: red;
-        float: left;
-    }
-<span class="css">    <span class="selector-id">#second</span>{</span>
-        width: 200px;
-        height: 200px;
-        background: green;
-        float: left;
-    }
-<span class="css">    <span class="selector-id">#third</span>{</span>
-        width: 200px;
-        height: 200px;
-        background: blue;
-        float: left;
-        clear: left;
-    }
-<span class="css">    <span class="selector-id">#forth</span>{</span>
-        width: 200px;
-        height: 200px;
-        background: pink;
-        float: left;
-    }
-<span class="tag">&lt;/<span class="name">style</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
-
-<span class="tag">&lt;<span class="name">body</span>&gt;</span>
- <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
-<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"second"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
-<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"third"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
-<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"forth"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">html</span>&gt;</span>  </code></pre>
+<h3 id="1-布局"><a href="#1-布局" class="headerlink" title="1.布局"></a>1.布局</h3><p>用div划分布局 用css来控制显示，控制id用#idname,控制class用.classname<br>div可以通过声明id和class来控制，id不能重复，class可重复。<br>float为漂浮标签，在需要并排显示的时候使用<br><strong>田字格布局实现</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="meta-string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>划分布局<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-id">#main</span>&#123;</span></span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: red;</span><br><span class="line">		float: left;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="css">	<span class="selector-id">#second</span>&#123;</span></span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: green;</span><br><span class="line">		float: left;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="css">	<span class="selector-id">#third</span>&#123;</span></span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: blue;</span><br><span class="line">		float: left;</span><br><span class="line">		clear: left;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="css">	<span class="selector-id">#forth</span>&#123;</span></span><br><span class="line">		width: 200px;</span><br><span class="line">		height: 200px;</span><br><span class="line">		background: pink;</span><br><span class="line">		float: left;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"second"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"third"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"forth"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-新手易犯错误"><a href="#2-新手易犯错误" class="headerlink" title="2.新手易犯错误"></a>2.新手易犯错误</h3><ul>
 <li>不加doctype.低版本的IE解析出错  </li>
 <li>id用数字声明.页面不显示  </li>
-<li>文件编码与charset声明不一致  <h2 id="二-盒模型"><a href="#二-盒模型" class="headerlink" title="二.盒模型"></a>二.盒模型</h2>盒模型分为3个概念，分别为外边距（margin）,边框（borden）以及内边距（padding）  <h3 id="1-margin"><a href="#1-margin" class="headerlink" title="1.margin"></a>1.margin</h3>margin可实现div四周的外边距设定，如果<code>margin: 10px;</code>那么所在div模块的上下左右与其他模块或者网页总边框将有10px的距离。如果想要上下左右的外边距各不相同，可以使用<code>margin-top;margin-bottom;margin-left;margin-right;</code>来分别定义给值，或者你还可以使用一种更加便捷的方式，可以通过<code>margin:10px 20px 30px 40px;</code>即给margin四个不同的值来实现，此时注意margin将从上开始以顺时针的方向旋转给值，所以此时的上右下左的外边距分别为10px,20px,30px,40px.如果margin没有给四个不同的值，那么对应没有设定值的方向的外边距将以它的对边外边距为准。</li>
+<li>文件编码与charset声明不一致  <h2 id="二-盒模型"><a href="#二-盒模型" class="headerlink" title="二.盒模型"></a>二.盒模型</h2>盒模型分为3个概念，分别为外边距（margin）,边框（border）以及内边距（padding）  <h3 id="1-margin"><a href="#1-margin" class="headerlink" title="1.margin"></a>1.margin</h3>margin可实现div四周的外边距设定，如果<code>margin: 10px;</code>那么所在div模块的上下左右与其他模块或者网页总边框将有10px的距离。如果想要上下左右的外边距各不相同，可以使用<code>margin-top;margin-bottom;margin-left;margin-right;</code>来分别定义给值，或者你还可以使用一种更加便捷的方式，可以通过<code>margin:10px 20px 30px 40px;</code>即给margin四个不同的值来实现，此时注意margin将从上开始以顺时针的方向旋转给值，所以此时的上右下左的外边距分别为10px,20px,30px,40px.如果margin没有给四个不同的值，那么对应没有设定值的方向的外边距将以它的对边外边距为准。<br>要使边框变透明<code>background:rgba(200,200,200,0.5)</code>运用RGBA，红色和绿色和蓝色三个百分比都为200，a为参数，可以设置成0到1之间的数字，但是千万不要为负值  </li>
 </ul>
+<p><strong>margin重叠问题</strong>：相邻的上下<u>普通</u>元素，其距离不是简单的边距相加，而是取最大的边距值。</p>
+<h3 id="2-border"><a href="#2-border" class="headerlink" title="2.border"></a>2.border</h3><p>border可实现div四周边框设定。同margin的定义方法类似，不同在于，border有3个要素分别为大小，形状（实线，虚线，双线等），颜色.<br><strong>用CSS画圣诞树</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="meta-string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS画圣诞树<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#first</span>&#123;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">width</span><span class="selector-pseudo">:0px</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">height</span><span class="selector-pseudo">:0px</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-top</span><span class="selector-pseudo">:70px</span> <span class="selector-tag">solid</span> <span class="selector-tag">white</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-left</span><span class="selector-pseudo">:70px</span> <span class="selector-tag">solid</span> <span class="selector-tag">white</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-bottom</span><span class="selector-pseudo">:70px</span> <span class="selector-tag">solid</span> <span class="selector-tag">green</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-right</span><span class="selector-pseudo">:70px</span> <span class="selector-tag">solid</span> <span class="selector-tag">white</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">margin-left</span><span class="selector-pseudo">:30px</span>;</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#second</span>&#123;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">width</span><span class="selector-pseudo">:0px</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">height</span><span class="selector-pseudo">:0px</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-top</span><span class="selector-pseudo">:100px</span> <span class="selector-tag">solid</span> <span class="selector-tag">white</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-left</span><span class="selector-pseudo">:100px</span> <span class="selector-tag">solid</span> <span class="selector-tag">white</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-bottom</span><span class="selector-pseudo">:100px</span> <span class="selector-tag">solid</span> <span class="selector-tag">green</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">border-right</span><span class="selector-pseudo">:100px</span> <span class="selector-tag">solid</span> <span class="selector-tag">white</span>;</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#third</span>&#123;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">width</span><span class="selector-pseudo">:60px</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">height</span><span class="selector-pseudo">:70px</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">background</span>:<span class="selector-id">#393</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">margin-left</span><span class="selector-pseudo">:70px</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"first"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"second"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"third"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="三-内联元素"><a href="#三-内联元素" class="headerlink" title="三.内联元素"></a>三.内联元素</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>独占一行</th>
+<th>能设宽高</th>
+<th>竖直方向的margin,padding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>块状元素</td>
+<td>是</td>
+<td>是</td>
+<td>有，可以设置</td>
+</tr>
+<tr>
+<td>内联元素</td>
+<td>否</td>
+<td>否</td>
+<td>没有，也不可以设置</td>
+</tr>
+<tr>
+<td>内联元素又被称为行内元素，可以设置margin-left,但是高不可设置。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>块状元素div</strong>：address-地址；blockquote-块引用；center-居中对齐；dir-目录列表；dl-定义列表；form-交互表单；fieldset-form控制组；hr-水平分割线；menu-菜单列表；ol-有序表单；p-段落；pre-格式化文本；table-表格；ul-无序列表；</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>内联元素span</strong>：a-锚点；abbr-缩写；acronym-首字；strong-粗体；big-大字体；br-换行；cite-引用；dfn-定义字段；em-强调；i-斜体；img-图片；input-输入框；textarea-多行文本输入框；label-表格标签；q-短引用；strike-中划线；u-下划线；var-定义变量；</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>内联元素与块状元素可以通过display互相转化。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>哪个地方把内联转块状用的多</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dispaly除了block,inline,none还有哪些</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -609,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-组成结构"><span class="nav-number">1.1.</span> <span class="nav-text">一.组成结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-布局"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-新手易犯错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.新手易犯错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-盒模型"><span class="nav-number">1.2.</span> <span class="nav-text">二.盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-margin"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.margin</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-组成结构"><span class="nav-number">1.1.</span> <span class="nav-text">一.组成结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-布局"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-新手易犯错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.新手易犯错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-盒模型"><span class="nav-number">1.2.</span> <span class="nav-text">二.盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-margin"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-border"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.border</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-内联元素"><span class="nav-number">1.3.</span> <span class="nav-text">三.内联元素</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -654,7 +675,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.8k字</span>
+  <span class="post-count">博客全站共7.8k字</span>
 </div>
         
 <div class="busuanzi-count">
