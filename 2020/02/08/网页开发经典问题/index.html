@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="经典," />
+  <meta name="keywords" content="CSS,HTML," />
 
 
 
@@ -81,14 +81,15 @@
 
 <meta name="description" content="Q1:后缀.html .htm .shtml区别？首先来看 .htm 和 .html 文件的区别。答案居然是：它们是相同的。有个问题是服务端的，如果服务端某文件夹下同时有 index.html 和 index.htm 文件，URL 省略了后面的文件名（如 http:&#x2F;&#x2F;www.domain.dom&#x2F;dirname&#x2F;）  那么显然一个文件会优先于另一文件被读取（先解析 index.html）。事实上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML基础问题">
-<meta property="og:url" content="http://suyufan.github.io/2020/02/08/HTML%E8%AF%BE%E5%90%8E%E9%A2%98/index.html">
+<meta property="og:title" content="网页开发经典问题">
+<meta property="og:url" content="http://suyufan.github.io/2020/02/08/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="Q1:后缀.html .htm .shtml区别？首先来看 .htm 和 .html 文件的区别。答案居然是：它们是相同的。有个问题是服务端的，如果服务端某文件夹下同时有 index.html 和 index.htm 文件，URL 省略了后面的文件名（如 http:&#x2F;&#x2F;www.domain.dom&#x2F;dirname&#x2F;）  那么显然一个文件会优先于另一文件被读取（先解析 index.html）。事实上">
 <meta property="article:published_time" content="2020-02-08T06:04:07.000Z">
-<meta property="article:modified_time" content="2020-02-13T08:48:57.705Z">
+<meta property="article:modified_time" content="2020-02-13T12:19:51.728Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="经典">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://suyufan.github.io/2020/02/08/HTML课后题/"/>
+  <link rel="canonical" href="http://suyufan.github.io/2020/02/08/网页开发经典问题/"/>
 
 
 
 
 
-  <title>HTML基础问题 | 笑笑の博客</title>
+  <title>网页开发经典问题 | 笑笑の博客</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/02/08/HTML%E8%AF%BE%E5%90%8E%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/02/08/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏玉璠">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTML基础问题</h1>
+          <h1 class="post-title" itemprop="name headline">网页开发经典问题</h1>
         
 
         <div class="post-meta">
@@ -390,17 +391,50 @@
         <h3 id="Q1-后缀-html-htm-shtml区别？"><a href="#Q1-后缀-html-htm-shtml区别？" class="headerlink" title="Q1:后缀.html .htm .shtml区别？"></a>Q1:后缀.html .htm .shtml区别？</h3><p>首先来看 <strong>.htm 和 .html</strong> 文件的区别。答案居然是：它们是相同的。<br>有个问题是<u>服务端</u>的，如果服务端某文件夹下同时有 index.html 和 index.htm 文件，URL 省略了后面的文件名（如 <a href="http://www.domain.dom/dirname/）" target="_blank" rel="noopener">http://www.domain.dom/dirname/）</a>  那么显然一个文件会优先于另一文件被读取（先解析 index.html）。事实上，我们一般不会在同一个文件夹下保存两个 index 文件。<br>接着来说说 <strong>.html 和 .shtml</strong> 文件的区别，简单说 .shtml 文件就是 html 文件加个 SSI。<br><strong>SSI</strong>  是 Server Side Include 的首字母缩略词。包含有嵌入式服务器方包含命令的 HTML 文本。在被传送给浏览器之前，服务器会对 SHTML 文档进行完全地读取、分析以及修改。SSI 就是在 HTML 文件中，可以通过注释行调用的命令或指针。SSI 具有强大的功能，只要使用一条简单的 SSI 命令就可以实现整个网站的内容更新，时间和日期的动态显示，以及执行 shell 和 CGI 脚本程序等复杂的功能。 网站维护常常碰到的一个问题是，网站的结构已经固定，却为了更新一点内容而不得不重做一大批网页。SSI 提供了一种简单、有效的方法来解决这一问题，它将一个网站的基本结构放在几个简单的 HTML 文件中(模板)，以后我们要做的只是将文本传到服务器，让程序按照模板自动生成网页，从而使管理大型网站变得容易。<br>应用它可以把网站中一些公共区域做成独立的页面，然后利用此技术嵌入到其它需要此区域内容的页面中去。</p>
 <a id="more"></a>  
 <p><em>机制：</em><br>SSI 机制是动态包含，而不是静态生成，是由 web服务器比如 apache 在收到用户的请求时，如果解析到其中有 SSI 包含指令时，自动取出被包含的页面嵌入到被请求的页面中一起当做一个整体的页面发送给用户，对用户来说根本不知道服务器做了啥，只是知道得到一个完整的页面。<br>由 SSI 工作机制我们知道，包含动作是在每次用户请求页面时发生，所以如果被包含的页面内容有变化，也能实时的反应出来，正因为如此，就很容易用来实现静态页面的动态嵌入，我们就可以用来实现网站中全站公共区域，或是出现很多的重复区域内容发布成一个独立静态页面，然后在需要的地方用SSI指令包含进去，比如像全站的头部和尾部，全站最新新闻等等。<br>事实上，<strong>.html 的文件同样可以开启 SSI</strong>，只需在 apache 里进行相应的配置，一旦开启 SSI，.html 文件和 .shtml 文件可以一样对待了。  </p>
-<h3 id="Q2：CSS的4种引入方式"><a href="#Q2：CSS的4种引入方式" class="headerlink" title="Q2：CSS的4种引入方式"></a>Q2：CSS的4种引入方式</h3><p><strong>行内式</strong>（不推荐，没有体现出CSS的优势）<br>行内式是在标记的style属性中设定CSS样式<br>使用语法<code>&lt;div style=&quot;color:#333&quot;&gt;&lt;/div&gt;</code><br><strong>嵌入式</strong>（单一网页时推荐）<br>嵌入式是在head标签中写style标签，使用语法如下：  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span>  </span><br><span class="line">    此处写css描述  </span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Q2：CSS的4种引入方式"><a href="#Q2：CSS的4种引入方式" class="headerlink" title="Q2：CSS的4种引入方式"></a>Q2：CSS的4种引入方式</h3><p><strong>行内式</strong>（不推荐，没有体现出CSS的优势）<br>行内式是在标记的style属性中设定CSS样式<br>使用语法<code>&lt;div style=&quot;color:#333&quot;&gt;&lt;/div&gt;</code>  </p>
+<p><strong>嵌入式</strong>（单一网页时推荐）<br>嵌入式是在head标签中写style标签，使用语法如下：  </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  
+<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span>  
+    此处写css描述  
+<span class="tag">&lt;/<span class="name">style</span>&gt;</span>  
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span> </code></pre>
 <p><strong>导入式</strong>(网页css显示有延迟)<br>将一个独立的CSS文件以CSS规则导入HTML文件，也是写在head标签里，使用语法如下：  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="keyword">@import</span>"文件路径.css"  </span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line">```  </span><br><span class="line">**链接式**（显示无延迟）  </span><br><span class="line">以HTML规则引入外部的CSS文件，会在网页文件主体装载前装载CSS文件，因此显示出来无延迟，在head中用link来链接实现。使用语法`<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"文件路径.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span>`  </span><br><span class="line">### Q3:如何让2个div并排显示？  </span><br><span class="line">- 使用display的line属性  </span><br><span class="line">```html  </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"第一种"</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:line-block;background:black;"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:line-block;background:white;margin-left:10px;"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span>
+<span class="css"><span class="keyword">@import</span>"文件路径.css"  </span>
+<span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </code></pre>
+<p><strong>链接式</strong>（显示无延迟）<br>以HTML规则引入外部的CSS文件，会在网页文件主体装载前装载CSS文件，因此显示出来无延迟，在head中用link来链接实现。使用语法<code>&lt;link href=&quot;文件路径.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code>  </p>
+<h3 id="Q3-如何让2个div并排显示？"><a href="#Q3-如何让2个div并排显示？" class="headerlink" title="Q3:如何让2个div并排显示？"></a>Q3:如何让2个div并排显示？</h3><ul>
+<li><p>使用display的line属性  </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"第一种"</span>&gt;</span>  
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:line-block;background:black;"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display:line-block;background:white;margin-left:10px;"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </code></pre>
+</li>
+<li><p>使用float浮动  </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"第二种"</span>&gt;</span> 
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"float:left;background:black;"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"float:left;background:white;margin-left:10px;"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </code></pre>
+</li>
+<li><p>使用position为absolute  </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"第三种"</span>&gt;</span>  
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: absolute;width:100px;background:#f00;"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: absolute;left:100px;background:#0f0;margin-left:10px;"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </code></pre>
+</li>
+</ul>
+<h3 id="Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"><a href="#Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少" class="headerlink" title="Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"></a>Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少</h3><p>不会被撑起来，父div高度为0px,要使被撑起来，有以下2种方法。</p>
 <ul>
-<li>使用float浮动  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"第二种"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"float:left;background:black;"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"float:left;background:white;margin-left:10px;"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">```  </span><br><span class="line">- 使用position为absolute  </span><br><span class="line">```html  </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"第三种"</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: absolute;width:100px;background:#f00;"</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: absolute;left:100px;background:#0f0;margin-left:10px;"</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"><a href="#Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少" class="headerlink" title="Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"></a>Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少</h3>不会被撑起来，父div高度为0px,要使被撑起来，有以下2种方法。</li>
 <li>清除浮动，在浮动div后面加<code>style=&quot;clear: both;&quot;</code>  </li>
-<li>在父div后面加<code>overflow: hidden;</code>  <h3 id="Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？"><a href="#Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？" class="headerlink" title="Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？"></a>Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？</h3>如果加上50px的padding,那么灰色区域将变为200<em>200，蓝色边框仍为10px.<br>但是文字的书写范围仍为灰色的100</em>100.  <h3 id="Q6-margin重叠发生的条件及现象？"><a href="#Q6-margin重叠发生的条件及现象？" class="headerlink" title="Q6 margin重叠发生的条件及现象？"></a>Q6 margin重叠发生的条件及现象？</h3></li>
+<li>在父div后面加<code>overflow: hidden;</code>  </li>
+</ul>
+<h3 id="Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？"><a href="#Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？" class="headerlink" title="Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？"></a>Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？</h3><p>如果加上50px的padding,那么灰色区域将变为200<em>200，蓝色边框仍为10px.<br>但是文字的书写范围仍为灰色的100</em>100.   </p>
+<h3 id="Q6-margin重叠发生的条件及现象？"><a href="#Q6-margin重叠发生的条件及现象？" class="headerlink" title="Q6 margin重叠发生的条件及现象？"></a>Q6 margin重叠发生的条件及现象？</h3><ul>
 <li>上下都为普通元素，会发生margin重叠  </li>
-<li>父子（子为普通元素），父无论是否浮动，都会发生margin重叠<br>详见转载<a href="https://blog.csdn.net/qq_37977455/article/details/83246332" target="_blank" rel="noopener">margin重叠及防止方法</a>  <h3 id="Q7搜索块状元素和内联元素都有哪些？"><a href="#Q7搜索块状元素和内联元素都有哪些？" class="headerlink" title="Q7搜索块状元素和内联元素都有哪些？"></a>Q7搜索块状元素和内联元素都有哪些？</h3>块状元素div：address-地址；blockquote-块引用；center-居中对齐；dir-目录列表；dl-定义列表；form-交互表单；fieldset-form控制组；hr-水平分割线；menu-菜单列表；ol-有序表单；p-段落；pre-格式化文本；table-表格；ul-无序列表；<br>内联元素span：a-锚点；abbr-缩写；acronym-首字；strong-粗体；big-大字体；br-换行；cite-引用；dfn-定义字段；em-强调；i-斜体；img-图片；input-输入框；textarea-多行文本输入框；label-表格标签；q-短引用；strike-中划线；u-下划线；var-定义变量； <h3 id="Q8内联元素与块状元素的转化"><a href="#Q8内联元素与块状元素的转化" class="headerlink" title="Q8内联元素与块状元素的转化"></a>Q8内联元素与块状元素的转化</h3></li>
+<li>父子（子为普通元素），父无论是否浮动，都会发生margin重叠<br>详见转载<a href="https://blog.csdn.net/qq_37977455/article/details/83246332" target="_blank" rel="noopener">margin重叠及防止方法</a>  </li>
+</ul>
+<h3 id="Q7搜索块状元素和内联元素都有哪些？"><a href="#Q7搜索块状元素和内联元素都有哪些？" class="headerlink" title="Q7搜索块状元素和内联元素都有哪些？"></a>Q7搜索块状元素和内联元素都有哪些？</h3><p><strong>块状元素div</strong>：address-地址；blockquote-块引用；center-居中对齐；dir-目录列表；dl-定义列表；form-交互表单；fieldset-form控制组；hr-水平分割线；menu-菜单列表；ol-有序表单；p-段落；pre-格式化文本；table-表格；ul-无序列表；<br><strong>内联元素span</strong>：a-锚点；abbr-缩写；acronym-首字；strong-粗体；big-大字体；br-换行；cite-引用；dfn-定义字段；em-强调；i-斜体；img-图片；input-输入框；textarea-多行文本输入框；label-表格标签；q-短引用；strike-中划线；u-下划线；var-定义变量；  </p>
+<h3 id="Q8内联元素与块状元素的转化"><a href="#Q8内联元素与块状元素的转化" class="headerlink" title="Q8内联元素与块状元素的转化"></a>Q8内联元素与块状元素的转化</h3><ul>
 <li><code>display:block;</code>变为块状元素  </li>
 <li><code>display:inline;</code>变为内联元素  </li>
 <li><code>display:none;</code>设置之后，该元素和该元素的子元素不再显示，等同于这段代码被删除，不占空间。  </li>
@@ -422,7 +456,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%BB%8F%E5%85%B8/" rel="tag"># 经典</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
           
         </div>
       
@@ -445,8 +481,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/11/HTML%E6%95%B4%E7%90%86/" rel="prev" title="HTML整理">
-                HTML整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/11/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="prev" title="网页开发基础知识">
+                网页开发基础知识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -579,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-后缀-html-htm-shtml区别？"><span class="nav-number">1.</span> <span class="nav-text">Q1:后缀.html .htm .shtml区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2：CSS的4种引入方式"><span class="nav-number">2.</span> <span class="nav-text">Q2：CSS的4种引入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"><span class="nav-number">3.</span> <span class="nav-text">Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？"><span class="nav-number">4.</span> <span class="nav-text">Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q6-margin重叠发生的条件及现象？"><span class="nav-number">5.</span> <span class="nav-text">Q6 margin重叠发生的条件及现象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q7搜索块状元素和内联元素都有哪些？"><span class="nav-number">6.</span> <span class="nav-text">Q7搜索块状元素和内联元素都有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q8内联元素与块状元素的转化"><span class="nav-number">7.</span> <span class="nav-text">Q8内联元素与块状元素的转化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-后缀-html-htm-shtml区别？"><span class="nav-number">1.</span> <span class="nav-text">Q1:后缀.html .htm .shtml区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2：CSS的4种引入方式"><span class="nav-number">2.</span> <span class="nav-text">Q2：CSS的4种引入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q3-如何让2个div并排显示？"><span class="nav-number">3.</span> <span class="nav-text">Q3:如何让2个div并排显示？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"><span class="nav-number">4.</span> <span class="nav-text">Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？"><span class="nav-number">5.</span> <span class="nav-text">Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q6-margin重叠发生的条件及现象？"><span class="nav-number">6.</span> <span class="nav-text">Q6 margin重叠发生的条件及现象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q7搜索块状元素和内联元素都有哪些？"><span class="nav-number">7.</span> <span class="nav-text">Q7搜索块状元素和内联元素都有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q8内联元素与块状元素的转化"><span class="nav-number">8.</span> <span class="nav-text">Q8内联元素与块状元素的转化</span></a></li></ol></div>
             
 
           </div>
@@ -624,7 +660,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.8k字</span>
+  <span class="post-count">博客全站共8k字</span>
 </div>
         
 <div class="busuanzi-count">
