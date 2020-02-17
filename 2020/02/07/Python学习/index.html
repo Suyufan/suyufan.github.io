@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="前言 Python具有高支持性。其程序代码是公开的，全世界有无数的人在搜索其漏洞并修复它。Python提供内置的解释器，不需要额外的解释器。用户也需要完整的程序模块才能测试， 只需要在解释器内编写测试的部分即可。Python解释器非常有弹性，其允许用户嵌入C++程序代码作为扩展模块。Python将大部分的函数以模块和类库来存储。大量的模块以标准Python函数库的形式与解释器一起传输。用户可以将程">
 <meta property="article:published_time" content="2020-02-07T05:20:30.000Z">
-<meta property="article:modified_time" content="2020-02-13T12:24:53.529Z">
+<meta property="article:modified_time" content="2020-02-17T12:32:57.567Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.4k
+                  4.2k
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13
+                  16
                 </span>
               
             </div>
@@ -668,7 +668,42 @@ fruits(<span class="string">"西瓜"</span>,<span class="string">"苹果"</span>
 <span class="meta">&gt;&gt;&gt; </span>int2(<span class="string">'1000011'</span>)
 <span class="number">67</span>
 <span class="meta">&gt;&gt;&gt; </span></code></pre>
-<h1 id="四-对象与类"><a href="#四-对象与类" class="headerlink" title="四.对象与类"></a>四.对象与类</h1>
+<h1 id="四-对象与类"><a href="#四-对象与类" class="headerlink" title="四.对象与类"></a>四.对象与类</h1><p>类是一群对象的集合。对象是类的实例化。对象分为静态和动态特征两种。变量即为静态特征又称属性，方法即为动态特征又称行为。一个对象由一组属性和一系列的方法组成。<br><strong>面向对象的特征</strong>：封装性，继承性，多态性<br>类的定义，构造方法，创建与C语言C++都十分类似。  </p>
+<h3 id="1-创建类"><a href="#1-创建类" class="headerlink" title="1.创建类"></a>1.创建类</h3><p>下面示例创建一个简单的类Fruits  </p>
+<pre><code class="python"><span class="class"><span class="keyword">class</span> <span class="title">Fruits</span>:</span>  <span class="comment">#定义类名为Fruits</span>
+<span class="string">"这是一个定义水果类的例子"</span>  
+fruCount = <span class="number">0</span>  <span class="comment">#初始化变量fruCount为0  </span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">displayFruits</span><span class="params">(self)</span>：#定义类的函数<span class="title">displayFruits</span>，在<span class="title">python</span>中称为方法.<span class="title">self</span>代表类的实例即为对象    </span>
+    Fruits.fruCount += 1  
+    print(<span class="string">"这是一个水果类的例子"</span>)  </code></pre>
+<h3 id="2-构造方法"><a href="#2-构造方法" class="headerlink" title="2.构造方法"></a>2.构造方法</h3><p>Python使用<em>init</em>()函数作为对象的构造方法，当用户要在对象内指向对象本身时，可以使用self.(相当于C++中的this)<br>举一个构造函数的简单例子  </p>
+<pre><code class="python"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>:</span>
+    name = <span class="string">''</span>
+    age = <span class="number">18</span>
+    num = <span class="number">0</span>
+<span class="function"><span class="keyword">def</span> <span class="title">_init_</span><span class="params">(self,n,a,u)</span>:</span>  <span class="comment">#构造函数初始化</span>
+    self.name = n
+    self.age = a
+    self.num = u
+<span class="function"><span class="keyword">def</span> <span class="title">displayStudent</span> <span class="params">(self)</span>:</span>  
+    print(<span class="string">"学生的姓名为%s年龄为%d学号为%d"</span> % (self.name,self.age,self.num))
+s = Student(<span class="string">'mary'</span>, <span class="number">18</span>, <span class="number">0</span>) <span class="comment">#定义变量</span>
+s.displayStudent()   <span class="comment">#调用displayStudent函数输出  </span></code></pre>
+<h3 id="3-重载运算符"><a href="#3-重载运算符" class="headerlink" title="3.重载运算符"></a>3.重载运算符</h3><p>如果要在Python解释器内使用运算符函数，首相必须加载operator模块，然后调用operator模块的运算符函数<br>如下：  </p>
+<pre><code class="python">&gt;&gt;&gt;<span class="keyword">import</span> operator  
+&gt;&gt;&gt;operator.add(<span class="number">100</span>,<span class="number">200</span>)
+<span class="number">300</span>  </code></pre>
+<h3 id="4-类的继承"><a href="#4-类的继承" class="headerlink" title="4.类的继承"></a>4.类的继承</h3><p>与C++类似，派生类的构造方法必须调用基础类的构造方法，并使用完整的基类名称   </p>
+<pre><code class="python">&gt;&gt;&gt;Class Person(Student):<span class="function"><span class="keyword">def</span> <span class="title">_init_</span><span class="params">(self,name,sex,phone)</span>:</span>     <span class="comment">#派生类Student的构造方法  </span>
+Student._init_(self,name,sex,phone)    <span class="comment">#调用基类的构造方法  </span></code></pre>
+<p>python同样支持类的有限多继承  </p>
+<h3 id="5-类的多态"><a href="#5-类的多态" class="headerlink" title="5.类的多态"></a>5.类的多态</h3><p>与C++类似，所谓类的多态，就是指类可以有多个名称相同，参数类型却不同的函数。因为pyth函数的参数不必声明数据类型，因此它并没有明显的多态特性。但是pyth利用动态数据类型忍让可以处理对象的多态。pyth必须等到运行该函数的时候才知道该函数的类型，这种特性称为<strong>运行期绑定</strong><br>与C++不同的是，C++将多态程为方法重载，允许类内有多个名称相同，参数却不同的函数存在。但是python不允许这样子，如果用户在Python的类内声明多个名称相同，参数却不同的函数，那么python会使用类内的最后一个声明的函数。  </p>
+<h3 id="6-类的封装"><a href="#6-类的封装" class="headerlink" title="6.类的封装"></a>6.类的封装</h3><p>python类中所有的变量和方法都是公有的，如果要做到类的封装，使其成为私有，必须遵循以下原则  </p>
+<ul>
+<li>属性名称的第一个字符是单下划线，那么该属性视为类的内部变量，外部的变量不可以引用该属性<br>以上原则只是参考，python属性仍是公有的。  </li>
+</ul>
+
       
     </div>
     
@@ -842,7 +877,7 @@ fruits(<span class="string">"西瓜"</span>,<span class="string">"苹果"</span>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-基础语法"><span class="nav-number">2.</span> <span class="nav-text">一.基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-程序结构"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.程序结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#缩进分层"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">缩进分层</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-输入输出"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#输入"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-变量"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-数据类型"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-运算符与优先级"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.运算符与优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-字符串"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1字符串运算符"><span class="nav-number">2.0.6.0.1.</span> <span class="nav-text">6.1字符串运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-2格式化字符串"><span class="nav-number">2.0.6.0.2.</span> <span class="nav-text">6.2格式化字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-3内置方法"><span class="nav-number">2.0.6.0.3.</span> <span class="nav-text">6.3内置方法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-控制结构"><span class="nav-number">3.</span> <span class="nav-text">二.控制结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-赋值语句"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.赋值语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-程序结构"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.程序结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-函数"><span class="nav-number">4.</span> <span class="nav-text">三.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-常见内置函数"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.常见内置函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-函数的定义"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.函数的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-可变参数"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-返回函数"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.返回函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-递归函数"><span class="nav-number">4.0.5.</span> <span class="nav-text">5.递归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-匿名函数"><span class="nav-number">4.0.6.</span> <span class="nav-text">6.匿名函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-偏函数"><span class="nav-number">4.0.7.</span> <span class="nav-text">7.偏函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-对象与类"><span class="nav-number">5.</span> <span class="nav-text">四.对象与类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-基础语法"><span class="nav-number">2.</span> <span class="nav-text">一.基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-程序结构"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.程序结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#缩进分层"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">缩进分层</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-输入输出"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#输入"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-变量"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-数据类型"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-运算符与优先级"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.运算符与优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-字符串"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1字符串运算符"><span class="nav-number">2.0.6.0.1.</span> <span class="nav-text">6.1字符串运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-2格式化字符串"><span class="nav-number">2.0.6.0.2.</span> <span class="nav-text">6.2格式化字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-3内置方法"><span class="nav-number">2.0.6.0.3.</span> <span class="nav-text">6.3内置方法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-控制结构"><span class="nav-number">3.</span> <span class="nav-text">二.控制结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-赋值语句"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.赋值语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-程序结构"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.程序结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-函数"><span class="nav-number">4.</span> <span class="nav-text">三.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-常见内置函数"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.常见内置函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-函数的定义"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.函数的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-可变参数"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-返回函数"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.返回函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-递归函数"><span class="nav-number">4.0.5.</span> <span class="nav-text">5.递归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-匿名函数"><span class="nav-number">4.0.6.</span> <span class="nav-text">6.匿名函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-偏函数"><span class="nav-number">4.0.7.</span> <span class="nav-text">7.偏函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-对象与类"><span class="nav-number">5.</span> <span class="nav-text">四.对象与类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建类"><span class="nav-number">5.0.1.</span> <span class="nav-text">1.创建类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-构造方法"><span class="nav-number">5.0.2.</span> <span class="nav-text">2.构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-重载运算符"><span class="nav-number">5.0.3.</span> <span class="nav-text">3.重载运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-类的继承"><span class="nav-number">5.0.4.</span> <span class="nav-text">4.类的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-类的多态"><span class="nav-number">5.0.5.</span> <span class="nav-text">5.类的多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-类的封装"><span class="nav-number">5.0.6.</span> <span class="nav-text">6.类的封装</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -887,7 +922,7 @@ fruits(<span class="string">"西瓜"</span>,<span class="string">"苹果"</span>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.2k字</span>
+  <span class="post-count">博客全站共10k字</span>
 </div>
         
 <div class="busuanzi-count">
