@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="Q1:后缀.html .htm .shtml区别？首先来看 .htm 和 .html 文件的区别。答案居然是：它们是相同的。有个问题是服务端的，如果服务端某文件夹下同时有 index.html 和 index.htm 文件，URL 省略了后面的文件名（如 http:&#x2F;&#x2F;www.domain.dom&#x2F;dirname&#x2F;）  那么显然一个文件会优先于另一文件被读取（先解析 index.html）。事实上">
 <meta property="article:published_time" content="2020-02-08T06:04:07.000Z">
-<meta property="article:modified_time" content="2020-02-13T12:19:51.728Z">
+<meta property="article:modified_time" content="2020-02-17T04:26:43.872Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="CSS">
 <meta property="article:tag" content="HTML">
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  1.9k
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -437,7 +437,20 @@
 <h3 id="Q8内联元素与块状元素的转化"><a href="#Q8内联元素与块状元素的转化" class="headerlink" title="Q8内联元素与块状元素的转化"></a>Q8内联元素与块状元素的转化</h3><ul>
 <li><code>display:block;</code>变为块状元素  </li>
 <li><code>display:inline;</code>变为内联元素  </li>
-<li><code>display:none;</code>设置之后，该元素和该元素的子元素不再显示，等同于这段代码被删除，不占空间。  </li>
+<li><code>display:none;</code>设置之后，该元素和该元素的子元素不再显示，等同于这段代码被删除，不占空间。  <h3 id="Q9有的网站即设置了背景图还设置了背景色为什么？"><a href="#Q9有的网站即设置了背景图还设置了背景色为什么？" class="headerlink" title="Q9有的网站即设置了背景图还设置了背景色为什么？"></a>Q9有的网站即设置了背景图还设置了背景色为什么？</h3>既有背景图又有背景色，优先显示背景图  </li>
+<li>考虑到大屏幕，背景图不足以铺满整个显示区域，背景图之外的地方显示背景色，并且背景图边缘部分必须处理妥当保证平滑过渡到背景色，不会有突兀的感觉。   </li>
+<li>根据网站的主色调定义一个背景色，利于减少视觉疲劳（不至于图片加载不出来，颜色反差大，闪眼，造成视觉不友好。一般是先定义背景色，再定义背景图片，色彩优先）  </li>
+<li>考虑到如果图片加载不出来，有背景色可过度。  <h3 id="Q10哪些标签是自闭合？"><a href="#Q10哪些标签是自闭合？" class="headerlink" title="Q10哪些标签是自闭合？"></a>Q10哪些标签是自闭合？</h3></li>
+</ul>
+<p><strong>一般标签</strong>成对出现，中间可以插入别的标签或内容<br><strong>自闭合标签</strong>单个出现，只能定义一些属性，不能插入别的标签或者内容。<br>常见的自闭合标签：  </p>
+<ul>
+<li>meta:用于引擎搜索，定义页面说明    </li>
+<li>link链接外部CSS文件或者脚本  </li>
+<li>base页面所有链接的基础定位  </li>
+<li>br换行  </li>
+<li>hr水平线  </li>
+<li>input定义表单元素  </li>
+<li>img图片标签  </li>
 </ul>
 
       
@@ -560,7 +573,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -571,7 +584,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -582,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -615,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-后缀-html-htm-shtml区别？"><span class="nav-number">1.</span> <span class="nav-text">Q1:后缀.html .htm .shtml区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2：CSS的4种引入方式"><span class="nav-number">2.</span> <span class="nav-text">Q2：CSS的4种引入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q3-如何让2个div并排显示？"><span class="nav-number">3.</span> <span class="nav-text">Q3:如何让2个div并排显示？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"><span class="nav-number">4.</span> <span class="nav-text">Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？"><span class="nav-number">5.</span> <span class="nav-text">Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q6-margin重叠发生的条件及现象？"><span class="nav-number">6.</span> <span class="nav-text">Q6 margin重叠发生的条件及现象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q7搜索块状元素和内联元素都有哪些？"><span class="nav-number">7.</span> <span class="nav-text">Q7搜索块状元素和内联元素都有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q8内联元素与块状元素的转化"><span class="nav-number">8.</span> <span class="nav-text">Q8内联元素与块状元素的转化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-后缀-html-htm-shtml区别？"><span class="nav-number">1.</span> <span class="nav-text">Q1:后缀.html .htm .shtml区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2：CSS的4种引入方式"><span class="nav-number">2.</span> <span class="nav-text">Q2：CSS的4种引入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q3-如何让2个div并排显示？"><span class="nav-number">3.</span> <span class="nav-text">Q3:如何让2个div并排显示？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少"><span class="nav-number">4.</span> <span class="nav-text">Q4如果父div中的2个子div是浮动的，父div的高度有没有被子div撑起来，父的高度是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q5设置背景为灰色的盒子宽高各为100px-给盒子加上10px的蓝色border-50px的padding-那灰色区域的面积变为多少？"><span class="nav-number">5.</span> <span class="nav-text">Q5设置背景为灰色的盒子宽高各为100px,给盒子加上10px的蓝色border,50px的padding.那灰色区域的面积变为多少？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q6-margin重叠发生的条件及现象？"><span class="nav-number">6.</span> <span class="nav-text">Q6 margin重叠发生的条件及现象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q7搜索块状元素和内联元素都有哪些？"><span class="nav-number">7.</span> <span class="nav-text">Q7搜索块状元素和内联元素都有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q8内联元素与块状元素的转化"><span class="nav-number">8.</span> <span class="nav-text">Q8内联元素与块状元素的转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q9有的网站即设置了背景图还设置了背景色为什么？"><span class="nav-number">9.</span> <span class="nav-text">Q9有的网站即设置了背景图还设置了背景色为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q10哪些标签是自闭合？"><span class="nav-number">10.</span> <span class="nav-text">Q10哪些标签是自闭合？</span></a></li></ol></div>
             
 
           </div>
@@ -660,7 +673,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8k字</span>
+  <span class="post-count">博客全站共9.2k字</span>
 </div>
         
 <div class="busuanzi-count">
