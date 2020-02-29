@@ -361,53 +361,17 @@
 
       
         
-          
-            <hr>
+          <hr>
 <p>title: HTML实现表单<br>author: 苏玉璠<br>date: 2020-02-26 08:13:16<br>tags: HTML<br>categories: 网页前端</p>
 <hr>
-<p>在用户注册，在线报名等场合，需要把用户的信息填写并提交，这时要用到表单来填写提交信息。  </p>
-<body>
-<form action="">
-    <p>
-        用户名：<input type="text" name="username" />
-         </p>
-     <p>
-         密码：<input type="password" name="password" />
-        </p>
-      <p>
-          性别：男:<input type="radio" name="sex" value="男"/>
-             女:<input type="radio" name="sex" value="女" />
-        </p>
-      <p>
-           爱好：篮球<input type="checkbox" name="hobby" value="篮球" />
-             舞蹈<input type="checkbox" name="hobby" value="舞蹈" />
-            唱歌<input type="checkbox" name="hobby" value="唱歌" />
-            </p>
-       <p>
-               <select name="education">
-                <option value="大学">大学</option>
-                <option value="高中">高中</option>
-                <option value="初中">初中</option>
-             </select>
-             </p>
-        <p>
-            <textarea name="intro"></textarea>
-            </p>
-        <p>
-            上传图像:<input type="file" name="picture"/>
-            </p>
-         <p>
-             隐藏域：你看不见<input type="hidden" name="IP" value="192.168.1.100" />
-            </p>
-          <p>
-                  <button>submit</button>
-           </p>
-      </form>
-
-</body>  
-源代码如下：  
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span>   //action写提交后跳转的网址，为了安全常在action后写method="post"</span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    	用户名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> /&gt;</span>  </span><br><span class="line">     	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">     	密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      	性别：男:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"男"</span>/&gt;</span> </span><br><span class="line">        	 女:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"女"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span> /*value后写checked="checked"表示默认选中*/</span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      	 爱好：篮球<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">value</span>=<span class="string">"篮球"</span> /&gt;</span></span><br><span class="line">         	舞蹈<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">value</span>=<span class="string">"舞蹈"</span> /&gt;</span></span><br><span class="line">            唱歌<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">value</span>=<span class="string">"唱歌"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  /*value后写checked="checked"表示默认选中*/</span><br><span class="line">       <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">       		<span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"education"</span>&gt;</span></span><br><span class="line">            	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"大学"</span>&gt;</span>大学<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"高中"</span>&gt;</span>高中<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"初中"</span>&gt;</span>初中<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"intro"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        	上传图像:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"picture"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">         	隐藏域：你看不见<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"IP"</span> <span class="attr">value</span>=<span class="string">"192.168.1.100"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">          		<span class="tag">&lt;<span class="name">button</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">p</span>&gt;</span>  //提交也可以这样写<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">           </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          
+<p>在用户注册，在线报名等场合，需要把用户的信息填写并提交，这时要用到表单来填写提交信息。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/26/HTML%E5%AE%9E%E7%8E%B0%E8%A1%A8%E5%8D%95/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
