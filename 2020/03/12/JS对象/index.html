@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="String字符串对象 length属性：长度   concat(String) 连接两个或更多个字符串   indexOf(string) 返回出现字符串的位置   substr(num1,[num2]) 截取字符串   toLowerCase()转换为小写   toUpperCase()转换为大写   replace(str1,str2)字符串替换">
 <meta property="article:published_time" content="2020-03-12T12:06:39.000Z">
-<meta property="article:modified_time" content="2020-03-12T14:05:12.080Z">
+<meta property="article:modified_time" content="2020-03-16T09:50:04.941Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  435
+                  902
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -432,6 +432,81 @@
 <span class="built_in">console</span>.log(arr.join(<span class="string">','</span>));<span class="comment">//输出春，夏，秋，冬  </span>
 <span class="keyword">var</span> str = <span class="string">'东，西，南，北'</span>;  
 <span class="built_in">console</span>.log(str.split(<span class="string">','</span>));<span class="comment">//输出[东，西，南，北]   </span></code></pre>
+<hr>
+<h2 id="浏览器window对象"><a href="#浏览器window对象" class="headerlink" title="浏览器window对象"></a>浏览器window对象</h2><p><strong>注：window对象是浏览器宿主对象，和JS语言无关</strong>   </p>
+<h3 id="window对象的方法"><a href="#window对象的方法" class="headerlink" title="window对象的方法"></a>window对象的方法</h3><p>window.alert(message)<br>window.confirm(message)<br>window.prompt(message[,defaultstr])<br>window.close()关闭窗口<br>window.print()打印<br>window.setlntval(表达式，毫秒)；<br>window.clearlntval(定时器对象)；<br>window.setTimeout(表达式，毫秒)<br>window.clearTimeout(定时器对象)  </p>
+<h3 id="window对象的子对象"><a href="#window对象的子对象" class="headerlink" title="window对象的子对象"></a>window对象的子对象</h3><p><strong>navigator.浏览器信息对象</strong>  </p>
+<blockquote>
+<p>appCodeName内部代码<br>appVersion浏览器版本<br>platform操作系统类型<br>userAgent用户代理信息<br>cookieEnabled是否支持cookie  </p>
+</blockquote>
+<p><strong>location地址栏对象</strong>  </p>
+<blockquote>
+<p>host主机<br>port端口<br>href地址<br>pathname路径<br>protocol协议<br>search查询字符串<br>assign(url)页面跳转  </p>
+</blockquote>
+<p><strong>history历史记录</strong>  </p>
+<blockquote>
+<p>length历史记录的数目<br>back();<br>forward();<br>go();</p>
+</blockquote>
+<p><strong>screen屏幕对象</strong>  </p>
+<blockquote>
+<p>height高度<br>width宽度<br>availHeight可用高度<br>availWidth可用宽度<br>colorDepth颜色  </p>
+</blockquote>
+<p>**document HTML文档对象<br>即HTML代码形成的对象，操作此对象，可动态的改变页面的内容是我们做JS的主战场  </p>
+<hr>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><pre><code class="javascript"><span class="keyword">var</span> a = <span class="number">3</span>;<span class="comment">//声明a变量并赋值  </span>
+b = <span class="number">3</span>;<span class="comment">//只是一个赋值  </span></code></pre>
+<p>JS作用域的特点：<br>首先在函数的内部查找变量，找不到则到外层函数查找，逐步找到最外层，即window对象，并操作window对象的属性  </p>
+<pre><code class="javascript">&lt;script&gt;
+<span class="function"><span class="keyword">function</span> <span class="title">t1</span>(<span class="params"></span>) </span>{
+        <span class="keyword">var</span> str = <span class="string">'local'</span>;
+       <span class="function"><span class="keyword">function</span> <span class="title">t2</span>(<span class="params"></span>)</span>{
+           <span class="keyword">var</span> str = <span class="string">'japan'</span>;
+           alert(str);
+       }
+       t2();
+}
+t1()
+&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/输出japan</span>
+<span class="regexp"></span>
+<span class="regexp">  &lt;script&gt;</span>
+<span class="regexp">function t1() {</span>
+<span class="regexp">        var str = 'local';</span>
+<span class="regexp">       function t2(){</span>
+<span class="regexp">           /</span><span class="regexp">/var str = 'japan';</span>
+<span class="regexp">           alert(str);</span>
+<span class="regexp">       }</span>
+<span class="regexp">       t2();</span>
+<span class="regexp">}</span>
+<span class="regexp">t1()</span>
+<span class="regexp">&lt;/</span>script&gt;<span class="comment">//输出local  </span>
+
+&lt;script&gt;
+<span class="built_in">window</span>.str = <span class="string">'union'</span>;<span class="comment">//最大的全局变量</span>
+<span class="function"><span class="keyword">function</span> <span class="title">t1</span>(<span class="params"></span>) </span>{
+        <span class="comment">//var str = 'local';</span>
+       <span class="function"><span class="keyword">function</span> <span class="title">t2</span>(<span class="params"></span>)</span>{
+           <span class="comment">//var str = 'japan';</span>
+           alert(str);
+       }
+       t2();
+}
+t1()
+&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/输出union  </span>
+<span class="regexp"></span>
+<span class="regexp">&lt;script&gt;/</span><span class="regexp">/t2的str不加var,只是赋值，而没有声明，所以str将一直往上走找声明过的str(即找到window.str,把japan给它)所以下面的程序将打印2次japan.</span>
+<span class="regexp">function t1() {</span>
+<span class="regexp">        /</span><span class="regexp">/var str = 'local';</span>
+<span class="regexp">       function t2(){</span>
+<span class="regexp">           /</span><span class="regexp">/var str = 'japan';</span>
+<span class="regexp">           str = 'japan';</span>
+<span class="regexp">           alert(str);</span>
+<span class="regexp">       }</span>
+<span class="regexp">       t2();</span>
+<span class="regexp">}</span>
+<span class="regexp">t1()</span>
+<span class="regexp">alert(window.str);</span>
+<span class="regexp">&lt;/</span>script&gt;  </code></pre>
+<p><strong>在以后的学习过程中，一定要注意加var,否则会污染全局变量</strong>  </p>
 
       
     </div>
@@ -606,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#String字符串对象"><span class="nav-number">1.</span> <span class="nav-text">String字符串对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Date日期对象"><span class="nav-number">2.</span> <span class="nav-text">Date日期对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math数学对象"><span class="nav-number">3.</span> <span class="nav-text">Math数学对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值对象"><span class="nav-number">4.</span> <span class="nav-text">数值对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#String字符串对象"><span class="nav-number">1.</span> <span class="nav-text">String字符串对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Date日期对象"><span class="nav-number">2.</span> <span class="nav-text">Date日期对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math数学对象"><span class="nav-number">3.</span> <span class="nav-text">Math数学对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值对象"><span class="nav-number">4.</span> <span class="nav-text">数值对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器window对象"><span class="nav-number">5.</span> <span class="nav-text">浏览器window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window对象的方法"><span class="nav-number">5.1.</span> <span class="nav-text">window对象的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window对象的子对象"><span class="nav-number">5.2.</span> <span class="nav-text">window对象的子对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">6.</span> <span class="nav-text">作用域</span></a></li></ol></div>
             
 
           </div>
@@ -651,7 +726,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共17.3k字</span>
+  <span class="post-count">博客全站共17.7k字</span>
 </div>
         
 <div class="busuanzi-count">
