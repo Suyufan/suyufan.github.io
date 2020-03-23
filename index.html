@@ -260,6 +260,403 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/22/JS%E7%89%B9%E6%95%88%E4%B9%8B%E5%8A%A8%E6%80%81%E5%8F%98%E6%8D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/22/JS%E7%89%B9%E6%95%88%E4%B9%8B%E5%8A%A8%E6%80%81%E5%8F%98%E6%8D%A2/" itemprop="url">JS特效之动态变换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T22:21:47+08:00">
+                2020-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">网页前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  924
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>特效其实可以通过控制台来查看，如果会JS会DOM在你的眼中，将没有特效可言。无非是通过JS动态的操作DOM而已。<br>下面我们将对id查询，标签查询，name查询，进行详细介绍。</p>
+</blockquote>
+<h2 id="1-div块的变换"><a href="#1-div块的变换" class="headerlink" title="1.div块的变换"></a>1.div块的变换</h2><p>使用div定义一个模块，通过点击来改变它的颜色。  </p>
+<pre><code class="javascript">&lt;title&gt;JS特效之动态变化&lt;<span class="regexp">/title&gt;</span>
+<span class="regexp">&lt;style&gt;</span>
+<span class="regexp">div{</span>
+<span class="regexp">    width:45px;</span>
+<span class="regexp">    height:45px;</span>
+<span class="regexp">}</span>
+<span class="regexp">#test1{</span>
+<span class="regexp">    background:red;</span>
+<span class="regexp">}</span>
+<span class="regexp">#test2{</span>
+<span class="regexp">    background:green;</span>
+<span class="regexp">}</span>
+<span class="regexp">&lt;/</span>style&gt;
+&lt;script&gt;
+    <span class="function"><span class="keyword">function</span> <span class="title">ch</span>(<span class="params"></span>)</span>{                              <span class="comment">//使用function来定义函数ch()；</span>
+    <span class="keyword">var</span> div= <span class="built_in">document</span>.getElementById(<span class="string">"test1"</span>);<span class="comment">//获取test1的对象，不要忘了使用var定义类型，js中的var相当于c中的int</span>
+    div.id=<span class="string">"test2"</span>;<span class="comment">//将id改为test2</span>
+}
+&lt;<span class="regexp">/script&gt;</span>
+<span class="regexp"></span>
+<span class="regexp">&lt;/</span>head&gt;
+
+&lt;body&gt;
+&lt;div id=<span class="string">"test1"</span> onclick=<span class="string">"ch();"</span>&gt;<span class="comment">//将通过onclick使用函数ch()，点击的时候相当于触发ch();函数</span>
+    &lt;p&gt;p1&lt;<span class="regexp">/p&gt;</span>
+<span class="regexp">    &lt;p&gt;p2&lt;/</span>p&gt;
+    &lt;p&gt;p3&lt;<span class="regexp">/p&gt;</span>
+<span class="regexp">&lt;/</span>div&gt; 
+&lt;<span class="regexp">/body&gt;</span></code></pre>
+<h2 id="2-img图片不断变换"><a href="#2-img图片不断变换" class="headerlink" title="2.img图片不断变换"></a>2.img图片不断变换</h2><p>img图片变换与div模块变换的使用方法是一样的。这里我们将img设置为不断点击不断变换，引入if语句和indexOf();函数的使用。  </p>
+<pre><code class="javascript">&lt;title&gt;img图片变换&lt;<span class="regexp">/title&gt;</span>
+<span class="regexp">&lt;script&gt;</span>
+<span class="regexp">function toggle(){</span>
+<span class="regexp">    var test1= document.getElementById("test1");/</span><span class="regexp">/寻找test1</span>
+<span class="regexp">    if(test1.src.indexOf("img/</span>圣诞树.png<span class="string">")&gt;=0){//用indexOf()方法查找字符串“img/圣诞树.png”,找不到返回值-1</span>
+<span class="string"></span>
+<span class="string">    test1.src="</span>img/top1.jpg<span class="string">";</span>
+<span class="string">}</span>
+<span class="string">else test1.src="</span>img/圣诞树.png<span class="string">";</span>
+<span class="string">}</span>
+<span class="string">&lt;/script&gt;</span>
+<span class="string">&lt;/head&gt;</span>
+<span class="string"></span>
+<span class="string">&lt;body&gt;</span>
+<span class="string">&lt;img id="</span>test1<span class="string">" src="</span>img/圣诞树.png<span class="string">" onclick="</span>toggle();<span class="string">" /&gt;</span>
+<span class="string">&lt;/body&gt;</span></code></pre>
+<h2 id="3-找对象"><a href="#3-找对象" class="headerlink" title="3.找对象"></a>3.找对象</h2><p>特效的第一步其实就是在找DOM对象，下面我们将进行详细介绍。<br><strong>注意:script代码一定要注意写到对象的后面，否则会因为还没有读到而返回null</strong>  </p>
+<h4 id="3-1id查询"><a href="#3-1id查询" class="headerlink" title="3.1id查询"></a>3.1id查询</h4><p>通过id查询，返回值为“对象”  </p>
+<pre><code class="javascript">&lt;script&gt;
+alert(<span class="built_in">document</span>.getElementById(<span class="string">'test1'</span>))；
+&lt;<span class="regexp">/script&gt;</span></code></pre>
+<h4 id="3-2标签查询"><a href="#3-2标签查询" class="headerlink" title="3.2标签查询"></a>3.2标签查询</h4><p>通过标签查询，返回值为“对象集合”object HTMLcollection,即使只有一个对象，也返回的是对象的集合。<br><code>alert(document.getElementsByTagName(&#39;h1&#39;));</code><br>那么问题来了，如果想要对标签的每一个实现不同的操作呢  </p>
+<pre><code class="javascript">&lt;script&gt;
+<span class="comment">//将集合定义为一个数组，通过数组来实现不同的操作</span>
+ps =<span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);
+ps[<span class="number">0</span>].style.background=<span class="string">'red'</span>;
+&lt;<span class="regexp">/script&gt;</span></code></pre>
+<p>要想知道数组的长度，<code>alert(document.getElementsByTagName(&#39;p&#39;).length);</code>  </p>
+<h4 id="3-3name查询"><a href="#3-3name查询" class="headerlink" title="3.3name查询"></a>3.3name查询</h4><p>对于表单元素，可以通过name来查询。返回值为“节点集合”object NodeList<br><code>alert(document.getElementsByName(&#39;username&#39;));</code>  </p>
+<h4 id="3-4按类名查找"><a href="#3-4按类名查找" class="headerlink" title="3.4按类名查找"></a>3.4按类名查找</h4><p>按照类名class name查找，返回值为对象集合<br><code>document.getElementsByClassName(&#39;test2&#39;)[0].style.background=&#39;red&#39;;</code>   </p>
+<h4 id="3-5找子对象"><a href="#3-5找子对象" class="headerlink" title="3.5找子对象"></a>3.5找子对象</h4><p>可以通过.children或者.parent来查找子，父。返回值为对象集合。<br>除了查找元素，也可以对元素进行操作，具体操作方法这里不一一列举，读者可以通过W3C的DOM手册进行学习了解<br>源代码为标题1的代码，下面这行代码将返回的值并不是3而是7.<br><code>alert(document.getElementById(&quot;test1&quot;).childNodes.length);</code><br>原因是由于DOM的语义规范，将test1下面的所有东西都会当成它的子对象，所以将4个空白的换行文本也当成它的子对象算在里面，这将使得我们在操作的时候造成很多不便。<br>因此，我们在实际操作的过程中并不使用上面的那种写法。<br>使用<code>alert(document.getElementById(&#39;test1&#39;).children.length);</code>的这种写法返回3，children属性虽然不标准，但是兼容性很好，现在的很多浏览器也支持，它不包含空白文本。<br>父对象，兄弟对象的属性类似。  </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/18/MySQL%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%93%8D%E4%BD%9C%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/18/MySQL%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%93%8D%E4%BD%9C%E8%A1%A8/" itemprop="url">MySQL操作数据库和操作表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T09:01:03+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  285
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: MySQL操作数据库和操作表<br>author: 苏玉璠<br>date: 2020-03-18 09:01:03<br>tags: MySQL<br>categories: 数据库</p>
+<hr>
+<p>MySQL的语言是SQL语言<br>SQL语言的特点  </p>
+<blockquote>
+<p>1.综合统一 2.​高度非过程化 3.面向过程的操作方式 4.以同一种语法结构提供多种使用方法 5.语言简洁，简单易学<br>SQL的数据定义功能包括模式定义，表定义，视图和索引的定义 </p>
+</blockquote>
+<h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| student            |</span><br><span class="line">| sys                |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.04 sec)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">&#96;&gt; SHOW DATABASES;&#96;用来查看当前所有存在的数据库</span><br><span class="line">mysql为必需的，描述用户的访问权限。其他数据库在后面将介绍   </span><br><span class="line">创建数据库是在系统磁盘上划分一块区域用于数据库的存储和管理   </span><br><span class="line">### 1.1创建</span><br></pre></td></tr></table></figure>
+<p>mysql&gt; CREATE DATABASE Student;//创建名为Student的数据库<br>Query OK, 1 row affected (0.03 sec) </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 2.2删除数据库  </span><br><span class="line">将已经存在的数据库从磁盘空间上清除。  </span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">mysql&gt; DROP DATABASE Student;&#x2F;&#x2F;删除创建的Student数据库</span><br><span class="line">Query OK, 0 rows affected (0.03 sec)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/15/PS%E7%B4%A0%E6%9D%90%E8%B5%84%E6%BA%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1651,348 +2048,11 @@ C --&gt; D[调用模拟器运行应用程序]   </code></pre>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/01/%E8%A7%A3%E5%86%B3VS-2019%E5%AF%B9scanf%E8%AF%AD%E5%8F%A5%E5%87%BA%E9%94%99%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/01/%E8%A7%A3%E5%86%B3VS-2019%E5%AF%B9scanf%E8%AF%AD%E5%8F%A5%E5%87%BA%E9%94%99%E9%97%AE%E9%A2%98/" itemprop="url">解决VS 2019对scanf语句出错问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T17:36:09+08:00">
-                2020-03-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  340
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>在用Visual Studio进行编写C语言程序时，发现了scanf语句显示错误返回值被忽略，错误提示C4996，可是scanf语句是C语言的标准输入语句，怎么会出错呢？<br>因为scanf()在读取数据时不检查边界，所以可能会造成内存访问越界,例如：分配了5字节的空间但是用户输入了10字节，就会导致scanf()读到10个字节<br>为此，scanf_s()函数是Microsoft公司VS开发工具提供的一个功能相同的安全标准输入函数，从vc++2005开始，VS系统提供了scanf_s()。在调用该函数时，必须提供一个数字以表明最多读取多少位字符。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/01/%E8%A7%A3%E5%86%B3VS-2019%E5%AF%B9scanf%E8%AF%AD%E5%8F%A5%E5%87%BA%E9%94%99%E9%97%AE%E9%A2%98/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/02/26/HTML%E5%AE%9E%E7%8E%B0%E8%A1%A8%E5%8D%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/26/HTML%E5%AE%9E%E7%8E%B0%E8%A1%A8%E5%8D%95/" itemprop="url">HTML实现表单</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-26T08:13:16+08:00">
-                2020-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  389
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <hr>
-<p>title: HTML实现表单<br>author: 苏玉璠<br>date: 2020-02-26 08:13:16<br>tags: HTML<br>categories: 网页前端</p>
-<hr>
-<p>在用户注册，在线报名等场合，需要把用户的信息填写并提交，这时要用到表单来填写提交信息。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/26/HTML%E5%AE%9E%E7%8E%B0%E8%A1%A8%E5%8D%95/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2038,7 +2098,7 @@ C --&gt; D[调用模拟器运行应用程序]   </code></pre>
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2122,7 +2182,7 @@ C --&gt; D[调用模拟器运行应用程序]   </code></pre>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共17.7k字</span>
+  <span class="post-count">博客全站共18.9k字</span>
 </div>
         
 <div class="busuanzi-count">
