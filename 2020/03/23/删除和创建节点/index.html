@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="特效其实可以通过控制台来查看，如果会JS会DOM在你的眼中，将没有特效可言。无非是通过JS动态的操作DOM而已。下面我们将对id查询，标签查询，name查询，进行详细介绍。  1.div块的变换使用div定义一个模块，通过点击来改变它的颜色。   &lt;title&gt;JS特效之动态变化&lt;&#x2F;title&gt; &lt;style&gt; div{     width:45px;">
+<meta name="description" content="1.删除节点设计一个按钮，通过点击按钮来实现删除最后一个节点通过点击delect the last li来依次删除文本冬，秋，夏，春以及文本前得li节点引入方法obj.parentNode.removeChild();用于删除节点   &lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Transitional&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS特效之动态变换">
-<meta property="og:url" content="http://suyufan.github.io/2020/03/22/JS%E7%89%B9%E6%95%88%E4%B9%8B%E5%8A%A8%E6%80%81%E5%8F%98%E6%8D%A2/index.html">
+<meta property="og:title" content="删除和创建节点">
+<meta property="og:url" content="http://suyufan.github.io/2020/03/23/%E5%88%A0%E9%99%A4%E5%92%8C%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="特效其实可以通过控制台来查看，如果会JS会DOM在你的眼中，将没有特效可言。无非是通过JS动态的操作DOM而已。下面我们将对id查询，标签查询，name查询，进行详细介绍。  1.div块的变换使用div定义一个模块，通过点击来改变它的颜色。   &lt;title&gt;JS特效之动态变化&lt;&#x2F;title&gt; &lt;style&gt; div{     width:45px;">
-<meta property="article:published_time" content="2020-03-22T14:21:47.000Z">
-<meta property="article:modified_time" content="2020-03-23T13:34:13.720Z">
+<meta property="og:description" content="1.删除节点设计一个按钮，通过点击按钮来实现删除最后一个节点通过点击delect the last li来依次删除文本冬，秋，夏，春以及文本前得li节点引入方法obj.parentNode.removeChild();用于删除节点   &lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Transitional&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.o">
+<meta property="article:published_time" content="2020-03-23T14:13:52.000Z">
+<meta property="article:modified_time" content="2020-03-23T14:32:30.514Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://suyufan.github.io/2020/03/22/JS特效之动态变换/"/>
+  <link rel="canonical" href="http://suyufan.github.io/2020/03/23/删除和创建节点/"/>
 
 
 
 
 
-  <title>JS特效之动态变换 | 笑笑の博客</title>
+  <title>删除和创建节点 | 笑笑の博客</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/22/JS%E7%89%B9%E6%95%88%E4%B9%8B%E5%8A%A8%E6%80%81%E5%8F%98%E6%8D%A2/">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/23/%E5%88%A0%E9%99%A4%E5%92%8C%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏玉璠">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS特效之动态变换</h1>
+          <h1 class="post-title" itemprop="name headline">删除和创建节点</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T22:21:47+08:00">
-                2020-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:13:52+08:00">
+                2020-03-23
               </time>
             
 
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  395
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -387,106 +387,52 @@
       
 
       
-        <blockquote>
-<p>特效其实可以通过控制台来查看，如果会JS会DOM在你的眼中，将没有特效可言。无非是通过JS动态的操作DOM而已。<br>下面我们将对id查询，标签查询，name查询，进行详细介绍。</p>
-</blockquote>
-<h2 id="1-div块的变换"><a href="#1-div块的变换" class="headerlink" title="1.div块的变换"></a>1.div块的变换</h2><p>使用div定义一个模块，通过点击来改变它的颜色。  </p>
-<pre><code class="javascript">&lt;title&gt;JS特效之动态变化&lt;<span class="regexp">/title&gt;</span>
-<span class="regexp">&lt;style&gt;</span>
-<span class="regexp">div{</span>
-<span class="regexp">    width:45px;</span>
-<span class="regexp">    height:45px;</span>
+        <h2 id="1-删除节点"><a href="#1-删除节点" class="headerlink" title="1.删除节点"></a>1.删除节点</h2><p>设计一个按钮，通过点击按钮来实现删除最后一个节点<br>通过点击delect the last li来依次删除文本冬，秋，夏，春以及文本前得li节点<br>引入方法<strong>obj.parentNode.removeChild();</strong>用于删除节点  </p>
+<pre><code class="javascript">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;
+&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;
+&lt;head&gt;
+&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span> /&gt;
+&lt;title&gt;删除对象&lt;<span class="regexp">/title&gt;</span>
+<span class="regexp">&lt;script&gt;</span>
+<span class="regexp">function del(){</span>
+<span class="regexp">    var li =document.getElementsByTagName('li');/</span><span class="regexp">/获取li的对象集合</span>
+<span class="regexp">     var lastli =li[li.length-1];/</span><span class="regexp">/定义最后一个li对象节点</span>
+<span class="regexp">     lastli.parentNode.removeChild(lastli);/</span><span class="regexp">/通过方法删除节点</span>
 <span class="regexp">}</span>
-<span class="regexp">#test1{</span>
-<span class="regexp">    background:red;</span>
-<span class="regexp">}</span>
-<span class="regexp">#test2{</span>
-<span class="regexp">    background:green;</span>
-<span class="regexp">}</span>
-<span class="regexp">&lt;/</span>style&gt;
-&lt;script&gt;
-    <span class="function"><span class="keyword">function</span> <span class="title">ch</span>(<span class="params"></span>)</span>{                              <span class="comment">//使用function来定义函数ch()；</span>
-    <span class="keyword">var</span> div= <span class="built_in">document</span>.getElementById(<span class="string">"test1"</span>);<span class="comment">//获取test1的对象，不要忘了使用var定义类型，js中的var相当于c中的int</span>
-    div.id=<span class="string">"test2"</span>;<span class="comment">//将id改为test2</span>
+<span class="regexp">&lt;/</span>script&gt;
+&lt;<span class="regexp">/head&gt;</span>
+<span class="regexp">&lt;body&gt;</span>
+<span class="regexp">&lt;input type="button" value="delect the last li" onclick="del();"/</span>&gt;
+&lt;ul&gt;
+&lt;li&gt;spring&lt;<span class="regexp">/li&gt;</span>
+<span class="regexp">&lt;li&gt;summer&lt;/</span>li&gt;
+&lt;li&gt;autumn&lt;<span class="regexp">/li&gt;</span>
+<span class="regexp">&lt;li&gt;winter&lt;/</span>li&gt;
+&lt;<span class="regexp">/ul&gt;</span>
+<span class="regexp">&lt;/</span>body&gt;
+&lt;<span class="regexp">/html&gt;  </span></code></pre>
+<a id="more"></a>
+<h2 id="2-创建节点"><a href="#2-创建节点" class="headerlink" title="2.创建节点"></a>2.创建节点</h2><h4 id="2-1创建li节点前面的小黑点"><a href="#2-1创建li节点前面的小黑点" class="headerlink" title="2.1创建li节点前面的小黑点"></a>2.1创建li节点前面的小黑点</h4><p>通过点击add the li按钮在原来的基础上来增加小黑点<br>引用<strong>obj.appendChild();</strong> </p>
+<pre><code class="javascript">&lt;script&gt;
+<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> li =<span class="built_in">document</span>.createElement(<span class="string">'li'</span>);<span class="comment">//创建节点小黑点</span>
+
+     <span class="built_in">document</span>.getElementsByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>].appendChild(li);<span class="comment">//通过方法实现</span>
 }
 &lt;<span class="regexp">/script&gt;</span>
-<span class="regexp"></span>
 <span class="regexp">&lt;/</span>head&gt;
 
 &lt;body&gt;
-&lt;div id=<span class="string">"test1"</span> onclick=<span class="string">"ch();"</span>&gt;<span class="comment">//将通过onclick使用函数ch()，点击的时候相当于触发ch();函数</span>
-    &lt;p&gt;p1&lt;<span class="regexp">/p&gt;</span>
-<span class="regexp">    &lt;p&gt;p2&lt;/</span>p&gt;
-    &lt;p&gt;p3&lt;<span class="regexp">/p&gt;</span>
-<span class="regexp">&lt;/</span>div&gt; 
-&lt;<span class="regexp">/body&gt;</span></code></pre>
-<h2 id="2-img图片不断变换"><a href="#2-img图片不断变换" class="headerlink" title="2.img图片不断变换"></a>2.img图片不断变换</h2><p>img图片变换与div模块变换的使用方法是一样的。这里我们将img设置为不断点击不断变换，引入if语句和indexOf();函数的使用。  </p>
-<pre><code class="javascript">&lt;title&gt;img图片变换&lt;<span class="regexp">/title&gt;</span>
-<span class="regexp">&lt;script&gt;</span>
-<span class="regexp">function toggle(){</span>
-<span class="regexp">    var test1= document.getElementById("test1");/</span><span class="regexp">/寻找test1</span>
-<span class="regexp">    if(test1.src.indexOf("img/</span>圣诞树.png<span class="string">")&gt;=0){//用indexOf()方法查找字符串“img/圣诞树.png”,找不到返回值-1</span>
-<span class="string"></span>
-<span class="string">    test1.src="</span>img/top1.jpg<span class="string">";</span>
-<span class="string">}</span>
-<span class="string">else test1.src="</span>img/圣诞树.png<span class="string">";</span>
-<span class="string">}</span>
-<span class="string">&lt;/script&gt;</span>
-<span class="string">&lt;/head&gt;</span>
-<span class="string"></span>
-<span class="string">&lt;body&gt;</span>
-<span class="string">&lt;img id="</span>test1<span class="string">" src="</span>img/圣诞树.png<span class="string">" onclick="</span>toggle();<span class="string">" /&gt;</span>
-<span class="string">&lt;/body&gt;</span></code></pre>
-<h2 id="3-找对象"><a href="#3-找对象" class="headerlink" title="3.找对象"></a>3.找对象</h2><p>特效的第一步其实就是在找DOM对象，下面我们将进行详细介绍。<br><strong>注意:script代码一定要注意写到对象的后面，否则会因为还没有读到而返回null</strong>  </p>
-<h4 id="3-1id查询"><a href="#3-1id查询" class="headerlink" title="3.1id查询"></a>3.1id查询</h4><p>通过id查询，返回值为“对象”  </p>
-<pre><code class="javascript">&lt;script&gt;
-alert(<span class="built_in">document</span>.getElementById(<span class="string">'test1'</span>))；
-&lt;<span class="regexp">/script&gt;</span></code></pre>
-<h4 id="3-2标签查询"><a href="#3-2标签查询" class="headerlink" title="3.2标签查询"></a>3.2标签查询</h4><p>通过标签查询，返回值为“对象集合”object HTMLcollection,即使只有一个对象，也返回的是对象的集合。<br><code>alert(document.getElementsByTagName(&#39;h1&#39;));</code><br>那么问题来了，如果想要对标签的每一个实现不同的操作呢  </p>
-<pre><code class="javascript">&lt;script&gt;
-<span class="comment">//将集合定义为一个数组，通过数组来实现不同的操作</span>
-ps =<span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);
-ps[<span class="number">0</span>].style.background=<span class="string">'red'</span>;
-&lt;<span class="regexp">/script&gt;</span></code></pre>
-<p>要想知道数组的长度，<code>alert(document.getElementsByTagName(&#39;p&#39;).length);</code>  </p>
-<h4 id="3-3name查询"><a href="#3-3name查询" class="headerlink" title="3.3name查询"></a>3.3name查询</h4><p>对于表单元素，可以通过name来查询。返回值为“节点集合”object NodeList<br><code>alert(document.getElementsByName(&#39;username&#39;));</code>  </p>
-<h4 id="3-4按类名查找"><a href="#3-4按类名查找" class="headerlink" title="3.4按类名查找"></a>3.4按类名查找</h4><p>按照类名class name查找，返回值为对象集合<br><code>document.getElementsByClassName(&#39;test2&#39;)[0].style.background=&#39;red&#39;;</code>   </p>
-<h4 id="3-5找子对象"><a href="#3-5找子对象" class="headerlink" title="3.5找子对象"></a>3.5找子对象</h4><p>可以通过.children或者.parent来查找子，父。返回值为对象集合。<br>除了查找元素，也可以对元素进行操作，具体操作方法这里不一一列举，读者可以通过W3C的DOM手册进行学习了解<br>源代码为标题1的代码，下面这行代码将返回的值并不是3而是7.<br><code>alert(document.getElementById(&quot;test1&quot;).childNodes.length);</code><br>原因是由于DOM的语义规范，将test1下面的所有东西都会当成它的子对象，所以将4个空白的换行文本也当成它的子对象算在里面，这将使得我们在操作的时候造成很多不便。<br>因此，我们在实际操作的过程中并不使用上面的那种写法。<br>使用<code>alert(document.getElementById(&#39;test1&#39;).children.length);</code>的这种写法返回3，children属性虽然不标准，但是兼容性很好，现在的很多浏览器也支持，它不包含空白文本。<br>父对象，兄弟对象的属性类似。  </p>
-<h2 id="4-操作对象"><a href="#4-操作对象" class="headerlink" title="4.操作对象"></a>4.操作对象</h2><p>css属性与DOM对象属性存在对应关系，二者通过obj.style.css属性名相对应<br>如:<code>obj.style.border</code><br>但是如果css属性带有横线，如border-top,需要把横线去掉并把横线后的字母大写。否则将会把横线理解为减号，应写为：<code>obj.style.borderTop</code><br>需要注意的是<strong>obj.style只对内联style有效</strong> </p>
-<ul>
-<li><p>操作div对象使得每点击一下宽高各增加20px,底边框增加2px;<br>要解决此问题我们需要引入<strong>parseInt();</strong>方法将字符串转化为数值数据。<br>还要注意<strong>css属性不能写到style标签里面，应该写到idv标签里面。</strong></p>
-<pre><code class="javascript">&lt;script&gt;
-<span class="function"><span class="keyword">function</span> <span class="title">ch</span>(<span class="params"></span>)</span>{
-  <span class="keyword">var</span> test =<span class="built_in">document</span>.getElementById(<span class="string">'test'</span>);
-  <span class="keyword">var</span> w = <span class="built_in">parseInt</span>(test.style.width);<span class="comment">//将字符串转化为数值数据</span>
-  <span class="keyword">var</span> h = <span class="built_in">parseInt</span>(test.style.height);
-  <span class="keyword">var</span> b = <span class="built_in">parseInt</span>(test.style.borderBottomWidth);
+&lt;input type=<span class="string">"button"</span> value=<span class="string">"add the li"</span> onclick=<span class="string">"add();"</span>/&gt;
+&lt;ul&gt;
+&lt;li&gt;spring&lt;<span class="regexp">/li&gt;</span>
+<span class="regexp">&lt;li&gt;summer&lt;/</span>li&gt;
+&lt;li&gt;autumn&lt;<span class="regexp">/li&gt;</span>
+<span class="regexp"></span>
+<span class="regexp">&lt;/u</span>l&gt;
 
-  test.style.width= w+<span class="number">20</span> + <span class="string">"px"</span>;
-  test.style.height= h+<span class="number">20</span> + <span class="string">"px"</span>;
-  test.style.borderBottomWidth= b+<span class="number">2</span> + <span class="string">"px"</span>;
-}
-&lt;<span class="regexp">/script&gt;</span>
-<span class="regexp"></span></code></pre>
-</li>
-</ul>
-</head>
-
-<body>
-<div id="test" onclick="ch()" style="width:60px; height:60px; background:pink; border:1px solid blue"></div>
-</body>  
-```  
-我们可以发现如果将css写成内联style会显得十分冗余，不美观。  
-可以用getComptedStyle(obj,伪参数)来获取css数据,伪参数通常写为null    
-第一个参数为要获取的对象  
-第二个参数为：after，：first-letter等
-通常先包装一个类，在类里面返回数据  
-```javascript  
-function get(obj,attr){
-    return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null); 
-}
-```  
-此方法是只读，要想改还是得用obj.style  
+&lt;<span class="regexp">/body&gt;  </span></code></pre>
+<h4 id="2-2创建li节点后面的文本"><a href="#2-2创建li节点后面的文本" class="headerlink" title="2.2创建li节点后面的文本"></a>2.2创建li节点后面的文本</h4><p>需要先创建所要增加的文本，然后通过appendChild();实现<br>即<code>var text= document.createTextNode(&#39;winter&#39;);li.appendChild(text);</code>  </p>
 
       
     </div>
@@ -517,8 +463,8 @@ function get(obj,attr){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/18/MySQL%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%93%8D%E4%BD%9C%E8%A1%A8/" rel="next" title="MySQL操作数据库和操作表">
-                <i class="fa fa-chevron-left"></i> MySQL操作数据库和操作表
+              <a href="/2020/03/22/JS%E7%89%B9%E6%95%88%E4%B9%8B%E5%8A%A8%E6%80%81%E5%8F%98%E6%8D%A2/" rel="next" title="JS特效之动态变换">
+                <i class="fa fa-chevron-left"></i> JS特效之动态变换
               </a>
             
           </div>
@@ -526,10 +472,6 @@ function get(obj,attr){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/23/%E5%88%A0%E9%99%A4%E5%92%8C%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9/" rel="prev" title="删除和创建节点">
-                删除和创建节点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -661,7 +603,7 @@ function get(obj,attr){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-div块的变换"><span class="nav-number">1.</span> <span class="nav-text">1.div块的变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-img图片不断变换"><span class="nav-number">2.</span> <span class="nav-text">2.img图片不断变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-找对象"><span class="nav-number">3.</span> <span class="nav-text">3.找对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1id查询"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1id查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2标签查询"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2标签查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3name查询"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3name查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4按类名查找"><span class="nav-number">3.0.4.</span> <span class="nav-text">3.4按类名查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5找子对象"><span class="nav-number">3.0.5.</span> <span class="nav-text">3.5找子对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-操作对象"><span class="nav-number">4.</span> <span class="nav-text">4.操作对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-删除节点"><span class="nav-number">1.</span> <span class="nav-text">1.删除节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建节点"><span class="nav-number">2.</span> <span class="nav-text">2.创建节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1创建li节点前面的小黑点"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1创建li节点前面的小黑点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2创建li节点后面的文本"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2创建li节点后面的文本</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
