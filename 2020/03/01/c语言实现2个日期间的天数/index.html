@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="title: c语言实现2个日期间的天数author: 苏玉璠date: 2020-03-01 19:03:11tags:   C语言   程序设计categories: 编程   一.作业题目三天打鱼两天晒网 二.作业内容中国有句俗语叫“三天打鱼两天晒网”。某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是在“打鱼”还是“晒网”。">
+<meta name="description" content="title: c语言实现2个日期间的天数author: 苏玉璠date: 2020-03-01 19:03:11tags:   C语言   程序设计categories: 编程   一.作业题目三天打鱼两天晒网 二.作业内容中国有句俗语叫“三天打鱼两天晒网”。某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是在“打鱼”还是“晒网”。更新：加上文件测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c语言实现2个日期间的天数">
 <meta property="og:url" content="http://suyufan.github.io/2020/03/01/c%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B02%E4%B8%AA%E6%97%A5%E6%9C%9F%E9%97%B4%E7%9A%84%E5%A4%A9%E6%95%B0/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="title: c语言实现2个日期间的天数author: 苏玉璠date: 2020-03-01 19:03:11tags:   C语言   程序设计categories: 编程   一.作业题目三天打鱼两天晒网 二.作业内容中国有句俗语叫“三天打鱼两天晒网”。某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是在“打鱼”还是“晒网”。">
+<meta property="og:description" content="title: c语言实现2个日期间的天数author: 苏玉璠date: 2020-03-01 19:03:11tags:   C语言   程序设计categories: 编程   一.作业题目三天打鱼两天晒网 二.作业内容中国有句俗语叫“三天打鱼两天晒网”。某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是在“打鱼”还是“晒网”。更新：加上文件测试">
 <meta property="article:published_time" content="2020-03-01T11:03:11.492Z">
-<meta property="article:modified_time" content="2020-03-03T07:11:14.583Z">
+<meta property="article:modified_time" content="2020-03-27T02:11:28.399Z">
 <meta property="article:author" content="苏玉璠">
 <meta name="twitter:card" content="summary">
 
@@ -327,7 +327,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  820
+                  1.2k
                 </span>
               
 
@@ -343,7 +343,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -372,10 +372,11 @@
 </ul>
 <hr>
 <h3 id="一-作业题目"><a href="#一-作业题目" class="headerlink" title="一.作业题目"></a>一.作业题目</h3><p>三天打鱼两天晒网</p>
-<h3 id="二-作业内容"><a href="#二-作业内容" class="headerlink" title="二.作业内容"></a>二.作业内容</h3><p>中国有句俗语叫“三天打鱼两天晒网”。某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是在“打鱼”还是“晒网”。  </p>
+<h3 id="二-作业内容"><a href="#二-作业内容" class="headerlink" title="二.作业内容"></a>二.作业内容</h3><p>中国有句俗语叫“三天打鱼两天晒网”。某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是在“打鱼”还是“晒网”。<br><strong>更新：加上文件测试</strong>  </p>
 <a id="more"></a>  
 <h3 id="三-算法设计"><a href="#三-算法设计" class="headerlink" title="三.算法设计"></a>三.算法设计</h3><p>1.检测输入时间的合法性<br>即年份需要不小于2010，月份不能大于12，日期不能大于31<br>2.设计函数用来判断闰年还是平年<br>闰年：能被4整除且不能被100整除或者能被400整除，闰年2月有29天<br>平年：2月28天<br>可以在算天数的函数中，定义一个二维数组来分开区别表示。<br>3.设计函数用来算2个时间之间的天数<br>3.1年份相同，月份相同，日期相减即可<br>3.2年份相同，月份不同。通过循环二维数组实现天数的累加，最后再加上本月的日期即可<br>3.3年份不同。<br>先算整年的天数进行累加，再算整月的天数进行累加，最后加上本月的日期<br>4.打鱼还是晒网<br>将天数除以5得余数<br>余数为1，2，3；则打鱼<br>余数为4,0;则晒网<br>代码如下：  </p>
-<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span>
+<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span>
 <span class="class"><span class="keyword">struct</span> <span class="title">Date</span></span>
 <span class="class">{</span>
     <span class="keyword">int</span> year;
@@ -386,34 +387,86 @@
 <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>
 <span class="function"></span>{
     <span class="class"><span class="keyword">struct</span> <span class="title">Date</span> <span class="title">maxDate</span>;</span>
-    <span class="keyword">int</span> days;
-    <span class="built_in">printf</span>(<span class="string">"请输入时间："</span>);
-    scanf_s(<span class="string">"%d %d %d"</span>, &amp;maxDate.year, &amp;maxDate.month, &amp;maxDate.date,<span class="number">10</span>);<span class="comment">//输入时间 </span>
-    <span class="built_in">printf</span>(<span class="string">"你输入的日期为:%d年,%d月，%d日\n"</span>, maxDate.year, maxDate.month, maxDate.date);
-    <span class="function"><span class="keyword">int</span> <span class="title">Test</span><span class="params">(struct Date maxDate)</span></span>;  
-    <span class="function"><span class="keyword">int</span> <span class="title">Diff</span><span class="params">(struct Date maxDate)</span></span>;
-    days = Diff(maxDate) + maxDate.date;<span class="comment">//将Diff函数返回的day天数再加上本月的日期，即为2个时间之间的天数 </span>
-    <span class="built_in">printf</span>(<span class="string">"天数为：%d\n"</span>, days);<span class="comment">//将天数输出 </span>
-    <span class="keyword">int</span> n = days % <span class="number">5</span>;
-    <span class="keyword">switch</span> (n)   <span class="comment">//利用switch语句，判断打鱼or晒网 </span>
-    {
-    <span class="keyword">case</span> <span class="number">1</span>:
-    <span class="keyword">case</span> <span class="number">2</span>:
-    <span class="keyword">case</span> <span class="number">3</span>:
-        <span class="built_in">printf</span>(<span class="string">"今天打鱼"</span>);<span class="comment">//输出打鱼 </span>
-        <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="number">4</span>:
-    <span class="keyword">case</span> <span class="number">0</span>:
-        <span class="built_in">printf</span>(<span class="string">"今天晒网"</span>);<span class="comment">//输出晒网 </span>
-        <span class="keyword">break</span>;
-    };
+    <span class="keyword">int</span> days,tag,a,b,c;
+    FILE *p,*f;
+     <span class="built_in">printf</span>(<span class="string">"请输入选择标志tag的值；tag为1是从键盘输入年月日，tag为0是从in.text中提取日期\n"</span>);
+     <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;tag);
+     <span class="keyword">switch</span>(tag)
+     {
+         <span class="keyword">case</span> <span class="number">0</span>:
+             {
+                 FILE *p=fopen(<span class="string">"in.txt"</span>,<span class="string">"r"</span>);<span class="comment">//用只读的方式打开文件in.txt</span>
+                FILE *f=fopen(<span class="string">"out.txt"</span>,<span class="string">"w"</span>);<span class="comment">//用只写的方式打开文件out.txt</span>
+                <span class="keyword">while</span>(!feof(p))
+                {
+                    <span class="built_in">fscanf</span>(p,<span class="string">"%d %d %d"</span>,&amp;a,&amp;b,&amp;c);<span class="comment">//从文件in.txt中读取数据年月日 </span>
+                    <span class="built_in">printf</span>(<span class="string">"%d年%d月%d日\n"</span>,a,b,c);
+                    maxDate.year=a;
+                    maxDate.month=b;
+                    maxDate.date=c;
+
+                    <span class="keyword">if</span> (maxDate.year &lt; <span class="number">2010</span> || maxDate.month &gt; <span class="number">12</span> || maxDate.date &gt; <span class="number">31</span>)
+                    <span class="built_in">printf</span>(<span class="string">"输入数据有误，请重新输入\n"</span>);
+                        <span class="keyword">else</span>{
+                            <span class="keyword">int</span> Diff(struct Date maxDate);
+                            days = Diff(maxDate) + maxDate.date;<span class="comment">//将Diff函数返回的day天数再加上本月的日期，即为2个时间之间的天数 </span>
+                            <span class="built_in">printf</span>(<span class="string">"天数为：%d\n"</span>, days);<span class="comment">//将天数输出 </span>
+                            <span class="keyword">int</span> yu = days % <span class="number">5</span>;
+                            <span class="keyword">switch</span> (yu)   <span class="comment">//利用switch语句，判断打鱼or晒网 </span>
+                           {
+                            <span class="keyword">case</span> <span class="number">1</span>:
+                            <span class="keyword">case</span> <span class="number">2</span>:
+                            <span class="keyword">case</span> <span class="number">3</span>:
+                                <span class="built_in">printf</span>(<span class="string">"今天打鱼\n"</span>);
+                                <span class="built_in">fprintf</span>(f,<span class="string">"%d %s %d %s %d %s"</span>,a,<span class="string">"年"</span>,b,<span class="string">"月"</span>,c,<span class="string">"日"</span>);<span class="comment">//将判断及结果写入out.txt中                          </span>
+                                 <span class="built_in">fprintf</span>(f,<span class="string">"%s"</span>,<span class="string">"他这天在打鱼\n"</span>);<span class="comment">//输出打鱼 </span>
+                                <span class="keyword">break</span>;
+                            <span class="keyword">case</span> <span class="number">4</span>:
+                            <span class="keyword">case</span> <span class="number">0</span>:
+                                <span class="built_in">printf</span>(<span class="string">"今天晒网\n"</span>);<span class="comment">//输出晒网 </span>
+                                <span class="built_in">fprintf</span>(f,<span class="string">"%d %s %d %s %d %s"</span>,a,<span class="string">"年"</span>,b,<span class="string">"月"</span>,c,<span class="string">"日"</span>);<span class="comment">//将判断及结果写入out.txt中                          </span>
+                                 <span class="built_in">fprintf</span>(f,<span class="string">"%s"</span>,<span class="string">"他这天在晒网\n"</span>);<span class="comment">//输出晒网 </span>
+                                <span class="keyword">break</span>;    
+                            };
+
+                    };
+
+            };
+             <span class="keyword">break</span>;
+     };
+         <span class="keyword">case</span> <span class="number">1</span>:{
+             <span class="built_in">printf</span>(<span class="string">"请输入年月日\n"</span>);
+             <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;maxDate.year,&amp;maxDate.month,&amp;maxDate.date);
+
+         <span class="keyword">if</span> (maxDate.year &lt; <span class="number">2010</span> || maxDate.month &gt; <span class="number">12</span> || maxDate.date &gt; <span class="number">31</span>)
+                    <span class="built_in">printf</span>(<span class="string">"输入数据有误，请重新输入\n"</span>);
+        <span class="keyword">else</span>
+        {
+            <span class="keyword">int</span> Diff(struct Date maxDate);
+                            days = Diff(maxDate) + maxDate.date;<span class="comment">//将Diff函数返回的day天数再加上本月的日期，即为2个时间之间的天数 </span>
+                            <span class="built_in">printf</span>(<span class="string">"天数为：%d\n"</span>, days);<span class="comment">//将天数输出 </span>
+                            <span class="keyword">int</span> n = days % <span class="number">5</span>;
+                            <span class="keyword">switch</span> (n)   <span class="comment">//利用switch语句，判断打鱼or晒网 </span>
+                            {
+                            <span class="keyword">case</span> <span class="number">1</span>:
+                            <span class="keyword">case</span> <span class="number">2</span>:
+                            <span class="keyword">case</span> <span class="number">3</span>:
+                                <span class="built_in">printf</span>(<span class="string">"今天打鱼"</span>);<span class="comment">//输出打鱼 </span>
+                                <span class="keyword">break</span>;
+                            <span class="keyword">case</span> <span class="number">4</span>:
+                            <span class="keyword">case</span> <span class="number">0</span>:
+                                <span class="built_in">printf</span>(<span class="string">"今天晒网"</span>);<span class="comment">//输出晒网 </span>
+                                <span class="keyword">break</span>;    
+                            };    
+                    };
+            };
+        }; 
 };
 
-<span class="function"><span class="keyword">int</span> <span class="title">Test</span><span class="params">(struct Date maxDate)</span>  <span class="comment">//判断时间是否输入正确 </span></span>
-<span class="function"></span>{
-    <span class="keyword">if</span> (maxDate.year &lt; <span class="number">2010</span> || maxDate.month &gt; <span class="number">12</span> || maxDate.date &gt; <span class="number">31</span>)
-    <span class="keyword">return</span> <span class="literal">false</span>;
-};
+
+
+
+
 
 <span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> year)</span>  <span class="comment">//检查是否为闰年，闰年返回1，平年返回0</span></span>
 <span class="function"></span>{
@@ -426,7 +479,7 @@
 <span class="function"><span class="keyword">int</span> <span class="title">Diff</span><span class="params">(struct Date maxDate)</span>  <span class="comment">//计算日期 </span></span>
 <span class="function"></span>{
     <span class="keyword">int</span> day = <span class="number">0</span>, i, j;
-    <span class="keyword">static</span> <span class="keyword">int</span> Month[<span class="number">2</span>][<span class="number">13</span>] = { {<span class="number">0</span>,<span class="number">31</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>},{<span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>} }; <span class="comment">//设计一个二维数组来分开区别闰年和平年 </span>
+    <span class="keyword">static</span> <span class="keyword">int</span> Month[<span class="number">2</span>][<span class="number">13</span>] = { {<span class="number">0</span>,<span class="number">31</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>},{<span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>} };<span class="comment">//设计一个二维数组来分开区别闰年和平年 </span>
     <span class="keyword">if</span> (maxDate.year == <span class="number">2010</span>)<span class="comment">//将年份，月份都相同 和 年份相同，月份不同的两种情况进行合并 </span>
         <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; maxDate.month; i++)<span class="comment">//利用for循环二维数组，实现整月份天数累加 </span>
             day += Month[<span class="number">1</span>][i];
@@ -438,7 +491,8 @@
             day += Month[isPrime(maxDate.year)][i];
     };
     <span class="keyword">return</span> day;                                
-};  </code></pre>
+};</code></pre>
+<p>注意：输入in.txt文件和输出out.txt文件需要和.cpp文件放到一个工程中</p>
 
       
     </div>
@@ -552,7 +606,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -652,7 +706,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20k字</span>
+  <span class="post-count">博客全站共21.2k字</span>
 </div>
         
 <div class="busuanzi-count">

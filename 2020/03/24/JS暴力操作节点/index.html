@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="针对不同的开发市场，Sun公司将Java划分为3个技术平台，分别为Java SE（平台标准版），Java EE（平台企业版）和Java ME（平台微型版）。Java语言的5大特点分别为简单易用，安全可靠，跨平台性，面向对象，支持多线程。Java Development Kit(JDK)是Sun公司提供的一套Java开发环境，是整个Java的核心，其中包括Java编译器，Java运行工具，Java">
+<meta name="description" content="在创建节点的时候，如果遇到很多标签里的操作节点，使用上节提到的引用obj.appendChild();方法就会非常麻烦。我们这这种情况通常使用innerHTML这种方法同样不符合规范，但是为了使用方便起见，很多浏览器都兼容。毕竟阻碍生产力的终将会被淘汰下面我们用一个例子，来介绍暴力操作节点的使用点击按钮一次，瞬间出现春夏秋冬以及小黑点obj.innerHTML不光可以写值，也可以读值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java运行机制">
-<meta property="og:url" content="http://suyufan.github.io/2020/03/09/Java%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/index.html">
+<meta property="og:title" content="JS暴力操作节点">
+<meta property="og:url" content="http://suyufan.github.io/2020/03/24/JS%E6%9A%B4%E5%8A%9B%E6%93%8D%E4%BD%9C%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="针对不同的开发市场，Sun公司将Java划分为3个技术平台，分别为Java SE（平台标准版），Java EE（平台企业版）和Java ME（平台微型版）。Java语言的5大特点分别为简单易用，安全可靠，跨平台性，面向对象，支持多线程。Java Development Kit(JDK)是Sun公司提供的一套Java开发环境，是整个Java的核心，其中包括Java编译器，Java运行工具，Java">
-<meta property="article:published_time" content="2020-03-09T00:38:46.000Z">
-<meta property="article:modified_time" content="2020-03-09T01:01:07.449Z">
+<meta property="og:description" content="在创建节点的时候，如果遇到很多标签里的操作节点，使用上节提到的引用obj.appendChild();方法就会非常麻烦。我们这这种情况通常使用innerHTML这种方法同样不符合规范，但是为了使用方便起见，很多浏览器都兼容。毕竟阻碍生产力的终将会被淘汰下面我们用一个例子，来介绍暴力操作节点的使用点击按钮一次，瞬间出现春夏秋冬以及小黑点obj.innerHTML不光可以写值，也可以读值">
+<meta property="article:published_time" content="2020-03-24T12:32:37.000Z">
+<meta property="article:modified_time" content="2020-03-24T12:55:15.313Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://suyufan.github.io/2020/03/09/Java运行机制/"/>
+  <link rel="canonical" href="http://suyufan.github.io/2020/03/24/JS暴力操作节点/"/>
 
 
 
 
 
-  <title>Java运行机制 | 笑笑の博客</title>
+  <title>JS暴力操作节点 | 笑笑の博客</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/09/Java%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/24/JS%E6%9A%B4%E5%8A%9B%E6%93%8D%E4%BD%9C%E8%8A%82%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏玉璠">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java运行机制</h1>
+          <h1 class="post-title" itemprop="name headline">JS暴力操作节点</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-09T08:38:46+08:00">
-                2020-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T20:32:37+08:00">
+                2020-03-24
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">网页前端</span>
                   </a>
                 </span>
 
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  411
+                  247
                 </span>
               
 
@@ -387,11 +387,27 @@
       
 
       
-        <blockquote>
-<p>针对不同的开发市场，Sun公司将Java划分为3个技术平台，分别为Java SE（平台标准版），Java EE（平台企业版）和Java ME（平台微型版）。<br>Java语言的5大特点分别为简单易用，安全可靠，跨平台性，面向对象，支持多线程。<br>Java Development Kit(JDK)是Sun公司提供的一套Java开发环境，是整个Java的核心，其中包括Java编译器，Java运行工具，Java文档生成工具，Java打包工具等。<br>Java程序运行时，必须经过编译和与运行两个步骤。  </p>
-</blockquote>
-<a id="more"></a>   
-<p>首先将扩展名为java的源文件进行编译，生成扩展名为class的字节码文件，然后Java虚拟机将字节码文件进行解释执行并将结果显示出来。<br>具体执行步骤如下<br>1.编写一个<strong>Java源文件</strong>hello world.java<br>2.使用“javac hello world.java”命令<strong>开启Java编译器</strong>并进行编译<br>3.编译结束后，会自动生成一个hello world.class的<strong>字节码文件</strong><br>4.使用“java hello world”命令<strong>启动Java虚拟机</strong>运行程序，Java虚拟机首先将编译好的字节码文件加载到内存，这个过程称为<strong>类加载</strong>，它由类加载器完成，然后虚拟机通过<strong>Java解析器</strong>对加载到内存中的Java类进行解释执行。<br>5.执行后会生成计算机可以识别的<strong>机器码文件</strong><br>6.机器码文件在计算机上运行并显示结果<br>Java程序是由Java虚拟机负责解释执行，并非操作系统。所以Java程序的跨平台运行。</p>
+        <p>在创建节点的时候，如果遇到很多标签里的操作节点，使用上节提到的引用<strong>obj.appendChild();</strong>方法就会非常麻烦。我们这这种情况通常使用innerHTML<br>这种方法同样不符合规范，但是为了使用方便起见，很多浏览器都兼容。毕竟阻碍生产力的终将会被淘汰<br>下面我们用一个例子，来介绍暴力操作节点的使用<br>点击按钮一次，瞬间出现春夏秋冬以及小黑点<br><strong>obj.innerHTML</strong>不光可以写值，也可以读值  </p>
+<a id="more"></a>  
+<pre><code class="javascript">&lt;title&gt;innerHTML&lt;<span class="regexp">/title&gt;</span>
+<span class="regexp">&lt;script&gt;</span>
+<span class="regexp">function add3(){</span>
+<span class="regexp">    var ul =document.getElementsByTagName('ul')[0];</span>
+<span class="regexp">    ul.innerHTML ='&lt;li&gt;spring&lt;/</span>li&gt;<span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>summer<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>autumn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="string">';</span>
+<span class="string">}</span>
+<span class="string"></span>
+<span class="string">function add1(){</span>
+<span class="string">    var ul=document.getElementsByTagName('</span>ul<span class="string">')[0];</span>
+<span class="string">    ul.innerHTML+='</span>&lt;li&gt;winter&lt;<span class="regexp">/li&gt;';</span>
+<span class="regexp">}</span>
+<span class="regexp">&lt;/</span>script&gt;
+&lt;<span class="regexp">/head&gt;</span>
+<span class="regexp"></span>
+<span class="regexp">&lt;body&gt;</span>
+<span class="regexp">&lt;input type="button" value="add spring summer autumn" onclick="add3();"/</span>&gt;
+&lt;input type=<span class="string">"button"</span> value=<span class="string">"add winter"</span> onclick=<span class="string">"add1();"</span>/&gt;
+&lt;ul&gt;&lt;<span class="regexp">/ul&gt;</span>
+<span class="regexp">&lt;/</span>body&gt;  </code></pre>
 
       
     </div>
@@ -409,7 +425,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -422,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/08/JavaScript%E4%B8%8EDOM%E7%9A%84%E5%85%B3%E7%B3%BB/" rel="next" title="JavaScript与DOM的关系">
-                <i class="fa fa-chevron-left"></i> JavaScript与DOM的关系
+              <a href="/2020/03/24/Java%E5%9C%A8ACM%E4%B8%8A%E7%9A%84%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/" rel="next" title="Java在ACM上的编译错误问题">
+                <i class="fa fa-chevron-left"></i> Java在ACM上的编译错误问题
               </a>
             
           </div>
@@ -432,8 +448,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/10/JS%E5%8F%98%E9%87%8F/" rel="prev" title="JS变量">
-                JS变量 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/24/JS%E7%89%B9%E6%95%88%E4%B9%8B%E8%81%94%E7%BB%93%E8%8F%9C%E5%8D%95/" rel="prev" title="JS特效之联菜单">
+                JS特效之联菜单 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

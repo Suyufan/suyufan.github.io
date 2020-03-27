@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="title: MySQL操作数据库和操作表author: 苏玉璠date: 2020-03-18 09:01:03tags: MySQLcategories: 数据库  MySQL的语言是SQL语言SQL语言的特点    1.综合统一 2.​高度非过程化 3.面向过程的操作方式 4.以同一种语法结构提供多种使用方法 5.语言简洁，简单易学SQL的数据定义功能包括模式定义，表定义，视图和索引的定义">
 <meta property="article:published_time" content="2020-03-18T01:01:03.426Z">
-<meta property="article:modified_time" content="2020-03-18T13:53:48.682Z">
+<meta property="article:modified_time" content="2020-03-27T01:54:26.356Z">
 <meta property="article:author" content="苏玉璠">
 <meta name="twitter:card" content="summary">
 
@@ -327,7 +327,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  285
+                  274
                 </span>
               
 
@@ -371,9 +371,20 @@
 <blockquote>
 <p>1.综合统一 2.​高度非过程化 3.面向过程的操作方式 4.以同一种语法结构提供多种使用方法 5.语言简洁，简单易学<br>SQL的数据定义功能包括模式定义，表定义，视图和索引的定义 </p>
 </blockquote>
-<h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| student            |</span><br><span class="line">| sys                |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.04 sec)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">&#96;&gt; SHOW DATABASES;&#96;用来查看当前所有存在的数据库</span><br><span class="line">mysql为必需的，描述用户的访问权限。其他数据库在后面将介绍   </span><br><span class="line">创建数据库是在系统磁盘上划分一块区域用于数据库的存储和管理   </span><br><span class="line">### 1.1创建</span><br></pre></td></tr></table></figure>
-<p>mysql&gt; CREATE DATABASE Student;//创建名为Student的数据库<br>Query OK, 1 row affected (0.03 sec) </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 2.2删除数据库  </span><br><span class="line">将已经存在的数据库从磁盘空间上清除。  </span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">mysql&gt; DROP DATABASE Student;&#x2F;&#x2F;删除创建的Student数据库</span><br><span class="line">Query OK, 0 rows affected (0.03 sec)</span><br></pre></td></tr></table></figure>
+<h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h2><pre><code class="mysql">mysql&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| student            |
+| sys                |
++--------------------+
+5 rows in set (0.04 sec)</code></pre>
+<p>用来查看当前所有存在的数据库<code>SHOW DATABASES;</code><br>mysql为必需的，描述用户的访问权限。其他数据库在后面将介绍<br>创建数据库是在系统磁盘上划分一块区域用于数据库的存储和管理   </p>
+<h3 id="1-1创建"><a href="#1-1创建" class="headerlink" title="1.1创建"></a>1.1创建</h3><p><code>mysql&gt; CREATE DATABASE Student;//创建名为Student的数据库  Query OK, 1 row affected (0.03 sec)</code> </p>
+<h2 id="2-2删除数据库"><a href="#2-2删除数据库" class="headerlink" title="2.2删除数据库"></a>2.2删除数据库</h2><p>将已经存在的数据库从磁盘空间上清除。<br><code>mysql&gt; DROP DATABASE Student;//删除创建的Student数据库  Query OK, 0 rows affected (0.03 sec)</code></p>
 
       
     </div>
@@ -487,7 +498,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -542,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建数据库"><span class="nav-number">1.</span> <span class="nav-text">1.创建数据库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建数据库"><span class="nav-number">1.</span> <span class="nav-text">1.创建数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1创建"><span class="nav-number">1.1.</span> <span class="nav-text">1.1创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2删除数据库"><span class="nav-number">2.</span> <span class="nav-text">2.2删除数据库</span></a></li></ol></div>
             
 
           </div>
@@ -587,7 +598,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20k字</span>
+  <span class="post-count">博客全站共21.2k字</span>
 </div>
         
 <div class="busuanzi-count">
