@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="一．题目名称：“图灵机”二．题目内容对于任意给定的一台turing机和任意给定的字符串w(w不含空格)，编程模拟turing机的运行过程，要求输出从开始运行起的每一步的结果。用C&#x2F;C++&#x2F;Java&#x2F;Python实现程序解决问题。 三．算法设计1.输入数字2.使用内置方法bin()将数字转化为二进制付给字符串3.将二进制写为扩展形式.读到1输出加上10，否则加0，最后加1104.将扩展形式转化为命令">
+<meta name="description" content="一．题目名称：“图灵机” 二．题目内容对于任意给定的一台turing机和任意给定的字符串w(w不含空格)，编程模拟turing机的运行过程，要求输出从开始运行起的每一步的结果。用C&#x2F;C++&#x2F;Java&#x2F;Python实现程序解决问题。 三．算法设计1.输入数字2.使用内置方法bin()将数字转化为二进制付给字符串3.将二进制写为扩展形式.读到1输出加上10，否则加0，最后加1104.将扩展形式转化为命">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pytho实现图灵机XN*2命令过程">
 <meta property="og:url" content="http://suyufan.github.io/2020/03/30/pytho%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%81%B5%E6%9C%BAXN-2%E5%91%BD%E4%BB%A4%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="一．题目名称：“图灵机”二．题目内容对于任意给定的一台turing机和任意给定的字符串w(w不含空格)，编程模拟turing机的运行过程，要求输出从开始运行起的每一步的结果。用C&#x2F;C++&#x2F;Java&#x2F;Python实现程序解决问题。 三．算法设计1.输入数字2.使用内置方法bin()将数字转化为二进制付给字符串3.将二进制写为扩展形式.读到1输出加上10，否则加0，最后加1104.将扩展形式转化为命令">
+<meta property="og:description" content="一．题目名称：“图灵机” 二．题目内容对于任意给定的一台turing机和任意给定的字符串w(w不含空格)，编程模拟turing机的运行过程，要求输出从开始运行起的每一步的结果。用C&#x2F;C++&#x2F;Java&#x2F;Python实现程序解决问题。 三．算法设计1.输入数字2.使用内置方法bin()将数字转化为二进制付给字符串3.将二进制写为扩展形式.读到1输出加上10，否则加0，最后加1104.将扩展形式转化为命">
 <meta property="article:published_time" content="2020-03-30T09:04:44.000Z">
-<meta property="article:modified_time" content="2020-03-30T09:11:09.823Z">
+<meta property="article:modified_time" content="2020-03-31T14:52:58.253Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -387,7 +387,8 @@
       
 
       
-        <h2 id="一．题目名称：“图灵机”"><a href="#一．题目名称：“图灵机”" class="headerlink" title="一．题目名称：“图灵机”"></a>一．题目名称：“图灵机”</h2><h2 id="二．题目内容"><a href="#二．题目内容" class="headerlink" title="二．题目内容"></a>二．题目内容</h2><p>对于任意给定的一台turing机和任意给定的字符串w(w不含空格)，编程模拟turing机的运行过程，要求输出从开始运行起的每一步的结果。用C/C++/Java/Python实现程序解决问题。</p>
+        <h2 id="一．题目名称："><a href="#一．题目名称：" class="headerlink" title="一．题目名称："></a>一．题目名称：</h2><p>“图灵机”</p>
+<h2 id="二．题目内容"><a href="#二．题目内容" class="headerlink" title="二．题目内容"></a>二．题目内容</h2><p>对于任意给定的一台turing机和任意给定的字符串w(w不含空格)，编程模拟turing机的运行过程，要求输出从开始运行起的每一步的结果。用C/C++/Java/Python实现程序解决问题。</p>
 <h2 id="三．算法设计"><a href="#三．算法设计" class="headerlink" title="三．算法设计"></a>三．算法设计</h2><p>1.输入数字<br>2.使用内置方法bin()将数字转化为二进制付给字符串<br>3.将二进制写为扩展形式.读到1输出加上10，否则加0，最后加110<br>4.将扩展形式转化为命令过程，定义一个index表示内态，利用for i in range()做循环字符串读取，在循环使用条件选择语句模拟命令规则</p>
 <a id="more"></a>  
 <p>5.将命令结果缩略为二进制的扩展形式，遇到01或者10输出1，遇到00输出0，遇到110输出2<br>6.将扩展形式化为标准二进制数<br>7.将二进制数还原为十进制<br><strong>python代码</strong>  </p>
@@ -529,6 +530,10 @@ print(<span class="string">"您已完成%d的倍数计算"</span>%w)</code></pre
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/03/31/Java%E5%AE%9E%E7%8E%B0%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0%E7%9A%84%E9%80%86%E9%97%AE%E9%A2%98/" rel="prev" title="Java实现最大公约数和最小公倍数的逆问题">
+                Java实现最大公约数和最小公倍数的逆问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -604,7 +609,7 @@ print(<span class="string">"您已完成%d的倍数计算"</span>%w)</code></pre
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -626,7 +631,7 @@ print(<span class="string">"您已完成%d的倍数计算"</span>%w)</code></pre
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -659,7 +664,7 @@ print(<span class="string">"您已完成%d的倍数计算"</span>%w)</code></pre
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一．题目名称：“图灵机”"><span class="nav-number">1.</span> <span class="nav-text">一．题目名称：“图灵机”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二．题目内容"><span class="nav-number">2.</span> <span class="nav-text">二．题目内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三．算法设计"><span class="nav-number">3.</span> <span class="nav-text">三．算法设计</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一．题目名称："><span class="nav-number">1.</span> <span class="nav-text">一．题目名称：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二．题目内容"><span class="nav-number">2.</span> <span class="nav-text">二．题目内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三．算法设计"><span class="nav-number">3.</span> <span class="nav-text">三．算法设计</span></a></li></ol></div>
             
 
           </div>
@@ -704,7 +709,7 @@ print(<span class="string">"您已完成%d的倍数计算"</span>%w)</code></pre
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.1k字</span>
+  <span class="post-count">博客全站共23.4k字</span>
 </div>
         
 <div class="busuanzi-count">
