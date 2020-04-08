@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="PS," />
+  <meta name="keywords" content="Java,python,C,C++," />
 
 
 
@@ -79,17 +79,27 @@
 
 
 
-<meta name="description" content="1、字体：https:&#x2F;&#x2F;fontsup.com&#x2F;（免费英文字体下载）http:&#x2F;&#x2F;www.qiuziti.com&#x2F;（可以通过截图识别字体）http:&#x2F;&#x2F;www.sozi.cn&#x2F;（国内字体网站、没有广告插件之类的）http:&#x2F;&#x2F;www.ziticq.com&#x2F;">
+<meta name="description" content="往往在解决一些问题时会有很多种算法去实现它，那么在多种   方法一：运行time()函数time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。测试函数的算法流程图如下：(1)源代码：     #include &quot;stdio.h&quot; #include &quot;time.h&quot; &#x2F;&#x2F;需要包含头文件 int gcd(int a,int b)  {      if(a%b&#x3D;&#x3D;0)      retur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PS素材资源">
-<meta property="og:url" content="http://suyufan.github.io/2020/03/15/PS%E7%B4%A0%E6%9D%90%E8%B5%84%E6%BA%90/index.html">
+<meta property="og:title" content="如何获取子函数运行时间">
+<meta property="og:url" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="1、字体：https:&#x2F;&#x2F;fontsup.com&#x2F;（免费英文字体下载）http:&#x2F;&#x2F;www.qiuziti.com&#x2F;（可以通过截图识别字体）http:&#x2F;&#x2F;www.sozi.cn&#x2F;（国内字体网站、没有广告插件之类的）http:&#x2F;&#x2F;www.ziticq.com&#x2F;">
-<meta property="article:published_time" content="2020-03-15T14:33:49.000Z">
-<meta property="article:modified_time" content="2020-03-15T14:37:03.891Z">
+<meta property="og:description" content="往往在解决一些问题时会有很多种算法去实现它，那么在多种   方法一：运行time()函数time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。测试函数的算法流程图如下：(1)源代码：     #include &quot;stdio.h&quot; #include &quot;time.h&quot; &#x2F;&#x2F;需要包含头文件 int gcd(int a,int b)  {      if(a%b&#x3D;&#x3D;0)      retur">
+<meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png">
+<meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/time%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E7%A9%B7%E4%B8%BE%E6%B3%95.png">
+<meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/GetTickCount()%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E6%9B%B4%E7%9B%B8%E5%87%8F%E6%8D%9F%E6%B3%95.png">
+<meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/QueryPerformanceCounter()%E5%87%BD%E6%95%B0.png">
+<meta property="article:published_time" content="2020-04-08T07:20:46.000Z">
+<meta property="article:modified_time" content="2020-04-08T11:47:19.465Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="PS">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png">
 
 
 
@@ -119,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://suyufan.github.io/2020/03/15/PS素材资源/"/>
+  <link rel="canonical" href="http://suyufan.github.io/2020/04/08/如何获取子函数运行时间/"/>
 
 
 
 
 
-  <title>PS素材资源 | 笑笑の博客</title>
+  <title>如何获取子函数运行时间 | 笑笑の博客</title>
   
 
 
@@ -262,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/15/PS%E7%B4%A0%E6%9D%90%E8%B5%84%E6%BA%90/">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏玉璠">
@@ -279,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PS素材资源</h1>
+          <h1 class="post-title" itemprop="name headline">如何获取子函数运行时间</h1>
         
 
         <div class="post-meta">
@@ -291,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T22:33:49+08:00">
-                2020-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-08T15:20:46+08:00">
+                2020-04-08
               </time>
             
 
@@ -314,8 +324,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">页面设计</span>
+                  <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
                   </a>
                 </span>
 
@@ -350,7 +360,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  389
+                  541
                 </span>
               
 
@@ -366,7 +376,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -387,14 +397,112 @@
       
 
       
-        <h2 id="1、字体："><a href="#1、字体：" class="headerlink" title="1、字体："></a>1、字体：</h2><p><a href="https://fontsup.com/（免费英文字体下载）" target="_blank" rel="noopener">https://fontsup.com/（免费英文字体下载）</a><br><a href="http://www.qiuziti.com/（可以通过截图识别字体）" target="_blank" rel="noopener">http://www.qiuziti.com/（可以通过截图识别字体）</a><br><a href="http://www.sozi.cn/（国内字体网站、没有广告插件之类的）" target="_blank" rel="noopener">http://www.sozi.cn/（国内字体网站、没有广告插件之类的）</a><br><a href="http://www.ziticq.com/" target="_blank" rel="noopener">http://www.ziticq.com/</a>  </p>
-<a id="more"></a>
+        <p>往往在解决一些问题时会有很多种算法去实现它，那么在多种  </p>
+<h2 id="方法一：运行time-函数"><a href="#方法一：运行time-函数" class="headerlink" title="方法一：运行time()函数"></a>方法一：运行time()函数</h2><p>time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png" alt="辗转相除法"><br>(1)源代码：    </p>
+<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"time.h"</span> <span class="comment">//需要包含头文件</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>
+<span class="function"> </span>{
 
-<h2 id="2、高清图库："><a href="#2、高清图库：" class="headerlink" title="2、高清图库："></a>2、高清图库：</h2><p><a href="https://unsplash.com/" target="_blank" rel="noopener">https://unsplash.com/</a>(国外高清图库）<br><a href="https://www.pexels.com/" target="_blank" rel="noopener">https://www.pexels.com/</a><br><a href="https://pixabay.com/" target="_blank" rel="noopener">https://pixabay.com/</a><br><a href="https://magdeleine.co/" target="_blank" rel="noopener">https://magdeleine.co/</a><br>摄影图片库：<a href="https://picography.co/" target="_blank" rel="noopener">https://picography.co/</a><br>复古图库：<a href="http://www.raumrot.com" target="_blank" rel="noopener">http://www.raumrot.com</a><br>综合图库：<a href="http://www.gratisography.com" target="_blank" rel="noopener">http://www.gratisography.com</a><br>日系图库：<a href="https://www.pakutaso.com" target="_blank" rel="noopener">https://www.pakutaso.com</a><br>京东图库：<a href="http://www.tokyo-date.net" target="_blank" rel="noopener">http://www.tokyo-date.net</a><br>美食图库：<a href="http://foodiesfeed.com" target="_blank" rel="noopener">http://foodiesfeed.com</a><br>人物图库：<a href="http://picography.co" target="_blank" rel="noopener">http://picography.co</a></p>
-<h2 id="3、素材、模板下载："><a href="#3、素材、模板下载：" class="headerlink" title="3、素材、模板下载："></a>3、素材、模板下载：</h2><p>觅元素：<a href="http://www.51yuansu.com/" target="_blank" rel="noopener">http://www.51yuansu.com/</a><br>花瓣：<a href="https://huaban.com/" target="_blank" rel="noopener">https://huaban.com/</a><br>千图网：<a href="https://www.58pic.com/" target="_blank" rel="noopener">https://www.58pic.com/</a><br>昵图网：<a href="http://www.nipic.com/index.html" target="_blank" rel="noopener">http://www.nipic.com/index.html</a><br>素材中国：<a href="http://www.sccnn.com/" target="_blank" rel="noopener">http://www.sccnn.com/</a><br>包图网：<a href="https://ibaotu.com/" target="_blank" rel="noopener">https://ibaotu.com/</a><br>千库网：<a href="https://588ku.com/" target="_blank" rel="noopener">https://588ku.com/</a><br>摄图网：<a href="http://699pic.com/" target="_blank" rel="noopener">http://699pic.com/</a><br>PNG: <a href="https://pngimg.com/" target="_blank" rel="noopener">https://pngimg.com/</a></p>
-<h2 id="4、设计欣赏、灵感采集："><a href="#4、设计欣赏、灵感采集：" class="headerlink" title="4、设计欣赏、灵感采集："></a>4、设计欣赏、灵感采集：</h2><p><a href="https://huaban.com/" target="_blank" rel="noopener">https://huaban.com/</a><br><a href="https://www.zcool.com.cn/" target="_blank" rel="noopener">https://www.zcool.com.cn/</a><br><a href="http://www.gtn9.com/index.aspx" target="_blank" rel="noopener">http://www.gtn9.com/index.aspx</a><br><a href="http://dameigong.cn/" target="_blank" rel="noopener">http://dameigong.cn/</a><br><a href="https://www.mydesy.com/（设计思路、设计文章）" target="_blank" rel="noopener">https://www.mydesy.com/（设计思路、设计文章）</a><br><a href="https://dribbble.com/" target="_blank" rel="noopener">https://dribbble.com/</a><br><a href="https://www.behance.net/" target="_blank" rel="noopener">https://www.behance.net/</a></p>
-<h2 id="5、互联网资讯："><a href="#5、互联网资讯：" class="headerlink" title="5、互联网资讯："></a>5、互联网资讯：</h2><p>简书：<a href="http://www.jianshu.com" target="_blank" rel="noopener">http://www.jianshu.com</a><br>知乎：<a href="https://www.zhihu.com" target="_blank" rel="noopener">https://www.zhihu.com</a><br>虎嗅：<a href="http://www.huxiu.com" target="_blank" rel="noopener">http://www.huxiu.com</a><br>36氪：<a href="http://www.36kr.com" target="_blank" rel="noopener">http://www.36kr.com</a><br>爱范儿：<a href="http://www.ifanr.com" target="_blank" rel="noopener">http://www.ifanr.com</a><br>威锋网：<a href="http://www.feng.com" target="_blank" rel="noopener">http://www.feng.com</a><br>设计趋势：<a href="http://www.tuyiyi.com/show-70" target="_blank" rel="noopener">http://www.tuyiyi.com/show-70</a><br>逻辑思维：<a href="http://i.youku.com/u/UNTEzNTY1OTgw" target="_blank" rel="noopener">http://i.youku.com/u/UNTEzNTY1OTgw</a><br>极客公园：<a href="http://www.geekpark.net" target="_blank" rel="noopener">http://www.geekpark.net</a><br>好奇心日报：<a href="http://www.qdaily.com" target="_blank" rel="noopener">http://www.qdaily.com</a></p>
-<h2 id="6、设计博客（增见闻，拓眼界）："><a href="#6、设计博客（增见闻，拓眼界）：" class="headerlink" title="6、设计博客（增见闻，拓眼界）："></a>6、设计博客（增见闻，拓眼界）：</h2><p>阿里UED：<a href="http://www.aliued.com" target="_blank" rel="noopener">http://www.aliued.com</a><br>腾讯MXD：<a href="http://mxd.tencent.com" target="_blank" rel="noopener">http://mxd.tencent.com</a><br>腾讯CDC：<a href="http://cdc.tencent.com" target="_blank" rel="noopener">http://cdc.tencent.com</a><br>腾讯ISUX：<a href="http://isux.tencent.com" target="_blank" rel="noopener">http://isux.tencent.com</a><br>应酷设计：<a href="http://blog.enqoo.com" target="_blank" rel="noopener">http://blog.enqoo.com</a><br>腾讯游戏：<a href="http://tgideas.qq.com" target="_blank" rel="noopener">http://tgideas.qq.com</a><br>腾讯UED：<a href="http://ued.qq.com" target="_blank" rel="noopener">http://ued.qq.com</a><br>携程UED：<a href="http://ued.ctrip.com" target="_blank" rel="noopener">http://ued.ctrip.com</a><br>百度UED：<a href="http://ued.baidu.com" target="_blank" rel="noopener">http://ued.baidu.com</a></p>
+    <span class="keyword">if</span>(a%b==<span class="number">0</span>)
+     <span class="keyword">return</span> b;
+     <span class="keyword">else</span>
+     <span class="keyword">return</span> gcd(b,a%b);
+ }
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> t;
+    <span class="keyword">time_t</span> start;
+    <span class="keyword">time_t</span> <span class="built_in">end</span>;
+    time(&amp;start);
+    t=gcd(<span class="number">45</span>,<span class="number">30</span>);
+    time(&amp;<span class="built_in">end</span>);
+    <span class="built_in">printf</span>(<span class="string">"秒数为：%ld\n"</span>, <span class="built_in">end</span>-start);
+ } </code></pre>
+<p>(2)运行结果<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/time%E5%87%BD%E6%95%B0.png" alt="time函数运行结果">    </p>
+<h2 id="方法二：运用GetTickCount-函数"><a href="#方法二：运用GetTickCount-函数" class="headerlink" title="方法二：运用GetTickCount()函数"></a>方法二：运用GetTickCount()函数</h2><p>GetTickCount()函数是以毫秒为单位的时间。返回值为DWORD，属于windows程序设计。<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E7%A9%B7%E4%B8%BE%E6%B3%95.png" alt="穷举法"><br>(1)源代码：    </p>
+<pre><code class="c++"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"windows.h"</span><span class="comment">//需要包含头文件windows.h</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">divisor</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> temp;
+    temp = (a&gt;b)?b:a;
+    <span class="keyword">while</span>(temp&gt;<span class="number">0</span>)
+    {
+        <span class="keyword">if</span>(a%temp==<span class="number">0</span>&amp;&amp;b%temp==<span class="number">0</span>)
+        <span class="keyword">break</span>;
+        temp--;
+    }
+    <span class="keyword">return</span>(temp);
+};
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    DWORD start_time = GetTickCount();
+    <span class="keyword">int</span> a,b,t1;
+    t1 = divisor(<span class="number">789</span>,<span class="number">47</span>);
+    DWORD end_time = GetTickCount(); 
+    <span class="built_in">cout</span>&lt;&lt;<span class="string">"The time is："</span>&lt;&lt;(end_time-start_time)&lt;&lt;<span class="string">"ms"</span>&lt;&lt;<span class="built_in">endl</span>;
+}  </code></pre>
+<p>(2)运行结果：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/GetTickCount()%E5%87%BD%E6%95%B0.png" alt="GetTickCount函数">    </p>
+<h2 id="方法三-运用QueryPerformanceCounter-函数"><a href="#方法三-运用QueryPerformanceCounter-函数" class="headerlink" title="方法三:运用QueryPerformanceCounter()函数"></a>方法三:运用QueryPerformanceCounter()函数</h2><p>QueryPerformanceCounter()函数返回的是以微妙为单位的时间。精度在98下可能是35微妙，2000下可以达到1微妙左右<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E6%9B%B4%E7%9B%B8%E5%87%8F%E6%8D%9F%E6%B3%95.png" alt="更相减损法"><br>(1)源代码：       </p>
+<pre><code class="C++"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">template</span>&lt;<span class="keyword">typename</span> func&gt;
+<span class="function"><span class="keyword">int</span> <span class="title">performance_test</span><span class="params">(func f)</span></span>{            <span class="comment">//通过传入成员函数指针，进行调用，测试函数运行时间</span>
+    LARGE_INTEGER frec, start, <span class="built_in">end</span>;        <span class="comment">//WindowsAPI测试程序运行时间</span>
+    QueryPerformanceFrequency(&amp;frec);
+    QueryPerformanceCounter(&amp;start);                                
+    QueryPerformanceCounter(&amp;<span class="built_in">end</span>);
+    <span class="keyword">return</span> (<span class="built_in">end</span>.QuadPart - start.QuadPart) * <span class="number">1000000000</span> / frec.QuadPart;
+}
+<span class="comment">//更相减损法</span>
+<span class="function"><span class="keyword">int</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span> </span>{
+    <span class="keyword">int</span> i=<span class="number">0</span>,temp,x;
+    <span class="keyword">while</span>(m%<span class="number">2</span>==<span class="number">0</span>&amp;&amp;n%<span class="number">2</span>==<span class="number">0</span>)
+    {
+        m/=<span class="number">2</span>;
+        n/=<span class="number">2</span>;
+        i+=<span class="number">1</span>;
+    }
+
+    <span class="comment">//m保存大的值 </span>
+    <span class="keyword">if</span>(m&lt;n)
+    {
+        temp=m;
+        m=n;
+        n=temp;
+    }
+
+    <span class="keyword">while</span>(x)
+    {
+        x=m-n;
+        m=(n&gt;x)?n:x;
+        n=(n&lt;x)?n:x;
+        <span class="keyword">if</span>(n==(m-n))
+        <span class="keyword">break</span>; 
+    }
+
+    <span class="keyword">if</span>(i==<span class="number">0</span>)
+    <span class="keyword">return</span> n;
+    <span class="keyword">else</span>
+    <span class="keyword">return</span>(<span class="keyword">int</span>)<span class="built_in">pow</span>(<span class="number">2</span>,i)*n;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> t;
+    t=test(<span class="number">478</span>,<span class="number">98</span>);
+    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The time is:"</span>&lt;&lt;performance_test(test) &lt;&lt;<span class="string">"微秒"</span>&lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//传入函数对象,返回的是一个微秒的运行时间</span>
+}  </code></pre>
+<p>(2)运行结果：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/QueryPerformanceCounter()%E5%87%BD%E6%95%B0.png" alt="QueryPerformanceCounter()函数"></p>
 
       
     </div>
@@ -412,7 +520,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PS/" rel="tag"># PS</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
           
         </div>
       
@@ -425,8 +539,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/12/Android%E5%BA%94%E7%94%A8%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B/" rel="next" title="Android应用项目的开发过程">
-                <i class="fa fa-chevron-left"></i> Android应用项目的开发过程
+              <a href="/2020/04/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%BF%9E%E6%8E%A5/" rel="next" title="数据库之连接">
+                <i class="fa fa-chevron-left"></i> 数据库之连接
               </a>
             
           </div>
@@ -434,10 +548,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/18/MySQL%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%93%8D%E4%BD%9C%E8%A1%A8/" rel="prev" title="MySQL操作数据库和操作表">
-                MySQL操作数据库和操作表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、字体："><span class="nav-number">1.</span> <span class="nav-text">1、字体：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、高清图库："><span class="nav-number">2.</span> <span class="nav-text">2、高清图库：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、素材、模板下载："><span class="nav-number">3.</span> <span class="nav-text">3、素材、模板下载：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、设计欣赏、灵感采集："><span class="nav-number">4.</span> <span class="nav-text">4、设计欣赏、灵感采集：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、互联网资讯："><span class="nav-number">5.</span> <span class="nav-text">5、互联网资讯：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、设计博客（增见闻，拓眼界）："><span class="nav-number">6.</span> <span class="nav-text">6、设计博客（增见闻，拓眼界）：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一：运行time-函数"><span class="nav-number">1.</span> <span class="nav-text">方法一：运行time()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二：运用GetTickCount-函数"><span class="nav-number">2.</span> <span class="nav-text">方法二：运用GetTickCount()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法三-运用QueryPerformanceCounter-函数"><span class="nav-number">3.</span> <span class="nav-text">方法三:运用QueryPerformanceCounter()函数</span></a></li></ol></div>
             
 
           </div>

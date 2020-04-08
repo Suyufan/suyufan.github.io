@@ -260,6 +260,284 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/" itemprop="url">如何获取子函数运行时间</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-08T15:20:46+08:00">
+                2020-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  541
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>往往在解决一些问题时会有很多种算法去实现它，那么在多种  </p>
+<h2 id="方法一：运行time-函数"><a href="#方法一：运行time-函数" class="headerlink" title="方法一：运行time()函数"></a>方法一：运行time()函数</h2><p>time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png" alt="辗转相除法"><br>(1)源代码：    </p>
+<pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"time.h"</span> <span class="comment">//需要包含头文件</span></span>
+<span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>
+<span class="function"> </span>{
+
+    <span class="keyword">if</span>(a%b==<span class="number">0</span>)
+     <span class="keyword">return</span> b;
+     <span class="keyword">else</span>
+     <span class="keyword">return</span> gcd(b,a%b);
+ }
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> t;
+    <span class="keyword">time_t</span> start;
+    <span class="keyword">time_t</span> <span class="built_in">end</span>;
+    time(&amp;start);
+    t=gcd(<span class="number">45</span>,<span class="number">30</span>);
+    time(&amp;<span class="built_in">end</span>);
+    <span class="built_in">printf</span>(<span class="string">"秒数为：%ld\n"</span>, <span class="built_in">end</span>-start);
+ } </code></pre>
+<p>(2)运行结果<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/time%E5%87%BD%E6%95%B0.png" alt="time函数运行结果">    </p>
+<h2 id="方法二：运用GetTickCount-函数"><a href="#方法二：运用GetTickCount-函数" class="headerlink" title="方法二：运用GetTickCount()函数"></a>方法二：运用GetTickCount()函数</h2><p>GetTickCount()函数是以毫秒为单位的时间。返回值为DWORD，属于windows程序设计。<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E7%A9%B7%E4%B8%BE%E6%B3%95.png" alt="穷举法"><br>(1)源代码：    </p>
+<pre><code class="c++"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"windows.h"</span><span class="comment">//需要包含头文件windows.h</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">divisor</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>
+<span class="function"></span>{
+    <span class="keyword">int</span> temp;
+    temp = (a&gt;b)?b:a;
+    <span class="keyword">while</span>(temp&gt;<span class="number">0</span>)
+    {
+        <span class="keyword">if</span>(a%temp==<span class="number">0</span>&amp;&amp;b%temp==<span class="number">0</span>)
+        <span class="keyword">break</span>;
+        temp--;
+    }
+    <span class="keyword">return</span>(temp);
+};
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+    DWORD start_time = GetTickCount();
+    <span class="keyword">int</span> a,b,t1;
+    t1 = divisor(<span class="number">789</span>,<span class="number">47</span>);
+    DWORD end_time = GetTickCount(); 
+    <span class="built_in">cout</span>&lt;&lt;<span class="string">"The time is："</span>&lt;&lt;(end_time-start_time)&lt;&lt;<span class="string">"ms"</span>&lt;&lt;<span class="built_in">endl</span>;
+}  </code></pre>
+<p>(2)运行结果：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/GetTickCount()%E5%87%BD%E6%95%B0.png" alt="GetTickCount函数">    </p>
+<h2 id="方法三-运用QueryPerformanceCounter-函数"><a href="#方法三-运用QueryPerformanceCounter-函数" class="headerlink" title="方法三:运用QueryPerformanceCounter()函数"></a>方法三:运用QueryPerformanceCounter()函数</h2><p>QueryPerformanceCounter()函数返回的是以微妙为单位的时间。精度在98下可能是35微妙，2000下可以达到1微妙左右<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E6%9B%B4%E7%9B%B8%E5%87%8F%E6%8D%9F%E6%B3%95.png" alt="更相减损法"><br>(1)源代码：       </p>
+<pre><code class="C++"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="keyword">template</span>&lt;<span class="keyword">typename</span> func&gt;
+<span class="function"><span class="keyword">int</span> <span class="title">performance_test</span><span class="params">(func f)</span></span>{            <span class="comment">//通过传入成员函数指针，进行调用，测试函数运行时间</span>
+    LARGE_INTEGER frec, start, <span class="built_in">end</span>;        <span class="comment">//WindowsAPI测试程序运行时间</span>
+    QueryPerformanceFrequency(&amp;frec);
+    QueryPerformanceCounter(&amp;start);                                
+    QueryPerformanceCounter(&amp;<span class="built_in">end</span>);
+    <span class="keyword">return</span> (<span class="built_in">end</span>.QuadPart - start.QuadPart) * <span class="number">1000000000</span> / frec.QuadPart;
+}
+<span class="comment">//更相减损法</span>
+<span class="function"><span class="keyword">int</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span> </span>{
+    <span class="keyword">int</span> i=<span class="number">0</span>,temp,x;
+    <span class="keyword">while</span>(m%<span class="number">2</span>==<span class="number">0</span>&amp;&amp;n%<span class="number">2</span>==<span class="number">0</span>)
+    {
+        m/=<span class="number">2</span>;
+        n/=<span class="number">2</span>;
+        i+=<span class="number">1</span>;
+    }
+
+    <span class="comment">//m保存大的值 </span>
+    <span class="keyword">if</span>(m&lt;n)
+    {
+        temp=m;
+        m=n;
+        n=temp;
+    }
+
+    <span class="keyword">while</span>(x)
+    {
+        x=m-n;
+        m=(n&gt;x)?n:x;
+        n=(n&lt;x)?n:x;
+        <span class="keyword">if</span>(n==(m-n))
+        <span class="keyword">break</span>; 
+    }
+
+    <span class="keyword">if</span>(i==<span class="number">0</span>)
+    <span class="keyword">return</span> n;
+    <span class="keyword">else</span>
+    <span class="keyword">return</span>(<span class="keyword">int</span>)<span class="built_in">pow</span>(<span class="number">2</span>,i)*n;
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> t;
+    t=test(<span class="number">478</span>,<span class="number">98</span>);
+    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The time is:"</span>&lt;&lt;performance_test(test) &lt;&lt;<span class="string">"微秒"</span>&lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//传入函数对象,返回的是一个微秒的运行时间</span>
+}  </code></pre>
+<p>(2)运行结果：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/QueryPerformanceCounter()%E5%87%BD%E6%95%B0.png" alt="QueryPerformanceCounter()函数"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/04/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%BF%9E%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1811,183 +2089,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/24/Java%E5%9C%A8ACM%E4%B8%8A%E7%9A%84%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/24/Java%E5%9C%A8ACM%E4%B8%8A%E7%9A%84%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/" itemprop="url">Java在ACM上的编译错误问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-24T15:23:56+08:00">
-                2020-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  280
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>代码在Intellij IDEA 上运行没有问题，但是提交到ACM上的时候出现Compiling Error，点击进去你会发现错误提示显示F:\temp\21510553.704063\Main.java:3: class Add is public, should be declared in a file named Add.java public class Add {        ^ 1 error<br>这个的原因其实很简单，一般在线考试提交系统的类名默认为Main,只需要将Add改为Main就可以提交成功。  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/24/Java%E5%9C%A8ACM%E4%B8%8A%E7%9A%84%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2038,7 +2139,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2049,7 +2150,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2060,7 +2161,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2132,7 +2233,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.6k字</span>
+  <span class="post-count">博客全站共25.1k字</span>
 </div>  
 
         
