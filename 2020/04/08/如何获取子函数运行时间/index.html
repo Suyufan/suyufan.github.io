@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="往往在解决一些问题时会有很多种算法去实现它，那么在多种   方法一：运行time()函数time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。测试函数的算法流程图如下：(1)源代码：     #include &quot;stdio.h&quot; #include &quot;time.h&quot; &#x2F;&#x2F;需要包含头文件 int gcd(int a,int b)  {      if(a%b&#x3D;&#x3D;0)      retur">
+<meta name="description" content="往往在解决一些问题时会有很多种算法去实现它，那么在多种   方法一：运行time()函数time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。测试函数的算法流程图如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何获取子函数运行时间">
 <meta property="og:url" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="往往在解决一些问题时会有很多种算法去实现它，那么在多种   方法一：运行time()函数time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。测试函数的算法流程图如下：(1)源代码：     #include &quot;stdio.h&quot; #include &quot;time.h&quot; &#x2F;&#x2F;需要包含头文件 int gcd(int a,int b)  {      if(a%b&#x3D;&#x3D;0)      retur">
+<meta property="og:description" content="往往在解决一些问题时会有很多种算法去实现它，那么在多种   方法一：运行time()函数time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。测试函数的算法流程图如下：">
 <meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png">
 <meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/time%E5%87%BD%E6%95%B0.png">
 <meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E7%A9%B7%E4%B8%BE%E6%B3%95.png">
@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E6%9B%B4%E7%9B%B8%E5%87%8F%E6%8D%9F%E6%B3%95.png">
 <meta property="og:image" content="http://suyufan.github.io/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/QueryPerformanceCounter()%E5%87%BD%E6%95%B0.png">
 <meta property="article:published_time" content="2020-04-08T07:20:46.000Z">
-<meta property="article:modified_time" content="2020-04-08T11:47:19.465Z">
+<meta property="article:modified_time" content="2020-04-22T03:35:01.350Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="python">
@@ -398,7 +398,9 @@
 
       
         <p>往往在解决一些问题时会有很多种算法去实现它，那么在多种  </p>
-<h2 id="方法一：运行time-函数"><a href="#方法一：运行time-函数" class="headerlink" title="方法一：运行time()函数"></a>方法一：运行time()函数</h2><p>time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png" alt="辗转相除法"><br>(1)源代码：    </p>
+<h2 id="方法一：运行time-函数"><a href="#方法一：运行time-函数" class="headerlink" title="方法一：运行time()函数"></a>方法一：运行time()函数</h2><p>time()返回的是单位为秒的时间，因此不适用于完成小型代码的测试。<br>测试函数的算法流程图如下：<br><img src="/2020/04/08/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AD%90%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95.png" alt="辗转相除法">  </p>
+<a id="more"></a>      
+<p>(1)源代码：    </p>
 <pre><code class="c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span>
 <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"time.h"</span> <span class="comment">//需要包含头文件</span></span>
 <span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>
