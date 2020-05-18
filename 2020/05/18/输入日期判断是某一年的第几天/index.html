@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="JS的变量名可以用_,数字，字母，$组成。且数字不能开头声明变量用var变量名来声明   var a &#x3D; 34; var b &#x3D; 3.4; var $ &#x3D; &#39;jquery&#39;; var c &#x3D; &quot;hello&quot;; var h &#x3D; {name:&#39;list&#39;,age:19}; 注意：变量名区分大小写str和Str不是一个变量；不用var，会污染全局">
+<meta name="description" content="前言在进行Java基础学习的时候，发现一个之前用C语言做过的程序设计问题，代码链接c语言实现对问题产生了新的更加简洁的想法。题目描述：输入年月日，输出这几天是输入年份的第几天">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS变量">
-<meta property="og:url" content="http://suyufan.github.io/2020/03/10/JS%E5%8F%98%E9%87%8F/index.html">
+<meta property="og:title" content="输入日期判断是某一年的第几天">
+<meta property="og:url" content="http://suyufan.github.io/2020/05/18/%E8%BE%93%E5%85%A5%E6%97%A5%E6%9C%9F%E5%88%A4%E6%96%AD%E6%98%AF%E6%9F%90%E4%B8%80%E5%B9%B4%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="JS的变量名可以用_,数字，字母，$组成。且数字不能开头声明变量用var变量名来声明   var a &#x3D; 34; var b &#x3D; 3.4; var $ &#x3D; &#39;jquery&#39;; var c &#x3D; &quot;hello&quot;; var h &#x3D; {name:&#39;list&#39;,age:19}; 注意：变量名区分大小写str和Str不是一个变量；不用var，会污染全局">
-<meta property="article:published_time" content="2020-03-10T12:49:49.000Z">
-<meta property="article:modified_time" content="2020-03-10T14:40:29.658Z">
+<meta property="og:description" content="前言在进行Java基础学习的时候，发现一个之前用C语言做过的程序设计问题，代码链接c语言实现对问题产生了新的更加简洁的想法。题目描述：输入年月日，输出这几天是输入年份的第几天">
+<meta property="article:published_time" content="2020-05-18T09:55:25.000Z">
+<meta property="article:modified_time" content="2020-05-18T10:42:54.032Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://suyufan.github.io/2020/03/10/JS变量/"/>
+  <link rel="canonical" href="http://suyufan.github.io/2020/05/18/输入日期判断是某一年的第几天/"/>
 
 
 
 
 
-  <title>JS变量 | 笑笑の博客</title>
+  <title>输入日期判断是某一年的第几天 | 笑笑の博客</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/03/10/JS%E5%8F%98%E9%87%8F/">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/05/18/%E8%BE%93%E5%85%A5%E6%97%A5%E6%9C%9F%E5%88%A4%E6%96%AD%E6%98%AF%E6%9F%90%E4%B8%80%E5%B9%B4%E7%9A%84%E7%AC%AC%E5%87%A0%E5%A4%A9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏玉璠">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS变量</h1>
+          <h1 class="post-title" itemprop="name headline">输入日期判断是某一年的第几天</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T20:49:49+08:00">
-                2020-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-18T17:55:25+08:00">
+                2020-05-18
               </time>
             
 
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">网页前端</span>
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">程序设计</span>
                   </a>
                 </span>
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  394
+                  265
                 </span>
               
 
@@ -377,38 +377,10 @@
       
 
       
-        <p>JS的变量名可以用_,数字，字母，$组成。且数字不能开头<br>声明变量用var变量名来声明  </p>
-<pre><code class="javascript"><span class="keyword">var</span> a = <span class="number">34</span>;
-<span class="keyword">var</span> b = <span class="number">3.4</span>;
-<span class="keyword">var</span> $ = <span class="string">'jquery'</span>;
-<span class="keyword">var</span> c = <span class="string">"hello"</span>;
-<span class="keyword">var</span> h = {<span class="attr">name</span>:<span class="string">'list'</span>,<span class="attr">age</span>:<span class="number">19</span>};</code></pre>
-<p><strong>注意：变量名区分大小写str和Str不是一个变量；不用var，会污染全局</strong>  </p>
-<a id="more"></a>
-<p>很多公司在招聘前端人员的时候，会将招聘信息放在公司首页的控制台。例如百度<br>，在百度搜索页按f12或者点击web开发工具，将会打开控制台，控制台里面写的百度招聘信息。  </p>
-<hr>
-<p>由两个特殊的定义<br><code>var a = undefined;</code>表示原生对象没有定义<br><code>var b = null;</code>表示关联数组没有定义<br>假如DOM找ｐ标签没有找到，那么它将返回null;因为DOM在浏览器上渲染的一切都理解为DOM对象。  </p>
-<hr>
-<h2 id="输出的语法格式为console-log-39-hello-39-39-39-39-world-39-输出hello-world"><a href="#输出的语法格式为console-log-39-hello-39-39-39-39-world-39-输出hello-world" class="headerlink" title="输出的语法格式为console.log(&#39;hello&#39; + &#39; &#39; + &#39;world&#39;);//输出hello world    "></a>输出的语法格式为<code>console.log(&#39;hello&#39; + &#39; &#39; + &#39;world&#39;);//输出hello world</code>    </h2><p>JavaScript中，拼接运算符“+”<br><code>console.log(2+3+4+&#39;haha&#39;+5);//9haha5</code><br><code>console.log(2+3+4+&#39;haha&#39;+5+6);//9haha56,一旦碰到非法数字后，后面的一律理解为拼接</code>  </p>
-<hr>
-<p>JavaScript中，逻辑运算，返回的是最早能判断表达式结果的那个值  </p>
-<pre><code class="javascript"><span class="keyword">var</span> a = <span class="literal">false</span>;
-<span class="keyword">var</span> b = <span class="number">6</span>;
-<span class="keyword">var</span> c = <span class="literal">true</span>;  
-<span class="keyword">var</span> d = (a || b || c);
-<span class="built_in">console</span>.log(d);<span class="comment">//返回6  </span></code></pre>
-<pre><code class="javascript"><span class="keyword">var</span> e = <span class="literal">false</span>;  
-<span class="keyword">var</span> f = <span class="number">2</span>;
-<span class="built_in">console</span>.log(e &amp;&amp; f);<span class="comment">//返回false  </span></code></pre>
-<hr>
-<p>JavaScript中，循环操作  </p>
-<pre><code class="javascript"><span class="keyword">var</span> obj = {<span class="attr">name</span>:<span class="string">'list'</span>,<span class="attr">age</span>:<span class="number">19</span>};  
-<span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj){<span class="comment">//循环obj,把键分别赋给k  </span>
-<span class="built_in">console</span>.log(k);<span class="comment">//返回name,age  </span>
-<span class="built_in">console</span>.log(obj.k);<span class="comment">//错误  </span>
-<span class="built_in">console</span>.log(obj[k]);<span class="comment">//返回name:list,age:19  </span>
-}  </code></pre>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在进行Java基础学习的时候，发现一个之前用C语言做过的程序设计问题，代码链接<a href="https://suyufan.github.io/2020/03/01/c%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B02%E4%B8%AA%E6%97%A5%E6%9C%9F%E9%97%B4%E7%9A%84%E5%A4%A9%E6%95%B0/">c语言实现</a>对问题产生了新的更加简洁的想法。<br><strong>题目描述：输入年月日，输出这几天是输入年份的第几天</strong>  </p>
+<a id="more"></a>  
+<p>代码：<br>算法设计：<br>巧妙使用switch语句，倒序月份，使得依次执行指定月份之前的月份天数累加。   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwitchSen</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入year:"</span>);</span><br><span class="line">        <span class="keyword">int</span> year = scan.nextInt();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"请输入month:"</span>);</span><br><span class="line">        <span class="keyword">int</span> month = scan.nextInt();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"请输入day:"</span>);</span><br><span class="line">        <span class="keyword">int</span> day = scan.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">switch</span> (month)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                sum += <span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                sum += <span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">                sum += <span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">                sum += <span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                sum += <span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">                sum += <span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                sum += <span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                sum += <span class="number">30</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                sum += <span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                <span class="keyword">if</span>((year % <span class="number">4</span> ==<span class="number">0</span> &amp;&amp; year % <span class="number">100</span> !=<span class="number">0</span>)||(year % <span class="number">400</span> == <span class="number">0</span>))</span><br><span class="line">                    sum += <span class="number">29</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    sum += <span class="number">28</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                sum += <span class="number">31</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                sum += day;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"输入日期是"</span>+ year + <span class="string">"年的第"</span> + sum + <span class="string">"天"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2020年5月18是2020年的第139天</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -425,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -438,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/09/Java%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/" rel="next" title="Java运行机制">
-                <i class="fa fa-chevron-left"></i> Java运行机制
+              <a href="/2020/04/26/Java%E5%8C%85%E8%A3%85%E7%B1%BB%E4%B9%8BInteger/" rel="next" title="Java包装类之Integer">
+                <i class="fa fa-chevron-left"></i> Java包装类之Integer
               </a>
             
           </div>
@@ -447,10 +419,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/12/JS%E5%AF%B9%E8%B1%A1/" rel="prev" title="JS对象">
-                JS对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输出的语法格式为console-log-39-hello-39-39-39-39-world-39-输出hello-world"><span class="nav-number">1.</span> <span class="nav-text">输出的语法格式为console.log(&#39;hello&#39; + &#39; &#39; + &#39;world&#39;);&#x2F;&#x2F;输出hello world    </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
             
 
           </div>
