@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="1.文档流 所有的元素默认情况下都是在文档流中存在的  文档流是网页的最底层  元素在文档流中的特点：  块元素   1.默认宽度是父元素的全部2.默认高度被内容（子元素）撑开3.在页面中自上而下垂直排列">
 <meta property="article:published_time" content="2020-09-02T12:55:06.000Z">
-<meta property="article:modified_time" content="2020-09-06T15:56:51.845Z">
+<meta property="article:modified_time" content="2020-09-09T15:10:03.428Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -482,15 +482,10 @@
     filter:alpha(opacity=透明度);
     - 需要一个0-100之间的值
     - 0 表示完全透明
-    - 100 表示完全不透明  </code></pre><h1 id="4-输出"><a href="#4-输出" class="headerlink" title="4.输出"></a>4.输出</h1><ul>
-<li><p>弹出警告框</p>
-<p>alert(“显示内容”)；</p>
-</li>
-<li><p>document.write(“向body输出一个内容”)；</p>
-</li>
-<li><p>document.log(“向控制台输出”)；//console.log();用于在控制台输出一个日志</p>
-</li>
-</ul>
+    - 100 表示完全不透明  </code></pre><h1 id="4-输出"><a href="#4-输出" class="headerlink" title="4.输出"></a>4.输出</h1><p>弹出警告框</p>
+<p>  <code>alert(&quot;显示内容&quot;)；</code></p>
+<p><code>document.write(&quot;向body输出一个内容&quot;)；</code></p>
+<p><code>document.log(&quot;向控制台输出&quot;)；//console.log();用于在控制台输出一个日志</code></p>
 <p><strong>外边有双引号的时候，括号里面用单引号，如有需要，使用<code>\</code>进行转义</strong></p>
 <p><strong>script标签一旦用于引入外部文件就不能再在标签内部写了，如果需要，重新写一个script标签</strong></p>
 <ul>
@@ -506,12 +501,8 @@
 <ul>
 <li><p>JS中的字符串需要使用引号引起来双引号或单引号都行</p>
 </li>
-<li><p>在字符串中使用\作为转义字符</p>
-<pre><code>\&apos;  ==&gt; &apos;
-\&quot;  ==&gt; &quot;
-\n  ==&gt; 换行
-\t  ==&gt; 制表符
-\\  ==&gt; \    </code></pre></li>
+<li><p>在字符串中使用\作为转义字符  </p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\&#39;  &#x3D;&#x3D;&gt; &#39;</span><br><span class="line">\&quot;  &#x3D;&#x3D;&gt; &quot;</span><br><span class="line">\n  &#x3D;&#x3D;&gt; 换行</span><br><span class="line">\t  &#x3D;&#x3D;&gt; 制表符</span><br><span class="line">\\  &#x3D;&#x3D;&gt; \</span><br></pre></td></tr></table></figure></code></pre></li>
 <li><p>使用typeof运算符检查字符串时，会返回”string”    </p>
 </li>
 </ul>
@@ -625,7 +616,39 @@
 <li><p>parseFloat()</p>
 <ul>
 <li>可以将一个字符串中的有效的小数位提取出来，并转换为Number</li>
-<li>例子：<br><code>var a = &quot;123.456px&quot;;a = parseFloat(a); //123.456</code></li>
+<li>例子：<br><code>var a = &quot;123.456px&quot;;a = parseFloat(a); //123.456</code>  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>方式三（隐式的类型转换）：</p>
+<ul>
+<li>使用一元的+来进行隐式的类型转换</li>
+<li>例子：<br><code>var a = &quot;123&quot;;a = +a;</code>      </li>
+<li>原理：和Number()函数一样    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>转换为布尔值</p>
+<ul>
+<li><p>方式一（强制类型转换）：</p>
+<ul>
+<li><p>使用Boolean()函数</p>
+</li>
+<li><p>例子：<br>  <code>var s = &quot;false&quot;;s = Boolean(s); //true</code></p>
+</li>
+<li><p>转换的情况<br>  字符串 –&gt; 布尔</p>
+<pre><code>- 除了空串其余全是true</code></pre><p>  数值 –&gt; 布尔</p>
+<pre><code>- 除了0和NaN其余的全是true</code></pre><p>  null、undefined —&gt; 布尔</p>
+<pre><code>- 都是false</code></pre><p>  对象 —&gt; 布尔</p>
+<pre><code>- 都是true</code></pre></li>
+</ul>
+</li>
+<li><p>方式二（隐式类型转换）：    </p>
+<ul>
+<li>为任意的数据类型做两次非运算，即可将其转换为布尔值</li>
+<li>例子：<br>  <code>var a = &quot;hello&quot;;a = !!a; //true</code>  </li>
 </ul>
 </li>
 </ul>
@@ -635,36 +658,7 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<pre><code>    - 方式三（隐式的类型转换）：
-        - 使用一元的+来进行隐式的类型转换
-        - 例子： 
-        `var a = &quot;123&quot;;a = +a;`      
-        - 原理：和Number()函数一样    
 
-- 转换为布尔值
-    - 方式一（强制类型转换）：
-        - 使用Boolean()函数
-        - 例子：
-            `var s = &quot;false&quot;;s = Boolean(s); //true`
-        - 转换的情况
-            字符串 --&gt; 布尔
-                - 除了空串其余全是true
-
-            数值 --&gt; 布尔
-                - 除了0和NaN其余的全是true
-
-            null、undefined ---&gt; 布尔
-                - 都是false
-
-            对象 ---&gt; 布尔
-                - 都是true
-
-    - 方式二（隐式类型转换）：    
-        - 为任意的数据类型做两次非运算，即可将其转换为布尔值
-        - 例子： 
-            `var a = &quot;hello&quot;;a = !!a; //true`  </code></pre>
       
     </div>
     
@@ -783,7 +777,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -893,7 +887,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.8k字</span>
+  <span class="post-count">博客全站共40.6k字</span>
 </div>  
 
         
