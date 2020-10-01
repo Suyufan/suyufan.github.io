@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vs code," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="在最初安装VS Code的时候没有勾选通过open with code的2个框框，导致无法在文件中右击通过VS Code打开。    通过写.reg文件修改注册表—–&gt;错误，显示没有与之关联的应用  参考了lanlan—–&gt;成功。">
+<meta name="description" content="利用事件绑定，来实现拖拽。效果类似于电脑桌面上的快捷方式位置移动  鼠标按下 鼠标移动 鼠标松开重点在于鼠标的移动过程中，如何使鼠标点击div的位置在移动过程中，一直与div保持相对固定，不会出现鼠标跳点到div左上角的情况方式有2种：①控制鼠标②控制div显然只能控制div，因为鼠标的移动是用户通过外部硬件来进行控制的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过VS code右击打开">
-<meta property="og:url" content="http://suyufan.github.io/2020/09/11/%E9%80%9A%E8%BF%87VS-code%E5%8F%B3%E5%87%BB%E6%89%93%E5%BC%80/index.html">
+<meta property="og:title" content="JS-拖拽实现">
+<meta property="og:url" content="http://suyufan.github.io/2020/10/01/JS-%E6%8B%96%E6%8B%BD%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="在最初安装VS Code的时候没有勾选通过open with code的2个框框，导致无法在文件中右击通过VS Code打开。    通过写.reg文件修改注册表—–&gt;错误，显示没有与之关联的应用  参考了lanlan—–&gt;成功。">
-<meta property="article:published_time" content="2020-09-11T00:27:27.000Z">
-<meta property="article:modified_time" content="2020-09-11T04:00:16.916Z">
+<meta property="og:description" content="利用事件绑定，来实现拖拽。效果类似于电脑桌面上的快捷方式位置移动  鼠标按下 鼠标移动 鼠标松开重点在于鼠标的移动过程中，如何使鼠标点击div的位置在移动过程中，一直与div保持相对固定，不会出现鼠标跳点到div左上角的情况方式有2种：①控制鼠标②控制div显然只能控制div，因为鼠标的移动是用户通过外部硬件来进行控制的">
+<meta property="og:image" content="http://suyufan.github.io/2020/10/01/JS-%E6%8B%96%E6%8B%BD%E5%AE%9E%E7%8E%B0/%E7%AE%97%E6%B3%95.png">
+<meta property="article:published_time" content="2020-10-01T10:39:26.000Z">
+<meta property="article:modified_time" content="2020-10-01T11:07:40.666Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="vs code">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://suyufan.github.io/2020/10/01/JS-%E6%8B%96%E6%8B%BD%E5%AE%9E%E7%8E%B0/%E7%AE%97%E6%B3%95.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://suyufan.github.io/2020/09/11/通过VS-code右击打开/"/>
+  <link rel="canonical" href="http://suyufan.github.io/2020/10/01/JS-拖拽实现/"/>
 
 
 
 
 
-  <title>通过VS code右击打开 | 笑笑の博客</title>
+  <title>JS-拖拽实现 | 笑笑の博客</title>
   
 
 
@@ -252,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/09/11/%E9%80%9A%E8%BF%87VS-code%E5%8F%B3%E5%87%BB%E6%89%93%E5%BC%80/">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/10/01/JS-%E6%8B%96%E6%8B%BD%E5%AE%9E%E7%8E%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏玉璠">
@@ -269,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">通过VS code右击打开</h1>
+          <h1 class="post-title" itemprop="name headline">JS-拖拽实现</h1>
         
 
         <div class="post-meta">
@@ -281,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-11T08:27:27+08:00">
-                2020-09-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-01T18:39:26+08:00">
+                2020-10-01
               </time>
             
 
@@ -304,8 +306,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -340,7 +342,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  686
+                  398
                 </span>
               
 
@@ -356,7 +358,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -377,55 +379,14 @@
       
 
       
-        <p>在最初安装VS Code的时候没有勾选通过open with code的2个框框，导致无法在文件中右击通过VS Code打开。  </p>
+        <p>利用事件绑定，来实现拖拽。效果类似于电脑桌面上的快捷方式位置移动</p>
 <ul>
-<li><p>通过写.reg文件修改注册表—–&gt;错误，显示没有与之关联的应用</p>
-</li>
-<li><p>参考了<a href="https://lanlan2017.github.io/blog/4869d326/" target="_blank" rel="noopener">lanlan</a>—–&gt;成功。</p>
-<a id="more"></a>  
-<h3 id="尝试①：写-reg文件。"><a href="#尝试①：写-reg文件。" class="headerlink" title="尝试①：写.reg文件。"></a>尝试①：写.reg文件。</h3><p>  注册表shell下有了vscode子目录，vscode的默认字段的值是open with code<br>  vscode目录下出现command子目录，command中默认字段的值是vscode的安装地址，icon的值也为安装地址  </p>
-</li>
-<li><p>右击open with code<br>报错：默认应用设置未关联<br>解决：使用管理员身份运行，仍旧此错误  </p>
-</li>
-<li><p>百度搜此错误，原因是要消除小箭头，在cmd运行  </p>
-<pre><code>```  
-taskkill /f /im explorer.exe
-
-reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;C:\Windows\system32\imageres.dll,154&quot; /t reg_sz /f
-
-reg add &quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;C:\Windows\system32\imageres.dll,154&quot; /t reg_sz /f
-
-reg add &quot;HKEY_CLASSES_ROOT\lnkfile&quot; /v IsShortcut /t reg_sz /f
-
-reg add &quot;HEKY_CLASSES_ROOT\piffile&quot; /v IsShortcut /t reg_sz /f
-
-start explorer   
-```  </code></pre></li>
+<li>鼠标按下</li>
+<li>鼠标移动</li>
+<li>鼠标松开<br>重点在于鼠标的移动过程中，如何使鼠标点击div的位置在移动过程中，一直与div保持相对固定，不会出现鼠标跳点到div左上角的情况<br>方式有2种：①控制鼠标②控制div<br>显然只能控制div，因为鼠标的移动是用户通过外部硬件来进行控制的  <a id="more"></a>  </li>
 </ul>
-<p>错误：找不到piffile文件<br>解决：原因是没有IconCache.db ，此文件是图标缓存文件。  </p>
-<ul>
-<li>百度，此文件为隐藏文件，需要勾选显示隐藏文件<br>错误：仍旧没有<br>解决：放弃寻找  <h3 id="尝试②：写-bat文件，解决默认应用设置未关联"><a href="#尝试②：写-bat文件，解决默认应用设置未关联" class="headerlink" title="尝试②：写.bat文件，解决默认应用设置未关联"></a>尝试②：写.bat文件，解决默认应用设置未关联</h3>先写这个，运行这个  <pre><code>```  
-taskkill /f /im explorer.exe
-reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;C:\Windows\system32\imageres.dll,154&quot; /t reg_sz /f
-reg add &quot;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;C:\Windows\system32\imageres.dll,154&quot; /t reg_sz /f
-reg add &quot;HKEY_CLASSES_ROOT\lnkfile&quot; /v IsShortcut /t reg_sz /f
-reg add &quot;HEKY_CLASSES_ROOT\piffile&quot; /v IsShortcut /t reg_sz /f
-start explorer  
-```  </code></pre>保存为.bat文件<br>再写这个，运行这个 <pre><code>reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot; /v 29 /d &quot;%systemroot%\system32\imageres.dll,197&quot; /t reg_sz /f
-taskkill /f /im explorer.exe
-attrib -s -r -h &quot;%userprofile%\AppData\Local\iconcache.db&quot;
-del &quot;%userprofile%\AppData\Local\iconcache.db&quot; /f /q
-start explorer
-pause</code></pre>保存为.bat文件<br>错误：默认应用设置未关联<br>解决：不解决，弃用使用.reg文件修改注册表   <h3 id="自己手动修改注册表"><a href="#自己手动修改注册表" class="headerlink" title="自己手动修改注册表"></a>自己手动修改注册表</h3></li>
-<li>win+regedite打开注册表<code>计算机\HKEY_CLASSES_ROOT\Directory\Background\shell</code>  </li>
-<li>删除shell下的vscode目录  </li>
-<li>新建Open With Code目录  </li>
-<li>Open With Code目录下建command子目录  </li>
-<li>command默认字段值为vscode安装目录<br>比如<code>&quot;C:\Users\苏玉璠\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot; &quot;%V&quot;</code>  </li>
-<li>添加字符串字段名为icon，值为code.icon的位置 （可选步骤）<br>我没有找到code.icon文件，没有进行此步操作，vscode仍然可以打开  </li>
-</ul>
-<p><strong>VS code跟注册表都是自动保存，在修改注册表之前，为了避免错误，可以先copy一份注册表</strong></p>
-
+<p><strong>解决坐标问题</strong><br><img src="/2020/10/01/JS-%E6%8B%96%E6%8B%BD%E5%AE%9E%E7%8E%B0/%E7%AE%97%E6%B3%95.png" alt="解决坐标问题"><br>代码：  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#box1</span>&#123;</span></span><br><span class="line">            height: 100px;</span><br><span class="line">            width: 100px;</span><br><span class="line">            position: absolute;</span><br><span class="line">            background-color: green;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#box2</span>&#123;</span></span><br><span class="line">            top: 200px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            width: 100px;</span><br><span class="line">            position: absolute;</span><br><span class="line">            background-color: hotpink;</span><br><span class="line">            overflow: auto;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//获取box1的对象</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> box1 = <span class="built_in">document</span>.getElementById(<span class="string">"box1"</span>)</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//鼠标按下，并触发事件</span></span></span><br><span class="line"><span class="actionscript">            box1.onmousedown=<span class="function"><span class="keyword">function</span><span class="params">(event)</span></span>&#123;</span></span><br><span class="line"><span class="javascript">                event = event||<span class="built_in">window</span>.event</span></span><br><span class="line"><span class="actionscript">                <span class="comment">//div的偏移量：鼠标.clientx - 元素.offleft  鼠标.clienty - 元素.offTop</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> le = event.clientX - box1.offsetLeft</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> lt = event.clientY - box1.offsetTop</span></span><br><span class="line"><span class="actionscript">                <span class="comment">//鼠标移动，添加触发响应事件</span></span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//触发响应事件兼容</span></span></span><br><span class="line"><span class="javascript">                    event = event||<span class="built_in">window</span>.event </span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//获取鼠标坐标</span></span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">var</span> top = event.clientY - lt</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">var</span> left = event.clientX - le</span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//修改box1的位置</span></span></span><br><span class="line"><span class="actionscript">                    box1.style.top = top+<span class="string">"px"</span></span></span><br><span class="line"><span class="actionscript">                    box1.style.left = left+<span class="string">"px"</span></span></span><br><span class="line">                &#125;;</span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.onmouseup=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//取消onmousemove事件</span></span></span><br><span class="line"><span class="javascript">                    <span class="built_in">document</span>.onmousemove=<span class="literal">null</span></span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//取消onmouseup事件</span></span></span><br><span class="line"><span class="javascript">                    <span class="built_in">document</span>.onmouseup = <span class="literal">null</span></span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -442,7 +403,7 @@ pause</code></pre>保存为.bat文件<br>错误：默认应用设置未关联<br
       
         <div class="post-tags">
           
-            <a href="/tags/vs-code/" rel="tag"># vs code</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -455,8 +416,8 @@ pause</code></pre>保存为.bat文件<br>错误：默认应用设置未关联<br
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/09/10/Date%E7%AE%97%E6%B3%95%E9%A2%98/" rel="next" title="Date算法题">
-                <i class="fa fa-chevron-left"></i> Date算法题
+              <a href="/2020/09/11/IDEA%E8%BF%9E%E6%8E%A5Mysql-JDBC/" rel="next" title="IDEA连接Mysql-JDBC">
+                <i class="fa fa-chevron-left"></i> IDEA连接Mysql-JDBC
               </a>
             
           </div>
@@ -464,10 +425,6 @@ pause</code></pre>保存为.bat文件<br>错误：默认应用设置未关联<br
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/09/11/IDEA%E8%BF%9E%E6%8E%A5Mysql-JDBC/" rel="prev" title="IDEA连接Mysql-JDBC">
-                IDEA连接Mysql-JDBC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,17 +476,8 @@ pause</code></pre>保存为.bat文件<br>错误：默认应用设置未关联<br
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -599,22 +547,6 @@ pause</code></pre>保存为.bat文件<br>错误：默认应用设置未关联<br
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试①：写-reg文件。"><span class="nav-number">1.</span> <span class="nav-text">尝试①：写.reg文件。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试②：写-bat文件，解决默认应用设置未关联"><span class="nav-number">2.</span> <span class="nav-text">尝试②：写.bat文件，解决默认应用设置未关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己手动修改注册表"><span class="nav-number">3.</span> <span class="nav-text">自己手动修改注册表</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
