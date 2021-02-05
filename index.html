@@ -250,6 +250,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/02/05/express%E6%A1%86%E6%9E%B6%E4%B8%8EAjax%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/02/05/express%E6%A1%86%E6%9E%B6%E4%B8%8EAjax%E4%BD%BF%E7%94%A8/" itemprop="url">express框架与Ajax使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-05T12:09:54+08:00">
+                2021-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  496
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="express框架使用与Ajax使用"><a href="#express框架使用与Ajax使用" class="headerlink" title="express框架使用与Ajax使用"></a>express框架使用与Ajax使用</h1><p><strong>express使用步骤</strong>  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.引入express</span></span><br><span class="line"><span class="keyword">const</span> &#123; response, request &#125; = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="comment">//2.创建对象  </span></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="comment">//3.创建url路径</span></span><br><span class="line"><span class="comment">//get</span></span><br><span class="line">app.get(<span class="string">'/service'</span>,(request,response)=&gt;&#123;</span><br><span class="line">     response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>,<span class="string">'*'</span>)</span><br><span class="line">    <span class="comment">//设置响应  </span></span><br><span class="line">    response.send(<span class="string">'hello express'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//post</span></span><br><span class="line"><span class="comment">//创建url路径  </span></span><br><span class="line">app.post(<span class="string">'/service'</span>,(request,response)=&gt;&#123;</span><br><span class="line">    response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>,<span class="string">'*'</span>)</span><br><span class="line">   <span class="comment">//设置响应  </span></span><br><span class="line">   response.send(<span class="string">'hello express'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//4.监听端口 </span></span><br><span class="line">app.listen(<span class="number">8000</span>,()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"8000端口服务已经启动。。。。。"</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">&lt;!--more--&gt;</span></span><br><span class="line"><span class="string">**Ajax使用步骤**</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line">            <span class="comment">//创建对象  </span></span><br><span class="line">            <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">            <span class="comment">//初始化，设置请求方法 和 url</span></span><br><span class="line">            xhr.open(<span class="string">'GET'</span>,<span class="string">'http://127.0.0.1:8000/service'</span>)</span><br><span class="line">            <span class="comment">//发送  </span></span><br><span class="line">            xhr.send()</span><br><span class="line">            <span class="comment">//事件绑定 处理服务端返回结果 </span></span><br><span class="line">            xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="comment">//readyState是xhr中的属性 表示状态0 1 2 3 4 </span></span><br><span class="line">                <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">                    <span class="comment">//status是状态码2XX就是成功</span></span><br><span class="line">                    <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp; xhr.status &lt; <span class="number">300</span>)&#123;</span><br><span class="line">                        <span class="comment">//处理结果 行 头 空行 体  </span></span><br><span class="line">                        <span class="comment">//1.响应行 </span></span><br><span class="line">                        <span class="built_in">console</span>.log(xhr.status) </span><br><span class="line">                        <span class="built_in">console</span>.log(xhr.statusText)</span><br><span class="line">                        <span class="built_in">console</span>.log(xhr.getAllResponseHeaders)</span><br><span class="line">                        <span class="built_in">console</span>.log(xhr.response)</span><br><span class="line">                       text.innerHTML=xhr.response</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+<p>1) 创建 XMLHttpRequest 对象<br>var xhr = new XMLHttpRequest();<br>2) 设置请求信息<br>xhr.open(method, url);<br>//可以设置请求头，一般不设置<br>xhr.setRequestHeader(‘Content-Type’, ‘application/x-www-form-urlencoded’);<br>3) 发送请求<br>xhr.send(body) //get 请求不传 body 参数，<strong>只有 post 请求使用</strong><br>4) 接收响应<br>//xhr.responseXML 接收 xml 格式的响应数据<br>//xhr.responseText 接收文本格式的响应数据<br>xhr.onreadystatechange = function (){<br>if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){<br>var text = xhr.responseText;<br>console.log(text);<br>}</p>
+<p><strong>xhr.readyState</strong> 可以用来查看请求当前的状态<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState" target="_blank" rel="noopener">参考资料</a><br>0: 表示 XMLHttpRequest 实例已经生成，但是 open()方法还没有被调用。<br>1: 表示 send()方法还没有被调用，仍然可以使用 setRequestHeader()，设定 HTTP请求的头信息。<br>2: 表示 send()方法已经执行，并且头信息和状态码已经收到。<br>3: 表示正在接收服务器传来的 body 部分的数据。<br>4: 表示服务器数据已经完全接收，或者本次接收已经失败了</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/02/05/vue3-TS%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1910,225 +2086,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/01/22/%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E6%A0%A1%E5%86%85%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%AC%AC%E4%BA%8C%E6%9C%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/01/22/%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E6%A0%A1%E5%86%85%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%AC%AC%E4%BA%8C%E6%9C%9F/" itemprop="url">蓝桥杯第十二届校内模拟赛第二期</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-22T15:42:00+08:00">
-                2021-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">程序设计</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  629
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.请问在 1 到 2020 中，有多少个数既是 4 的整数倍，又是 6 的整数倍  </p>
-<pre><code class="java"><span class="keyword">int</span> count = <span class="number">0</span>;
-<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2020</span>;i++){
-    <span class="keyword">if</span>((i%<span class="number">4</span>==<span class="number">0</span>)&amp;&amp;(i%<span class="number">6</span>==<span class="number">0</span>)){
-        count++;
-    }
-}
-System.out.println(count);</code></pre>
-<p>答案：168<br>2.小明要用二进制来表示 1 到 10000 的所有整数，要求不同的整数用不同的二进制数表示，请问，为了表示 1 到 10000 的所有整数，至少需要多少个二进制位？<br>答案：14<br>3.请问有多少个序列满足下面的条件：<br>    - 序列的长度为 5。<br>    - 序列中的每个数都是 1 到 10 之间的整数。<br>    - 序列中后面的数大于等于前面的数。  </p>
-<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestExm</span> </span>{
-    <span class="keyword">static</span> <span class="keyword">int</span> count=<span class="number">0</span>;
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-         DFS(<span class="number">1</span>,<span class="number">0</span>);
-        System.out.println(count);
-    }
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> n)</span></span>{
-        <span class="keyword">if</span>(n==<span class="number">5</span>){
-            count++;
-            <span class="keyword">return</span>;
-        }
-        <span class="keyword">for</span> (<span class="keyword">int</span> i=num;i&lt;<span class="number">10</span>;i++){
-            DFS(i,n+<span class="number">1</span>);
-        }
-    }
-}</code></pre>
-<p>答案：1287<br>4.一个无向图包含 2020 条边，如果图中没有自环和重边，请问最少包含多少个结点？<br>答案：65<br>公式 n个节点的无向图最多 有 n<em>(n-1)</em>2 条边<br>5.两个字母之间的距离定义为它们在字母表中位置的距离。例如 A 和 C 的距离为2，L 和 Q 的距离为 5。对于一个字符串，我们称字符串中两两字符之间的距离之和为字符串的内部距离。例如：ZOO 的内部距离为 22，其中 Z 和 O 的距离为 11。请问，LANQIAO 的内部距离是多少？<br>答案：162  </p>
-<hr>
-<p>6.现在时间是 a 点 b 分，请问 t 分钟后，是几点几分？<br>输入格式<br>　　输入的第一行包含一个整数 a。<br>　　第二行包含一个整数 b。<br>　　第三行包含一个整数 t。<br>输出格式<br>　　输出第一行包含一个整数，表示结果是几点。<br>　　第二行包含一个整数，表示结果是几分。<br>样例输入<br>3<br>20<br>165<br>样例输出<br>6<br>5<br>样例输入<br>3<br>20<br>175<br>样例输出<br>6<br>15<br>数据规模和约定<br>　　对于所有评测用例，0 &lt;= a &lt;= 23, 0 &lt;= b &lt;= 59, 0 &lt;= t, t 分钟后还是在当天。  </p>
-<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-       Scanner in=<span class="keyword">new</span> Scanner(System.in);
-       <span class="keyword">int</span> hour=in.nextInt();
-       <span class="keyword">int</span> minute=in.nextInt();
-       <span class="keyword">int</span> t=in.nextInt();
-       <span class="keyword">int</span> passhour=(minute+t)/<span class="number">60</span>;
-       minute=(minute+t)%<span class="number">60</span>;
-       hour=(passhour+hour)%<span class="number">24</span>;
-       System.out.println(hour);
-       System.out.println(minute);
-   }  </code></pre>
-<p>7.输出平行四边形的底和高，求平行四边形的面积  </p>
-<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T7</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        Scanner in=<span class="keyword">new</span> Scanner(System.in);
-        <span class="keyword">int</span> length=in.nextInt();
-        <span class="keyword">int</span> height=in.nextInt();
-        System.out.println(length*height);
-    }  </code></pre>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2177,7 +2134,7 @@ System.out.println(count);</code></pre>
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2199,7 +2156,7 @@ System.out.println(count);</code></pre>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2271,7 +2228,7 @@ System.out.println(count);</code></pre>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共68.2k字</span>
+  <span class="post-count">博客全站共68.7k字</span>
 </div>  
 
         
