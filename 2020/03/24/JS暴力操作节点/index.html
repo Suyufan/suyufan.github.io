@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="在创建节点的时候，如果遇到很多标签里的操作节点，使用上节提到的引用obj.appendChild();方法就会非常麻烦。我们这这种情况通常使用innerHTML这种方法同样不符合规范，但是为了使用方便起见，很多浏览器都兼容。毕竟阻碍生产力的终将会被淘汰下面我们用一个例子，来介绍暴力操作节点的使用点击按钮一次，瞬间出现春夏秋冬以及小黑点obj.innerHTML不光可以写值，也可以读值">
 <meta property="article:published_time" content="2020-03-24T12:32:37.000Z">
-<meta property="article:modified_time" content="2020-03-24T12:55:15.313Z">
+<meta property="article:modified_time" content="2021-02-20T14:00:06.108Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">网页前端</span>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  247
+                  252
                 </span>
               
 
@@ -379,25 +379,7 @@
       
         <p>在创建节点的时候，如果遇到很多标签里的操作节点，使用上节提到的引用<strong>obj.appendChild();</strong>方法就会非常麻烦。我们这这种情况通常使用innerHTML<br>这种方法同样不符合规范，但是为了使用方便起见，很多浏览器都兼容。毕竟阻碍生产力的终将会被淘汰<br>下面我们用一个例子，来介绍暴力操作节点的使用<br>点击按钮一次，瞬间出现春夏秋冬以及小黑点<br><strong>obj.innerHTML</strong>不光可以写值，也可以读值  </p>
 <a id="more"></a>  
-<pre><code class="javascript">&lt;title&gt;innerHTML&lt;<span class="regexp">/title&gt;</span>
-<span class="regexp">&lt;script&gt;</span>
-<span class="regexp">function add3(){</span>
-<span class="regexp">    var ul =document.getElementsByTagName('ul')[0];</span>
-<span class="regexp">    ul.innerHTML ='&lt;li&gt;spring&lt;/</span>li&gt;<span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>summer<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>autumn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="string">';</span>
-<span class="string">}</span>
-<span class="string"></span>
-<span class="string">function add1(){</span>
-<span class="string">    var ul=document.getElementsByTagName('</span>ul<span class="string">')[0];</span>
-<span class="string">    ul.innerHTML+='</span>&lt;li&gt;winter&lt;<span class="regexp">/li&gt;';</span>
-<span class="regexp">}</span>
-<span class="regexp">&lt;/</span>script&gt;
-&lt;<span class="regexp">/head&gt;</span>
-<span class="regexp"></span>
-<span class="regexp">&lt;body&gt;</span>
-<span class="regexp">&lt;input type="button" value="add spring summer autumn" onclick="add3();"/</span>&gt;
-&lt;input type=<span class="string">"button"</span> value=<span class="string">"add winter"</span> onclick=<span class="string">"add1();"</span>/&gt;
-&lt;ul&gt;&lt;<span class="regexp">/ul&gt;</span>
-<span class="regexp">&lt;/</span>body&gt;  </code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;title&gt;innerHTML&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">function add3()&#123;</span></span><br><span class="line"><span class="regexp">	var ul =document.getElementsByTagName('ul')[0];</span></span><br><span class="line"><span class="regexp">	ul.innerHTML ='&lt;li&gt;spring&lt;/</span>li&gt;<span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>summer<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>autumn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="string">';</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">function add1()&#123;</span></span><br><span class="line"><span class="string">	var ul=document.getElementsByTagName('</span>ul<span class="string">')[0];</span></span><br><span class="line"><span class="string">	ul.innerHTML+='</span>&lt;li&gt;winter&lt;<span class="regexp">/li&gt;';</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="button" value="add spring summer autumn" onclick="add3();"/</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"add winter"</span> onclick=<span class="string">"add1();"</span>/&gt;</span><br><span class="line">&lt;ul&gt;&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -519,7 +501,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -530,7 +512,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -602,7 +584,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         

@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="jQuery与Ajax的应用Ajax的优势和不足 优势：   不需要插件支持 在不刷新整个页面的前提下更新数据 通过XMLHttpRequest对象向服务器端提交希望提交的数据，按需发送 减轻服务器和带宽的压力   不足：  1.开发难度大2.破坏浏览器的前进，后退3.对搜素引擎的支持不足4.开发和调试工具缺乏">
+<meta name="description" content="Ajax的优势和不足 优势：   不需要插件支持 在不刷新整个页面的前提下更新数据 通过XMLHttpRequest对象向服务器端提交希望提交的数据，按需发送 减轻服务器和带宽的压力   不足：  1.开发难度大2.破坏浏览器的前进，后退3.对搜素引擎的支持不足4.开发和调试工具缺乏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery与Ajax的应用">
 <meta property="og:url" content="http://suyufan.github.io/2021/02/05/jQuery%E4%B8%8EAjax%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="jQuery与Ajax的应用Ajax的优势和不足 优势：   不需要插件支持 在不刷新整个页面的前提下更新数据 通过XMLHttpRequest对象向服务器端提交希望提交的数据，按需发送 减轻服务器和带宽的压力   不足：  1.开发难度大2.破坏浏览器的前进，后退3.对搜素引擎的支持不足4.开发和调试工具缺乏">
+<meta property="og:description" content="Ajax的优势和不足 优势：   不需要插件支持 在不刷新整个页面的前提下更新数据 通过XMLHttpRequest对象向服务器端提交希望提交的数据，按需发送 减轻服务器和带宽的压力   不足：  1.开发难度大2.破坏浏览器的前进，后退3.对搜素引擎的支持不足4.开发和调试工具缺乏">
 <meta property="article:published_time" content="2021-02-05T03:58:13.000Z">
-<meta property="article:modified_time" content="2021-02-05T04:07:46.814Z">
+<meta property="article:modified_time" content="2021-02-20T14:35:55.021Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="jQuery">
 <meta name="twitter:card" content="summary">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  939
+                  935
                 </span>
               
 
@@ -377,7 +377,7 @@
       
 
       
-        <h1 id="jQuery与Ajax的应用"><a href="#jQuery与Ajax的应用" class="headerlink" title="jQuery与Ajax的应用"></a>jQuery与Ajax的应用</h1><h4 id="Ajax的优势和不足"><a href="#Ajax的优势和不足" class="headerlink" title="Ajax的优势和不足"></a>Ajax的优势和不足</h4><ul>
+        <h4 id="Ajax的优势和不足"><a href="#Ajax的优势和不足" class="headerlink" title="Ajax的优势和不足"></a>Ajax的优势和不足</h4><ul>
 <li>优势：</li>
 </ul>
 <ol>
@@ -453,7 +453,35 @@
 <h3 id="serialize-方法"><a href="#serialize-方法" class="headerlink" title="serialize()方法"></a>serialize()方法</h3><p>序列化元素，与其他jQuery中的其他方法一样，它也是作用于一个jQuery对象，能够将DOM元素内容序列化为字符串。</p>
 <h3 id="serializeArray-方法"><a href="#serializeArray-方法" class="headerlink" title="serializeArray()方法"></a>serializeArray()方法</h3><p>不是返回字符串，将DOM序列化之后，返回JSON格式的数据　　</p>
 <h3 id="param-方法"><a href="#param-方法" class="headerlink" title="$.param()方法"></a>$.param()方法</h3><p>是serialize()方法的核心，用来对一个数组或对象按照key/value进行序列化  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> obj=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">var</span>  k  = $.param(obj);</span><br><span class="line">        alert(k)        <span class="comment">// 输出  a=1&amp;b=2&amp;c=3</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">-------   </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### Ajax全局事件  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">| 方法名称 | 说明  |</span></span><br><span class="line"><span class="string">| --- | --- |</span></span><br><span class="line"><span class="string">| ajaxComplete(callback) | Ajax请求完成时执行的函数 |</span></span><br><span class="line"><span class="string">| ajaxError(callback) | Ajax请求发生错误的时候执行，捕捉到的错误作为最后一个参数传递  |</span></span><br><span class="line"><span class="string">| ajaxSend(callback) | Ajax请求发送前执行的函数 |</span></span><br><span class="line"><span class="string">| ajaxSuccess(callback) | Ajax请求成功时执行的函数 |</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">-------------</span></span><br><span class="line"><span class="string">要想使某个Ajax请求不受全局的影响，在使用$.ajax(options)方法时，将参数中的global设置为false  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript  </span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">"test.html"</span>,</span><br><span class="line">    global: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> obj=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">var</span>  k  = $.param(obj);</span><br><span class="line">        alert(k)        <span class="comment">// 输出  a=1&amp;b=2&amp;c=3</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Ajax全局事件"><a href="#Ajax全局事件" class="headerlink" title="Ajax全局事件"></a>Ajax全局事件</h3><table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ajaxComplete(callback)</td>
+<td>Ajax请求完成时执行的函数</td>
+</tr>
+<tr>
+<td>ajaxError(callback)</td>
+<td>Ajax请求发生错误的时候执行，捕捉到的错误作为最后一个参数传递</td>
+</tr>
+<tr>
+<td>ajaxSend(callback)</td>
+<td>Ajax请求发送前执行的函数</td>
+</tr>
+<tr>
+<td>ajaxSuccess(callback)</td>
+<td>Ajax请求成功时执行的函数</td>
+</tr>
+</tbody></table>
+<hr>
+<p>要想使某个Ajax请求不受全局的影响，在使用$.ajax(options)方法时，将参数中的global设置为false  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">"test.html"</span>,</span><br><span class="line">    global: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -583,7 +611,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -594,7 +622,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -637,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery与Ajax的应用"><span class="nav-number">1.</span> <span class="nav-text">jQuery与Ajax的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax的优势和不足"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Ajax的优势和不足</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#load-方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">load()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-和-post-方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">$.get()和$.post()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ajax-方法"><span class="nav-number">1.0.3.</span> <span class="nav-text">$.ajax()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#serialize-方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">serialize()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#serializeArray-方法"><span class="nav-number">1.0.5.</span> <span class="nav-text">serializeArray()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#param-方法"><span class="nav-number">1.0.6.</span> <span class="nav-text">$.param()方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax的优势和不足"><span class="nav-number">1.</span> <span class="nav-text">Ajax的优势和不足</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#load-方法"><span class="nav-number"></span> <span class="nav-text">load()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-和-post-方法"><span class="nav-number"></span> <span class="nav-text">$.get()和$.post()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ajax-方法"><span class="nav-number"></span> <span class="nav-text">$.ajax()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#serialize-方法"><span class="nav-number"></span> <span class="nav-text">serialize()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#serializeArray-方法"><span class="nav-number"></span> <span class="nav-text">serializeArray()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#param-方法"><span class="nav-number"></span> <span class="nav-text">$.param()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax全局事件"><span class="nav-number"></span> <span class="nav-text">Ajax全局事件</span></a></div>
             
 
           </div>
@@ -682,7 +710,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         

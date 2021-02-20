@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,MySQL," />
 
 
 
@@ -79,15 +79,17 @@
 
 
 
-<meta name="description" content="title: IDEA连接Mysql-JDBCauthor: 苏玉璠date: 2020-09-11 11:13:38tags:   Java   MySQLcategories: 编程      方式一：在idea中进行配置  1.首先要确保MySQL的服务是开启的，如果没有开启，可以在命令行开启MySQL的服务，命令如下所示：   查看mysql状态  sudo service mysql">
+<meta name="description" content="方式一：在idea中进行配置  1.首先要确保MySQL的服务是开启的，如果没有开启，可以在命令行开启MySQL的服务，命令如下所示：   12查看mysql状态  sudo service mysql status启动mysql服务  sudo service mysql start 参考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IDEA连接Mysql-JDBC">
 <meta property="og:url" content="http://suyufan.github.io/2020/09/11/IDEA%E8%BF%9E%E6%8E%A5Mysql-JDBC/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="title: IDEA连接Mysql-JDBCauthor: 苏玉璠date: 2020-09-11 11:13:38tags:   Java   MySQLcategories: 编程      方式一：在idea中进行配置  1.首先要确保MySQL的服务是开启的，如果没有开启，可以在命令行开启MySQL的服务，命令如下所示：   查看mysql状态  sudo service mysql">
-<meta property="article:published_time" content="2020-09-11T03:13:38.505Z">
-<meta property="article:modified_time" content="2020-09-11T04:05:11.848Z">
+<meta property="og:description" content="方式一：在idea中进行配置  1.首先要确保MySQL的服务是开启的，如果没有开启，可以在命令行开启MySQL的服务，命令如下所示：   12查看mysql状态  sudo service mysql status启动mysql服务  sudo service mysql start 参考">
+<meta property="article:published_time" content="2020-09-11T03:13:38.000Z">
+<meta property="article:modified_time" content="2021-02-20T14:19:40.727Z">
 <meta property="article:author" content="苏玉璠">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 
 
@@ -291,6 +293,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">学习问题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -317,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  563
+                  587
                 </span>
               
 
@@ -354,19 +378,12 @@
       
 
       
-        <hr>
-<p>title: IDEA连接Mysql-JDBC<br>author: 苏玉璠<br>date: 2020-09-11 11:13:38<br>tags: </p>
-<ul>
-<li>Java  </li>
-<li>MySQL<br>categories: 编程  </li>
-</ul>
-<hr>
-<ul>
+        <ul>
 <li>方式一：在idea中进行配置</li>
 </ul>
 <p>1.首先要确保MySQL的服务是开启的，如果没有开启，可以在命令行开启MySQL的服务，命令如下所示：  </p>
-<pre><code>查看mysql状态  sudo service mysql status
-启动mysql服务  sudo service mysql start  </code></pre><p><a href="https://www.cnblogs.com/yxym2016/p/12690368.html" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看mysql状态  sudo service mysql status</span><br><span class="line">启动mysql服务  sudo service mysql start</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/yxym2016/p/12690368.html" target="_blank" rel="noopener">参考</a>  </p>
 <a id="more"></a>  
 <ul>
 <li>方式二：JDBC<br>连接数据库的步骤总结:</li>
@@ -376,115 +393,9 @@
 <p>3、获得执行sql的对象 Statement</p>
 <p>4、获得返回的结果集</p>
 <p>5、释放连接<br>代码①：经过尝试，可以连接成功。学生选课系统的课设，我用的是这个demo  </p>
-<pre><code class="java"><span class="keyword">package</span> until;
-<span class="keyword">import</span> java.sql.*;
-<span class="keyword">import</span> java.lang.Exception;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseDao</span> </span>{
-
-        <span class="keyword">private</span> <span class="keyword">static</span> String driver=<span class="string">"com.mysql.cj.jdbc.Driver"</span>;
-        <span class="keyword">private</span> <span class="keyword">static</span> String url=<span class="string">"jdbc:mysql://localhost:3306/choiceweb?&amp;useSSL=false&amp;serverTimezone=UTC"</span>;
-        <span class="keyword">private</span> <span class="keyword">static</span> String user=<span class="string">"root"</span>;
-        <span class="keyword">private</span> <span class="keyword">static</span> String password=<span class="string">"suyufanzuimei."</span>;
-
-        <span class="comment">/**</span>
-<span class="comment">         * 连接数据库</span>
-<span class="comment">         * <span class="doctag">@throws</span> Exception</span>
-<span class="comment">         */</span>
-        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getCon</span> <span class="params">()</span> <span class="keyword">throws</span> Exception</span>{
-            Class.forName(driver);
-            <span class="comment">//System.out.println("加载");</span>
-            Connection con =DriverManager.getConnection(url, user, password);
-            <span class="comment">//System.out.println("连接");</span>
-            <span class="keyword">return</span> con;
-        }
-        <span class="comment">/**</span>
-<span class="comment">         * 关闭数据库</span>
-<span class="comment">         */</span>
-        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Connection con,PreparedStatement ps,ResultSet rs)</span></span>{
-            <span class="keyword">if</span>(rs!=<span class="keyword">null</span>){<span class="comment">//关闭资源，避免出现异常</span>
-                <span class="keyword">try</span> {
-                    rs.close();
-                } <span class="keyword">catch</span> (SQLException e) {
-                    <span class="comment">// TODO Auto-generated catch block</span>
-                    e.printStackTrace();
-                }
-            }
-            <span class="keyword">if</span>(ps!=<span class="keyword">null</span>){<span class="comment">//关闭资源，避免出现异常</span>
-                <span class="keyword">try</span> {
-                    ps.close();
-                } <span class="keyword">catch</span> (SQLException e) {
-                    <span class="comment">// TODO Auto-generated catch block</span>
-                    e.printStackTrace();
-                }
-            }
-            <span class="keyword">if</span>(con!=<span class="keyword">null</span>){<span class="comment">//关闭资源，避免出现异常</span>
-                <span class="keyword">try</span> {
-                    con.close();
-                } <span class="keyword">catch</span> (SQLException e) {
-                    <span class="comment">// TODO Auto-generated catch block</span>
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    <span class="comment">/**</span>
-<span class="comment">         * 测试</span>
-<span class="comment">         */</span>
-   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        <span class="keyword">try</span> {
-           BaseDao.getCon();
-            System.out.println(<span class="string">"成功"</span>);
-        } <span class="keyword">catch</span> (Exception e) {
-           <span class="comment">// TODO Auto-generated catch block</span>
-          e.printStackTrace();
-        }
-
-   }
-
-}  </code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> until;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.lang.Exception;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String driver=<span class="string">"com.mysql.cj.jdbc.Driver"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String url=<span class="string">"jdbc:mysql://localhost:3306/choiceweb?&amp;useSSL=false&amp;serverTimezone=UTC"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String user=<span class="string">"root"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String password=<span class="string">"suyufanzuimei."</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 连接数据库</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getCon</span> <span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">            Class.forName(driver);</span><br><span class="line">            <span class="comment">//System.out.println("加载");</span></span><br><span class="line">            Connection con =DriverManager.getConnection(url, user, password);</span><br><span class="line">            <span class="comment">//System.out.println("连接");</span></span><br><span class="line">            <span class="keyword">return</span> con;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 关闭数据库</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Connection con,PreparedStatement ps,ResultSet rs)</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(rs!=<span class="keyword">null</span>)&#123;<span class="comment">//关闭资源，避免出现异常</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    rs.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(ps!=<span class="keyword">null</span>)&#123;<span class="comment">//关闭资源，避免出现异常</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    ps.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(con!=<span class="keyword">null</span>)&#123;<span class="comment">//关闭资源，避免出现异常</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    con.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 测试</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">           BaseDao.getCon();</span><br><span class="line">            System.out.println(<span class="string">"成功"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">          e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>代码②：最初的尝试，已经try-catch还是会有很多异常。推荐代码①  </p>
-<pre><code class="java"><span class="keyword">import</span> java.sql.*;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test2</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>{
-        Connection con;
-        <span class="comment">//jdbc驱动</span>
-        String driver=<span class="string">"com.mysql.cj.jdbc.Driver"</span>;
-        <span class="comment">//这里是我的数据库的信息</span>
-        String url=<span class="string">"jdbc:mysql://localhost:3306/choiceweb?&amp;useSSL=false&amp;serverTimezone=UTC"</span>;
-        String user=<span class="string">"root"</span>;
-        String password=<span class="string">"suyufanzuimei."</span>;
-        <span class="keyword">try</span> {
-            <span class="comment">//注册JDBC驱动程序</span>
-            Class.forName(driver);
-            <span class="comment">//建立连接</span>
-            con = DriverManager.getConnection(url, user, password);
-            <span class="comment">//判断连接是否成功</span>
-            <span class="keyword">if</span> (!con.isClosed()) {
-                System.out.println(<span class="string">"数据库连接成功"</span>);
-            }
-            Statement statement=con.createStatement();
-            String sql;
-            <span class="comment">//sql语句</span>
-            sql=<span class="string">"select * from course"</span>;
-            ResultSet resultSet=statement.executeQuery(sql);
-            <span class="keyword">while</span> (resultSet.next()){
-                String cNo=resultSet.getString(<span class="string">"cNo"</span>);
-                String cName=resultSet.getString(<span class="string">"cName"</span>);
-                String cTeacher=resultSet.getString(<span class="string">"cTeacher"</span>);
-                System.out.println(<span class="string">"cNo:"</span>+cNo+<span class="string">"cName:"</span>+cName+<span class="string">"cTeacher:"</span>+cTeacher);
-            }
-            con.close();
-        } <span class="keyword">catch</span> (ClassNotFoundException e) {
-            System.out.println(<span class="string">"数据库驱动没有安装"</span>);
-        } <span class="keyword">catch</span> (SQLException e) {
-            e.printStackTrace();
-            System.out.println(<span class="string">"数据库连接失败"</span>);
-        }
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        Connection con;</span><br><span class="line">        <span class="comment">//jdbc驱动</span></span><br><span class="line">        String driver=<span class="string">"com.mysql.cj.jdbc.Driver"</span>;</span><br><span class="line">        <span class="comment">//这里是我的数据库的信息</span></span><br><span class="line">        String url=<span class="string">"jdbc:mysql://localhost:3306/choiceweb?&amp;useSSL=false&amp;serverTimezone=UTC"</span>;</span><br><span class="line">        String user=<span class="string">"root"</span>;</span><br><span class="line">        String password=<span class="string">"suyufanzuimei."</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//注册JDBC驱动程序</span></span><br><span class="line">            Class.forName(driver);</span><br><span class="line">            <span class="comment">//建立连接</span></span><br><span class="line">            con = DriverManager.getConnection(url, user, password);</span><br><span class="line">            <span class="comment">//判断连接是否成功</span></span><br><span class="line">            <span class="keyword">if</span> (!con.isClosed()) &#123;</span><br><span class="line">                System.out.println(<span class="string">"数据库连接成功"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            Statement statement=con.createStatement();</span><br><span class="line">            String sql;</span><br><span class="line">            <span class="comment">//sql语句</span></span><br><span class="line">            sql=<span class="string">"select * from course"</span>;</span><br><span class="line">            ResultSet resultSet=statement.executeQuery(sql);</span><br><span class="line">            <span class="keyword">while</span> (resultSet.next())&#123;</span><br><span class="line">                String cNo=resultSet.getString(<span class="string">"cNo"</span>);</span><br><span class="line">                String cName=resultSet.getString(<span class="string">"cName"</span>);</span><br><span class="line">                String cTeacher=resultSet.getString(<span class="string">"cTeacher"</span>);</span><br><span class="line">                System.out.println(<span class="string">"cNo:"</span>+cNo+<span class="string">"cName:"</span>+cName+<span class="string">"cTeacher:"</span>+cTeacher);</span><br><span class="line">            &#125;</span><br><span class="line">            con.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"数据库驱动没有安装"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(<span class="string">"数据库连接失败"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -499,6 +410,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
       
 
       
@@ -600,7 +519,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -611,7 +530,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -683,7 +602,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         

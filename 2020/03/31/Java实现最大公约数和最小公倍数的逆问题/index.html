@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="一．题目名称“求N个数的最大公约数和最小公倍数” 二．题目内容用C&#x2F;C++&#x2F;Java&#x2F;Python实现程序解决问题。已知正整数a0,a1,b0,b1，设某未知正整数x满足：1、  x和a0的最大公约数是a1；2、  x和b0的最小公倍数是b1。">
 <meta property="article:published_time" content="2020-03-31T14:51:17.000Z">
-<meta property="article:modified_time" content="2020-09-10T08:21:53.543Z">
+<meta property="article:modified_time" content="2021-02-20T14:16:17.609Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -385,47 +385,10 @@
 <p>样例输出  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <h2 id="三．算法设计"><a href="#三．算法设计" class="headerlink" title="三．算法设计"></a>三．算法设计</h2><p>1.输入n，以及利用对n循环输入a0,a1,b0,b1<br>2.求最大公因数，定义一个数组x，利用循环将符合条件的值存放在数组x中<br>3.求最小公倍数，定义一个数组y,利用循环将符合条件的值存放在数组y中<br>4.遍历比较数组x和y,存在相等数值时，count++  </p>
-<blockquote>
-<p>改进：2，3定义一个数组，将符合条件的值赋给数组<br>    4.遍历数组，当其值不为0时进行count++  </p>
+<p>改进：2，3定义一个数组，将符合条件的值赋给数组<br>4.遍历数组，当其值不为0时进行count++    </p>
+<h2 id="四-代码"><a href="#四-代码" class="headerlink" title="四.代码"></a>四.代码</h2><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hankson</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"请输入一个正整数n,表示有n组输入数据"</span>);</span><br><span class="line">           Scanner A = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">           <span class="keyword">int</span> n = A.nextInt();</span><br><span class="line">           System.out.println(<span class="string">"接下来的n行每行一组输入数据，为四个正整数a0，a1，b0，b1，每两个整数之间用一个空格隔开。输入数据保证a0能被a1整除，b1能被b0整除。\n"</span>);</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">               Scanner B = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">               <span class="keyword">int</span> a0 = B.nextInt();</span><br><span class="line">               <span class="keyword">int</span> a1 = B.nextInt();</span><br><span class="line">               <span class="keyword">int</span> b0 = B.nextInt();</span><br><span class="line">               <span class="keyword">int</span> b1 = B.nextInt();</span><br><span class="line">               greatest(a0,a1,b0,b1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">greatest</span><span class="params">(<span class="keyword">int</span> a0,<span class="keyword">int</span> a1,<span class="keyword">int</span> b0,<span class="keyword">int</span> b1)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> []x=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line">       <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> num=b1;num&gt;=<span class="number">1</span>;num--)&#123;</span><br><span class="line">           <span class="keyword">if</span>(a0%a1==num%a1&amp;&amp;b1%b0==b1%num&amp;&amp;b0%num!=<span class="number">0</span>)&#123;</span><br><span class="line">               x[i]=num;</span><br><span class="line">               i++;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;x.length;j++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(x[j]!=<span class="number">0</span>)&#123;</span><br><span class="line">               count++;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(count);</span><br><span class="line">   &#125;</span><br><span class="line">   &#125; </span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="四-代码"><a href="#四-代码" class="headerlink" title="四.代码"></a>四.代码</h2><pre><code class="java"><span class="keyword">import</span> java.util.Scanner;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hankson</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        System.out.println(<span class="string">"请输入一个正整数n,表示有n组输入数据"</span>);
-        Scanner A = <span class="keyword">new</span> Scanner(System.in);
-        <span class="keyword">int</span> n = A.nextInt();
-        System.out.println(<span class="string">"接下来的n行每行一组输入数据，为四个正整数a0，a1，b0，b1，每两个整数之间用一个空格隔开。输入数据保证a0能被a1整除，b1能被b0整除。\n"</span>);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) {
-            Scanner B = <span class="keyword">new</span> Scanner(System.in);
-            <span class="keyword">int</span> a0 = B.nextInt();
-            <span class="keyword">int</span> a1 = B.nextInt();
-            <span class="keyword">int</span> b0 = B.nextInt();
-            <span class="keyword">int</span> b1 = B.nextInt();
-            greatest(a0,a1,b0,b1);
-        }
-    }
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">greatest</span><span class="params">(<span class="keyword">int</span> a0,<span class="keyword">int</span> a1,<span class="keyword">int</span> b0,<span class="keyword">int</span> b1)</span> </span>{
-        <span class="keyword">int</span> []x=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];
-        <span class="keyword">int</span> i=<span class="number">0</span>;
-        <span class="keyword">int</span> count=<span class="number">0</span>;
-        <span class="keyword">for</span>(<span class="keyword">int</span> num=b1;num&gt;=<span class="number">1</span>;num--){
-            <span class="keyword">if</span>(a0%a1==num%a1&amp;&amp;b1%b0==b1%num&amp;&amp;b0%num!=<span class="number">0</span>){
-                x[i]=num;
-                i++;
-            }
-        }
-
-        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;x.length;j++){
-            <span class="keyword">if</span>(x[j]!=<span class="number">0</span>){
-                count++;
-            }
-        }
-        System.out.println(count);
-    }
-
-}</code></pre>
 <h2 id="五．测试"><a href="#五．测试" class="headerlink" title="五．测试"></a>五．测试</h2><h4 id="1-符合条件的值输出测试"><a href="#1-符合条件的值输出测试" class="headerlink" title="1.符合条件的值输出测试"></a>1.符合条件的值输出测试</h4><p>失败<br>问题1：32，24等数字并不符合96与它的最小公倍数为288，这些数字与96的最小公倍数为96本身。<br>问题2：不能取到大于41而且满足条件的值<br>改进：加上条件b0%num!=0；更改for循环中的num初始值</p>
 <p>成功</p>
 <h4 id="2-符合条件的值个数测试"><a href="#2-符合条件的值个数测试" class="headerlink" title="2.符合条件的值个数测试"></a>2.符合条件的值个数测试</h4><p>由于java好像无法在不清楚数组长度的时候定义。要先声明数组长度，不然系统不会为他分配内存空间。所以符合条件的个数不能通过x.length返回。</p>
@@ -476,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/03/test-add-picture/" rel="prev" title="test add picture">
-                test add picture <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E5%85%A8%E6%80%A7/" rel="prev" title="数据库安全性">
+                数据库安全性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -566,7 +529,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -577,7 +540,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -665,7 +628,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         

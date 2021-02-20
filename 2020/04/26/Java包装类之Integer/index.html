@@ -87,7 +87,7 @@
 <meta property="og:description" content="包装类和基本数据类型在进行转换时，引入了装箱和拆箱的概念（1）装箱：是指将基本数据类型的值转为引用数据类型。（2）拆箱：是指将引用数据类型的对象转为基本数据类型。JDK中提供了一系列的包装类，通过这些包装类可以将基本数据类型的值包装为引用数据类型的对象Java中的每种基本类型都有对应的包装类，具体如表所示。">
 <meta property="og:image" content="http://suyufan.github.io/2020/04/26/Java%E5%8C%85%E8%A3%85%E7%B1%BB%E4%B9%8BInteger/%E5%8C%85%E8%A3%85%E7%B1%BB.png">
 <meta property="article:published_time" content="2020-04-26T13:45:20.000Z">
-<meta property="article:modified_time" content="2020-04-26T14:12:23.692Z">
+<meta property="article:modified_time" content="2021-02-20T14:54:20.181Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="装箱 拆箱">
 <meta name="twitter:card" content="summary">
@@ -306,8 +306,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -383,44 +383,9 @@
 <p>包装类和基本数据类型在进行转换时，引入了装箱和拆箱的概念<br>（1）<strong>装箱</strong>：是指将基本数据类型的值转为引用数据类型。<br>（2）<strong>拆箱</strong>：是指将引用数据类型的对象转为基本数据类型。<br>JDK中提供了一系列的包装类，通过这些包装类可以将基本数据类型的值包装为引用数据类型的对象<br>Java中的每种基本类型都有对应的包装类，具体如表所示。<br><img src="/2020/04/26/Java%E5%8C%85%E8%A3%85%E7%B1%BB%E4%B9%8BInteger/%E5%8C%85%E8%A3%85%E7%B1%BB.png" alt="基本数据类型以及对应包装类">  </p>
 </blockquote>
 <a id="more"></a>   
-<p>代码如下  </p>
-<pre><code class="java">   <span class="keyword">import</span> java.lang.Integer;
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">API</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        <span class="comment">//示例一 </span>
-        Integer i = <span class="keyword">new</span> Integer(<span class="number">1</span>);
-        Integer j = <span class="keyword">new</span> Integer(<span class="number">1</span>);
-        System.out.println(i==j);<span class="comment">//输出false 因为比较的是内存地址  </span>
 
-        <span class="comment">//示例2</span>
-        Integer i2 = <span class="number">1</span>;
-        Integer j2= <span class="number">1</span>;
-        System.out.println(i2==j2);<span class="comment">//输出true 因为在取值范围之内 每个数值都有对应固定的地址 编译时被翻译成：Integer i4 = Integer.valueOf(127); 所以比较的是数值  </span>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.Integer;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">API</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//示例一 </span></span><br><span class="line">  Integer i = <span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">  Integer j = <span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">  System.out.println(i==j);<span class="comment">//输出false 因为比较的是内存地址  </span></span><br><span class="line">    <span class="comment">//示例2</span></span><br><span class="line">    Integer i2 = <span class="number">1</span>;</span><br><span class="line">    Integer j2= <span class="number">1</span>;</span><br><span class="line">    System.out.println(i2==j2);<span class="comment">//输出true 因为在取值范围之内 每个数值都有对应固定的地址 编译时被翻译成：Integer i4 = Integer.valueOf(127); 所以比较的是数值  </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//示例3</span></span><br><span class="line">    Integer i3 = <span class="number">128</span>;</span><br><span class="line">    Integer j3= <span class="number">128</span>;</span><br><span class="line">    System.out.println(i3==j3);<span class="comment">//输出false 因为数值范围为-128~127 超过部分将重新分配内存 所以此处比较的是地址 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//示例4</span></span><br><span class="line">    Integer i4 = <span class="number">127</span>;</span><br><span class="line">    Integer j4= <span class="keyword">new</span> Integer(<span class="number">127</span>);</span><br><span class="line">    System.out.println(i4==j4);<span class="comment">//输出为false new出来的对象存放在堆，而非new的Integer常量则在常量池（在方法区)  </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//示例5</span></span><br><span class="line">    Integer i5 = <span class="number">127</span>;</span><br><span class="line">    <span class="keyword">int</span>  j5= <span class="number">127</span>;</span><br><span class="line">    System.out.println(i5==j5);<span class="comment">//输出true  Integer会自动拆箱为int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//示例6</span></span><br><span class="line">    Integer i6 = <span class="number">128</span>;</span><br><span class="line">    <span class="keyword">int</span>  j6= <span class="number">128</span>;</span><br><span class="line">    System.out.println(i6==j6);<span class="comment">//输出true  Integer会自动拆箱为int</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <span class="comment">//示例3</span>
-        Integer i3 = <span class="number">128</span>;
-        Integer j3= <span class="number">128</span>;
-        System.out.println(i3==j3);<span class="comment">//输出false 因为数值范围为-128~127 超过部分将重新分配内存 所以此处比较的是地址 </span>
-
-        <span class="comment">//示例4</span>
-        Integer i4 = <span class="number">127</span>;
-        Integer j4= <span class="keyword">new</span> Integer(<span class="number">127</span>);
-        System.out.println(i4==j4);<span class="comment">//输出为false new出来的对象存放在堆，而非new的Integer常量则在常量池（在方法区)  </span>
-
-        <span class="comment">//示例5</span>
-        Integer i5 = <span class="number">127</span>;
-        <span class="keyword">int</span>  j5= <span class="number">127</span>;
-        System.out.println(i5==j5);<span class="comment">//输出true  Integer会自动拆箱为int</span>
-
-        <span class="comment">//示例6</span>
-        Integer i6 = <span class="number">128</span>;
-        <span class="keyword">int</span>  j6= <span class="number">128</span>;
-        System.out.println(i6==j6);<span class="comment">//输出true  Integer会自动拆箱为int</span>
-
-    }
-}
-
-</code></pre>
 
       
     </div>
@@ -542,7 +507,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -553,7 +518,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -625,7 +590,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         

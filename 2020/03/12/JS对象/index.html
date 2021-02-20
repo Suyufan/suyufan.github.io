@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="String字符串对象 length属性：长度   concat(String) 连接两个或更多个字符串   indexOf(string) 返回出现字符串的位置   substr(num1,[num2]) 截取字符串   toLowerCase()转换为小写   toUpperCase()转换为大写   replace(str1,str2)字符串替换">
 <meta property="article:published_time" content="2020-03-12T12:06:39.000Z">
-<meta property="article:modified_time" content="2020-03-27T02:11:33.982Z">
+<meta property="article:modified_time" content="2021-02-20T13:59:35.696Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">网页前端</span>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  902
+                  919
                 </span>
               
 
@@ -414,14 +414,7 @@
 <li>splice()从数组中删除元素  </li>
 </ul>
 <hr>
-<pre><code class="javascript"><span class="keyword">var</span> str = <span class="string">'helloworld'</span>;
-<span class="built_in">console</span>.log(str.length);<span class="comment">//输出 10  </span>
-<span class="built_in">console</span>.log(str.substr(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//输出 llo  </span>
-
-<span class="keyword">var</span> arr = [<span class="string">'春'</span>,<span class="string">'夏'</span>,<span class="string">'秋'</span>,<span class="string">'冬'</span>];  
-<span class="built_in">console</span>.log(arr.join(<span class="string">','</span>));<span class="comment">//输出春，夏，秋，冬  </span>
-<span class="keyword">var</span> str = <span class="string">'东，西，南，北'</span>;  
-<span class="built_in">console</span>.log(str.split(<span class="string">','</span>));<span class="comment">//输出[东，西，南，北]   </span></code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'helloworld'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.length);<span class="comment">//输出 10  </span></span><br><span class="line"><span class="built_in">console</span>.log(str.substr(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//输出 llo  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">'春'</span>,<span class="string">'夏'</span>,<span class="string">'秋'</span>,<span class="string">'冬'</span>];  </span><br><span class="line"><span class="built_in">console</span>.log(arr.join(<span class="string">','</span>));<span class="comment">//输出春，夏，秋，冬  </span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'东，西，南，北'</span>;  </span><br><span class="line"><span class="built_in">console</span>.log(str.split(<span class="string">','</span>));<span class="comment">//输出[东，西，南，北]</span></span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="浏览器window对象"><a href="#浏览器window对象" class="headerlink" title="浏览器window对象"></a>浏览器window对象</h2><p><strong>注：window对象是浏览器宿主对象，和JS语言无关</strong>   </p>
 <h3 id="window对象的方法"><a href="#window对象的方法" class="headerlink" title="window对象的方法"></a>window对象的方法</h3><p>window.alert(message)<br>window.confirm(message)<br>window.prompt(message[,defaultstr])<br>window.close()关闭窗口<br>window.print()打印<br>window.setlntval(表达式，毫秒)；<br>window.clearlntval(定时器对象)；<br>window.setTimeout(表达式，毫秒)<br>window.clearTimeout(定时器对象)  </p>
@@ -443,59 +436,9 @@
 </blockquote>
 <p><strong>document HTML文档对象</strong><br>即HTML代码形成的对象，操作此对象，可动态的改变页面的内容是我们做JS的主战场  </p>
 <hr>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><pre><code class="javascript"><span class="keyword">var</span> a = <span class="number">3</span>;<span class="comment">//声明a变量并赋值  </span>
-b = <span class="number">3</span>;<span class="comment">//只是一个赋值  </span></code></pre>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;<span class="comment">//声明a变量并赋值  </span></span><br><span class="line">b = <span class="number">3</span>;<span class="comment">//只是一个赋值</span></span><br></pre></td></tr></table></figure>
 <p>JS作用域的特点：<br>首先在函数的内部查找变量，找不到则到外层函数查找，逐步找到最外层，即window对象，并操作window对象的属性  </p>
-<pre><code class="javascript">&lt;script&gt;
-<span class="function"><span class="keyword">function</span> <span class="title">t1</span>(<span class="params"></span>) </span>{
-        <span class="keyword">var</span> str = <span class="string">'local'</span>;
-       <span class="function"><span class="keyword">function</span> <span class="title">t2</span>(<span class="params"></span>)</span>{
-           <span class="keyword">var</span> str = <span class="string">'japan'</span>;
-           alert(str);
-       }
-       t2();
-}
-t1()
-&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/输出japan</span>
-<span class="regexp"></span>
-<span class="regexp">  &lt;script&gt;</span>
-<span class="regexp">function t1() {</span>
-<span class="regexp">        var str = 'local';</span>
-<span class="regexp">       function t2(){</span>
-<span class="regexp">           /</span><span class="regexp">/var str = 'japan';</span>
-<span class="regexp">           alert(str);</span>
-<span class="regexp">       }</span>
-<span class="regexp">       t2();</span>
-<span class="regexp">}</span>
-<span class="regexp">t1()</span>
-<span class="regexp">&lt;/</span>script&gt;<span class="comment">//输出local  </span>
-
-&lt;script&gt;
-<span class="built_in">window</span>.str = <span class="string">'union'</span>;<span class="comment">//最大的全局变量</span>
-<span class="function"><span class="keyword">function</span> <span class="title">t1</span>(<span class="params"></span>) </span>{
-        <span class="comment">//var str = 'local';</span>
-       <span class="function"><span class="keyword">function</span> <span class="title">t2</span>(<span class="params"></span>)</span>{
-           <span class="comment">//var str = 'japan';</span>
-           alert(str);
-       }
-       t2();
-}
-t1()
-&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/输出union  </span>
-<span class="regexp"></span>
-<span class="regexp">&lt;script&gt;/</span><span class="regexp">/t2的str不加var,只是赋值，而没有声明，所以str将一直往上走找声明过的str(即找到window.str,把japan给它)所以下面的程序将打印2次japan.</span>
-<span class="regexp">function t1() {</span>
-<span class="regexp">        /</span><span class="regexp">/var str = 'local';</span>
-<span class="regexp">       function t2(){</span>
-<span class="regexp">           /</span><span class="regexp">/var str = 'japan';</span>
-<span class="regexp">           str = 'japan';</span>
-<span class="regexp">           alert(str);</span>
-<span class="regexp">       }</span>
-<span class="regexp">       t2();</span>
-<span class="regexp">}</span>
-<span class="regexp">t1()</span>
-<span class="regexp">alert(window.str);</span>
-<span class="regexp">&lt;/</span>script&gt;  </code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">t1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> str = <span class="string">'local'</span>;</span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">t2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		   <span class="keyword">var</span> str = <span class="string">'japan'</span>;</span><br><span class="line">		   alert(str);</span><br><span class="line">	   &#125;</span><br><span class="line">	   t2();</span><br><span class="line">&#125;</span><br><span class="line">t1()</span><br><span class="line">&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/输出japan</span></span><br><span class="line"><span class="regexp">  </span></span><br><span class="line"><span class="regexp">  &lt;script&gt;</span></span><br><span class="line"><span class="regexp">function t1() &#123;</span></span><br><span class="line"><span class="regexp">        var str = 'local';</span></span><br><span class="line"><span class="regexp">       function t2()&#123;</span></span><br><span class="line"><span class="regexp">		   /</span><span class="regexp">/var str = 'japan';</span></span><br><span class="line"><span class="regexp">		   alert(str);</span></span><br><span class="line"><span class="regexp">	   &#125;</span></span><br><span class="line"><span class="regexp">	   t2();</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">t1()</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;<span class="comment">//输出local  </span></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">window</span>.str = <span class="string">'union'</span>;<span class="comment">//最大的全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">t1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//var str = 'local';</span></span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">t2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		   <span class="comment">//var str = 'japan';</span></span><br><span class="line">		   alert(str);</span><br><span class="line">	   &#125;</span><br><span class="line">	   t2();</span><br><span class="line">&#125;</span><br><span class="line">t1()</span><br><span class="line">&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/输出union  </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;/</span><span class="regexp">/t2的str不加var,只是赋值，而没有声明，所以str将一直往上走找声明过的str(即找到window.str,把japan给它)所以下面的程序将打印2次japan.</span></span><br><span class="line"><span class="regexp">function t1() &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/var str = 'local';</span></span><br><span class="line"><span class="regexp">       function t2()&#123;</span></span><br><span class="line"><span class="regexp">		   /</span><span class="regexp">/var str = 'japan';</span></span><br><span class="line"><span class="regexp">           str = 'japan';</span></span><br><span class="line"><span class="regexp">		   alert(str);</span></span><br><span class="line"><span class="regexp">	   &#125;</span></span><br><span class="line"><span class="regexp">	   t2();</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">t1()</span></span><br><span class="line"><span class="regexp">alert(window.str);</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>在以后的学习过程中，一定要注意加var,否则会污染全局变量</strong>  </p>
 
       
@@ -627,7 +570,7 @@ t1()
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -638,7 +581,7 @@ t1()
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -726,7 +669,7 @@ t1()
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         

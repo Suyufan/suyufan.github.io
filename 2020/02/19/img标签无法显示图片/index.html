@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="很多博客都说是因为src属性给了绝对路径，而导致图片无法显示，应该写相对路径。绝对路径和相对路径又都是什么呢？百度告诉我绝对路径是无论从内部还是外部都可以通过此路径找到目标，而相对路径只能通过内部访问。看完还是不太清楚，继续搜索。。。">
 <meta property="article:published_time" content="2020-02-19T08:07:38.000Z">
-<meta property="article:modified_time" content="2020-09-10T08:12:32.271Z">
+<meta property="article:modified_time" content="2021-02-20T14:04:25.611Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">网页前端</span>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">学习问题</span>
                   </a>
                 </span>
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  539
+                  542
                 </span>
               
 
@@ -380,12 +380,12 @@
         <p>很多博客都说是因为src属性给了绝对路径，而导致图片无法显示，应该写相对路径。绝对路径和相对路径又都是什么呢？<br>百度告诉我绝对路径是无论从内部还是外部都可以通过此路径找到目标，而相对路径只能通过内部访问。看完还是不太清楚，继续搜索。。。  </p>
 <a id="more"></a>  
 <p>绝对路径是指存在硬盘上的位置，比如我的圣诞树.png的绝对路径为D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo。我打算在我的img.html文件中用图片圣诞树.png，图片圣诞树.png相对于文件img.html的路径称为相对路径，比如我的圣诞树.png存放位置是D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo，我的img.html存放位置也是D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo，也就是说文件和图片在同一个目录下，于是  </p>
-<pre><code class="html"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"圣诞树.png"</span>/&gt;</span>  </code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"圣诞树.png"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器上运行图片显示成功。<br>那，为什么绝对路径不行呢？使用绝对路径的话，在自己的计算机上浏览可能一切正常（ps:我用绝对路径在自己电脑上都不正常）但是上传到web服务器就很有可能不会显示图片。所以说，就使用相对路径吧。<br>如果图片和文件不在同一目录下呢？  </p>
 <ul>
-<li>上一级<br>我将图片放到了D:\Program Files (x86)\Adobe Dreamweaver CS6，文件仍然在D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo。失败。将代码改为  <pre><code class="html"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../圣诞树.png"</span>  /&gt;</span>  </code></pre>
+<li>上一级<br>我将图片放到了D:\Program Files (x86)\Adobe Dreamweaver CS6，文件仍然在D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo。失败。将代码改为  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../圣诞树.png"</span>  /&gt;</span></span><br></pre></td></tr></table></figure>
 浏览器上运行图片显示成功。     </li>
-<li>下一级<br>我将图片放在了D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo\img，文件仍然在D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo。失败。将代码改为   <pre><code class="html"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/圣诞树.png"</span>  /&gt;</span>  </code></pre>
+<li>下一级<br>我将图片放在了D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo\img，文件仍然在D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo。失败。将代码改为   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/圣诞树.png"</span>  /&gt;</span></span><br></pre></td></tr></table></figure>
 浏览器上运行图片显示成功。<br>在解决问题的过程中，还接触到一个虚拟根目录的概念，比如我将图片放在下一级时，/img/圣诞树.png   img前面的/就是虚拟根目录，它虚拟了D:\Program Files (x86)\Adobe Dreamweaver CS6\HTML demo。</li>
 </ul>
 
@@ -509,7 +509,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -520,7 +520,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -592,7 +592,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共70.1k字</span>
+  <span class="post-count">博客全站共70k字</span>
 </div>  
 
         
