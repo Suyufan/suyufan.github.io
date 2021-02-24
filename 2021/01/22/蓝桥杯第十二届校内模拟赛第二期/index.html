@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1.请问在 1 到 2020 中，有多少个数既是 4 的整数倍，又是 6 的整数倍   int count &#x3D; 0; for(int i&#x3D;1;i&lt;&#x3D;2020;i++){     if((i%4&#x3D;&#x3D;0)&amp;&amp;(i%6&#x3D;&#x3D;0)){         count++;     } } System.out.println(count); 答案：1682.小明要用二进制来表示 1 到 1">
+<meta name="description" content="1.请问在 1 到 2020 中，有多少个数既是 4 的整数倍，又是 6 的整数倍   1234567int count &#x3D; 0;for(int i&#x3D;1;i&lt;&#x3D;2020;i++)&amp;#123;    if((i%4&#x3D;&#x3D;0)&amp;&amp;(i%6&#x3D;&#x3D;0))&amp;#123;        count++;    &amp;#125;&amp;#125;System.out.println(count); 答案：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓝桥杯第十二届校内模拟赛第二期">
 <meta property="og:url" content="http://suyufan.github.io/2021/01/22/%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E6%A0%A1%E5%86%85%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%AC%AC%E4%BA%8C%E6%9C%9F/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="1.请问在 1 到 2020 中，有多少个数既是 4 的整数倍，又是 6 的整数倍   int count &#x3D; 0; for(int i&#x3D;1;i&lt;&#x3D;2020;i++){     if((i%4&#x3D;&#x3D;0)&amp;&amp;(i%6&#x3D;&#x3D;0)){         count++;     } } System.out.println(count); 答案：1682.小明要用二进制来表示 1 到 1">
+<meta property="og:description" content="1.请问在 1 到 2020 中，有多少个数既是 4 的整数倍，又是 6 的整数倍   1234567int count &#x3D; 0;for(int i&#x3D;1;i&lt;&#x3D;2020;i++)&amp;#123;    if((i%4&#x3D;&#x3D;0)&amp;&amp;(i%6&#x3D;&#x3D;0))&amp;#123;        count++;    &amp;#125;&amp;#125;System.out.println(count); 答案：">
 <meta property="article:published_time" content="2021-01-22T07:42:00.000Z">
-<meta property="article:modified_time" content="2021-01-22T08:04:36.182Z">
+<meta property="article:modified_time" content="2021-02-24T11:17:06.838Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  629
+                  648
                 </span>
               
 
@@ -378,52 +378,15 @@
 
       
         <p>1.请问在 1 到 2020 中，有多少个数既是 4 的整数倍，又是 6 的整数倍  </p>
-<pre><code class="java"><span class="keyword">int</span> count = <span class="number">0</span>;
-<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2020</span>;i++){
-    <span class="keyword">if</span>((i%<span class="number">4</span>==<span class="number">0</span>)&amp;&amp;(i%<span class="number">6</span>==<span class="number">0</span>)){
-        count++;
-    }
-}
-System.out.println(count);</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2020</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((i%<span class="number">4</span>==<span class="number">0</span>)&amp;&amp;(i%<span class="number">6</span>==<span class="number">0</span>))&#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
 <p>答案：168<br>2.小明要用二进制来表示 1 到 10000 的所有整数，要求不同的整数用不同的二进制数表示，请问，为了表示 1 到 10000 的所有整数，至少需要多少个二进制位？<br>答案：14<br>3.请问有多少个序列满足下面的条件：<br>    - 序列的长度为 5。<br>    - 序列中的每个数都是 1 到 10 之间的整数。<br>    - 序列中后面的数大于等于前面的数。  </p>
-<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestExm</span> </span>{
-    <span class="keyword">static</span> <span class="keyword">int</span> count=<span class="number">0</span>;
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-         DFS(<span class="number">1</span>,<span class="number">0</span>);
-        System.out.println(count);
-    }
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> n)</span></span>{
-        <span class="keyword">if</span>(n==<span class="number">5</span>){
-            count++;
-            <span class="keyword">return</span>;
-        }
-        <span class="keyword">for</span> (<span class="keyword">int</span> i=num;i&lt;<span class="number">10</span>;i++){
-            DFS(i,n+<span class="number">1</span>);
-        }
-    }
-}</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestExm</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">         DFS(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">        System.out.println(count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">5</span>)&#123;</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=num;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            DFS(i,n+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>答案：1287<br>4.一个无向图包含 2020 条边，如果图中没有自环和重边，请问最少包含多少个结点？<br>答案：65<br>公式 n个节点的无向图最多 有 n<em>(n-1)</em>2 条边<br>5.两个字母之间的距离定义为它们在字母表中位置的距离。例如 A 和 C 的距离为2，L 和 Q 的距离为 5。对于一个字符串，我们称字符串中两两字符之间的距离之和为字符串的内部距离。例如：ZOO 的内部距离为 22，其中 Z 和 O 的距离为 11。请问，LANQIAO 的内部距离是多少？<br>答案：162  </p>
 <hr>
 <p>6.现在时间是 a 点 b 分，请问 t 分钟后，是几点几分？<br>输入格式<br>　　输入的第一行包含一个整数 a。<br>　　第二行包含一个整数 b。<br>　　第三行包含一个整数 t。<br>输出格式<br>　　输出第一行包含一个整数，表示结果是几点。<br>　　第二行包含一个整数，表示结果是几分。<br>样例输入<br>3<br>20<br>165<br>样例输出<br>6<br>5<br>样例输入<br>3<br>20<br>175<br>样例输出<br>6<br>15<br>数据规模和约定<br>　　对于所有评测用例，0 &lt;= a &lt;= 23, 0 &lt;= b &lt;= 59, 0 &lt;= t, t 分钟后还是在当天。  </p>
-<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-       Scanner in=<span class="keyword">new</span> Scanner(System.in);
-       <span class="keyword">int</span> hour=in.nextInt();
-       <span class="keyword">int</span> minute=in.nextInt();
-       <span class="keyword">int</span> t=in.nextInt();
-       <span class="keyword">int</span> passhour=(minute+t)/<span class="number">60</span>;
-       minute=(minute+t)%<span class="number">60</span>;
-       hour=(passhour+hour)%<span class="number">24</span>;
-       System.out.println(hour);
-       System.out.println(minute);
-   }  </code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       Scanner in=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">       <span class="keyword">int</span> hour=in.nextInt();</span><br><span class="line">       <span class="keyword">int</span> minute=in.nextInt();</span><br><span class="line">       <span class="keyword">int</span> t=in.nextInt();</span><br><span class="line">       <span class="keyword">int</span> passhour=(minute+t)/<span class="number">60</span>;</span><br><span class="line">       minute=(minute+t)%<span class="number">60</span>;</span><br><span class="line">       hour=(passhour+hour)%<span class="number">24</span>;</span><br><span class="line">       System.out.println(hour);</span><br><span class="line">       System.out.println(minute);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>7.输出平行四边形的底和高，求平行四边形的面积  </p>
-<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T7</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-        Scanner in=<span class="keyword">new</span> Scanner(System.in);
-        <span class="keyword">int</span> length=in.nextInt();
-        <span class="keyword">int</span> height=in.nextInt();
-        System.out.println(length*height);
-    }  </code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">T7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> length=in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> height=in.nextInt();</span><br><span class="line">        System.out.println(length*height);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -441,7 +404,7 @@ System.out.println(count);</code></pre>
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -534,7 +497,7 @@ System.out.println(count);</code></pre>
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">81</span>
+                  <span class="site-state-item-count">83</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +591,7 @@ System.out.println(count);</code></pre>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共73.9k字</span>
+  <span class="post-count">博客全站共74k字</span>
 </div>  
 
         
