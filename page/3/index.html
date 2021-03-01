@@ -250,6 +250,230 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/01/25/%E6%89%8B%E5%86%99%E7%BB%84%E5%90%88API%EF%BC%88Vue3-x%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/25/%E6%89%8B%E5%86%99%E7%BB%84%E5%90%88API%EF%BC%88Vue3-x%EF%BC%89/" itemprop="url">手写组合API（Vue3.x）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-25T17:38:14+08:00">
+                2021-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  547
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-shallowReactive与reactive"><a href="#1-shallowReactive与reactive" class="headerlink" title="1.shallowReactive与reactive"></a>1.shallowReactive与reactive</h3><pre><code class="js"><span class="comment">//shallowReactive(浅的监视)与reative </span>
+
+<span class="comment">//定义一个reactiveHandler处理对象  </span>
+<span class="keyword">const</span> reactiveHandler = {
+    <span class="keyword">get</span>(target,prop){
+        <span class="keyword">if</span>(prop === <span class="string">'_is_reactive'</span>){
+            <span class="keyword">return</span> <span class="literal">true</span>
+        }
+        <span class="keyword">const</span> result = <span class="built_in">Reflect</span>.get(target,prop)
+        <span class="built_in">console</span>.log(<span class="string">"拦截到了读"</span>,prop)
+        <span class="keyword">return</span> result
+    },
+    <span class="keyword">set</span>(target,prop,value){
+        <span class="keyword">const</span> result = <span class="built_in">Reflect</span>.set(target,prop,value)
+        <span class="built_in">console</span>.log(<span class="string">"拦截到了添加与修改"</span>,prop,value)
+        <span class="keyword">return</span> result
+    },
+    deleteProperty(target,prop){
+        <span class="keyword">const</span> result = <span class="built_in">Reflect</span>.deleteProperty(target,prop)
+        <span class="built_in">console</span>.log(<span class="string">"拦截到了删除"</span>,prop)
+        <span class="keyword">return</span> result
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">shallowReactive</span>(<span class="params">target</span>)</span>{
+    <span class="comment">//判断输入数据的类型是否为object</span>
+    <span class="keyword">if</span>(target&amp;&amp;<span class="keyword">typeof</span> target === <span class="string">'object'</span>){
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,reactiveHandler)
+    }  
+    <span class="comment">//否则为基本数据类型，直接返回</span>
+    <span class="keyword">return</span> target
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">reactive</span>(<span class="params">target</span>)</span>{
+    <span class="keyword">if</span>(target&amp;&amp;<span class="keyword">typeof</span> target === <span class="string">'object'</span>){
+        <span class="keyword">if</span>(<span class="built_in">Array</span>.isArray(target)){
+            target.forEach(<span class="function">(<span class="params">item,index</span>)=&gt;</span>{
+                target[index] = reactive(item)
+            })
+        }<span class="keyword">else</span>{
+            <span class="built_in">Object</span>.keys(target).forEach(<span class="function"><span class="params">key</span>=&gt;</span>{
+                target[key] = reactive(target[key])
+            })
+        }
+        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,reactiveHandler)
+    }
+    <span class="keyword">return</span> target
+}</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/01/25/%E6%89%8B%E5%86%99%E7%BB%84%E5%90%88API%EF%BC%88Vue3-x%EF%BC%89/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/01/22/%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%8A%E6%A0%A1%E5%86%85%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%AC%AC%E4%BA%8C%E6%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1861,187 +2085,6 @@ vue create 项目名  创建项目  </code></pre><ul>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2020/12/19/v-model%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/12/19/v-model%E4%BD%BF%E7%94%A8/" itemprop="url">v-model使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-19T20:48:06+08:00">
-                2020-12-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  538
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>vue版本：2.9.6<br>v-model用来在input,select,text,checkbox,radio等表单控件上创建双向数据绑定,指令后面可以跟多个参数（number,lazy,debounce）</p>
-<ul>
-<li>number<br>  将输入自动转化为Number，原值转换结果为NaN则返回原值<br>  使用<code>v-model.number</code>无效，返回结果被处理为了字符串.<br>  解决：<code>v-model.number=&quot;msg&quot; type=&quot;number&quot;</code>使用html的type属性进行转化，输入框输入的时只允许输入数字</li>
-<li>lazy<br>  <code>&lt;input v-model.lazy=&quot;msg&quot;&gt;</code>输入框变化，v-model不变</li>
-<li>debounce<br>  vue的返回延时同步，避免高耗操作（比如，input输入内容时随时发送ajax请求）<br>  尝试失败–》度娘<br>  发现：vue2.0 版本带有debounce 的 v-model 移除了，移除的原因：Debouncing 曾经被用来控制 Ajax 请求及其它高耗任务的频率。Vue 中v-model的 debounce 属性参数使得在一些简单情况下非常容易实现这种控制。但实际上，这是控制了状态更新的频率，而不是控制高耗时任务本身。这是个微小的差别，但是会随着应用增长而显现出局限性。</li></ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/12/19/v-model%E4%BD%BF%E7%94%A8/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2090,7 +2133,7 @@ vue create 项目名  创建项目  </code></pre><ul>
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2112,7 +2155,7 @@ vue create 项目名  创建项目  </code></pre><ul>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2184,7 +2227,7 @@ vue create 项目名  创建项目  </code></pre><ul>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共79.7k字</span>
+  <span class="post-count">博客全站共81k字</span>
 </div>  
 
         
