@@ -87,7 +87,7 @@
 <meta property="og:description" content="一.HTTP篇1.HTTP与HTTPS 概念：  http:超文本传输协议，用于从服务器传输超文本到本地浏览器的传输协议明文 端口：80  https：http+ssl 加密  端口：443 工作流程：   https: （包含了tcp&#x2F;ip的3次握手）  1.客户端发url给服务端，要求建立连接  2.服务端接受请求后，将网站证书（含公钥）返回给客户端  3.客户端产生随机值Key,key对公钥">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/3%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/4%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
-<meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%BC%BA%E7%BC%93%E5%AD%98.png">
+<meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%BC%BA%E5%88%B6%E7%BC%93%E5%AD%98.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/cookie.jpg">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/HTTP%E5%AF%B9%E6%AF%94.jpg">
@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/DNS%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84.jpg">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B.jpg">
 <meta property="article:published_time" content="2021-02-24T10:30:04.000Z">
-<meta property="article:modified_time" content="2021-02-25T09:56:31.625Z">
+<meta property="article:modified_time" content="2021-03-02T04:42:03.996Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="计网">
 <meta name="twitter:card" content="summary">
@@ -442,7 +442,7 @@
 <h3 id="5-为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？"><a href="#5-为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？" class="headerlink" title="5.为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？"></a>5.为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？</h3><ul>
 <li><p>强缓存与协商缓存  </p>
 <ul>
-<li><p>请求流程<br>已存在缓存数据时，仅基于强制缓存，请求数据的流程如下<br><img src="/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%BC%BA%E7%BC%93%E5%AD%98.png" alt><br>已存在缓存数据时，仅基于协商制缓存，请求数据的流程如下<br><img src="/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.png" alt>  </p>
+<li><p>请求流程<br>已存在缓存数据时，仅基于强制缓存，请求数据的流程如下<br><img src="/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%BC%BA%E5%88%B6%E7%BC%93%E5%AD%98.png" alt><br>已存在缓存数据时，仅基于协商制缓存，请求数据的流程如下<br><img src="/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.png" alt>  </p>
 </li>
 <li><p>标识<br>强缓存：<br>  expires服务器到期的时间，是http1.0的东西。到期的时间由服务端生成，但是客户端的时间可能跟服务端时间有误差，会导致缓存命中的误差，所以到了HTTP1.1使用cache-control替代<br>  cache-control指定max-age<br>协商缓存：  </p>
 <ul>
@@ -767,7 +767,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81k字</span>
+  <span class="post-count">博客全站共81.4k字</span>
 </div>  
 
         
