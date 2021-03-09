@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="一.HTML篇1.HTML5 drag api   dragstart 事件主体为被拖放元素 开始时触放    drag 事件主体为被拖放元素 正在拖   dragenter 事件主体为目标元素 进入   dragover 事件主体为目标元素 被拖元素在某元素内移动   dragleave 事件主体为目标元素 被拖元素离开某元素   drop 事件主体为目标元素 目标元素完全接受被拖放元素   d">
 <meta property="article:published_time" content="2021-02-25T09:54:08.000Z">
-<meta property="article:modified_time" content="2021-03-03T03:02:07.431Z">
+<meta property="article:modified_time" content="2021-03-05T07:03:01.105Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="HTML">
@@ -342,7 +342,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3k
+                  3.4k
                 </span>
               
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -514,12 +514,18 @@
 <h3 id="3-Cookie，SessionStorage，LocalStorage的区别-前端四大存储方式"><a href="#3-Cookie，SessionStorage，LocalStorage的区别-前端四大存储方式" class="headerlink" title="3.Cookie，SessionStorage，LocalStorage的区别/前端四大存储方式"></a>3.Cookie，SessionStorage，LocalStorage的区别/前端四大存储方式</h3><p>共同：保存在浏览器前端<br>区别：<br>    cookie数据在同源的http请求中携带，过期前时间有效。可以在浏览器和服务器来回传递，存储容量小，大约为4kb<br>    SessionStorage：仅在当前窗口关闭前有效<br>    LocalStorage：始终有效  </p>
 <p><strong>IndexedDB：</strong>被纳入HTML5标准的数据库存储方案，它是一个NoSql数据库，用<strong>键值对</strong>进行存储，可以快速读取操作，适合web场景和JavaScript操作   </p>
 <p>cookie的作用<br>    - 保存用户登录状态<br>    - 跟踪用户行为</p>
-<h3 id="4-cookie与session"><a href="#4-cookie与session" class="headerlink" title="4.cookie与session"></a>4.cookie与session</h3><ul>
-<li>cookie数据存在浏览器  </li>
-<li>cookie不安全  </li>
-<li>session访问增多，后用服务器性能  </li>
-<li>单个cookie存数据不超过4K  </li>
-</ul>
+<h3 id="4-cookie与session"><a href="#4-cookie与session" class="headerlink" title="4.cookie与session"></a>4.cookie与session</h3><p>（这个说错了，把这个跟存储方式混了。在此之前，一直记的是错的）</p>
+<p>  - 工作原理：</p>
+<p>  <strong><em>\</em>cookie的工作原理**</strong>：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器；如果浏览器再次访问服务器，会携带着cookie；服务器根据浏览器发送过来的cookie，区分不同的用户、权限等</p>
+<p>  <strong><em>\</em>session的工作原理**</strong>：浏览器首次发送请求到服务器，服务器端创建一个session，同时创建一个cookie，发送到浏览器；浏览器再次访问服务器，会携带带有特殊id的cookie，服务器根据cookie中的sessionid，查看对应的session对象，区别用户</p>
+<p>  - 存储位置： </p>
+<p>  cookie和session都是会话技术，cookie数据是存储到客户端，而session是存储到服务端</p>
+<p>  - 数据大小限制 </p>
+<p>  cookie存储的数据大小有限 ；而session没有大小限制，跟服务端的内存有关</p>
+<p>  - 安全 </p>
+<p>  cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻击；而session运行在服务端，安全性高 </p>
+<p>  - 禁用 </p>
+<p>  如果浏览器禁用了cookie，那么cookie就不能使用，而session不能禁用 </p>
 <h3 id="4-Restful"><a href="#4-Restful" class="headerlink" title="4.Restful"></a>4.Restful</h3><p>用url定义资源，http描述操作</p>
 <h3 id="5-Cookie如何防范XSS攻击-CSRF攻击？"><a href="#5-Cookie如何防范XSS攻击-CSRF攻击？" class="headerlink" title="5.Cookie如何防范XSS攻击? CSRF攻击？"></a>5.Cookie如何防范XSS攻击? CSRF攻击？</h3><ul>
 <li><p>csrf攻击<br>  跨站点伪装请求，盗用你的身份以你的名义发送恶意请求，是单向的。成功的前提是用户必须登录到目标站点，且浏览了攻击者控制的站点  </p>
@@ -538,14 +544,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="6-Promise"><a href="#6-Promise" class="headerlink" title="6.Promise"></a>6.Promise</h3><h3 id="7-JS跨域"><a href="#7-JS跨域" class="headerlink" title="7.JS跨域"></a>7.JS跨域</h3><ul>
-<li>CORS(跨域资源共享)<br>  它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<ul>
-<li>整个CORS通信过程，都是浏览器自动完成  </li>
-<li>一旦发现AJAX请求跨源，就会自动添加一些附加的头信息  </li>
-<li>实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</li>
-</ul>
-</li>
-</ul>
+<h3 id="6-Promise"><a href="#6-Promise" class="headerlink" title="6.Promise"></a>6.Promise</h3><h3 id="7-JS跨域"><a href="#7-JS跨域" class="headerlink" title="7.JS跨域"></a>7.JS跨域</h3><p>之所以需要跨域，是因为浏览器同源策略的约束  </p>
+<p>同源策略拦截的是<strong>跨源请求</strong>，原因：CORS缺少 <code>Access-Control-Allow-Origin头</code>  </p>
+<p><strong>JSONP</strong>：ajax请求受同源策略影响，不允许进行跨域请求，而script标签src属性中的链接却可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。  </p>
+<p><strong>CORS(跨域资源共享)</strong><br>    它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>    - 整个CORS通信过程，都是浏览器自动完成<br>    - 一旦发现AJAX请求跨源，就会自动添加一些附加的头信息<br>    - 实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+<p><strong>web scoket</strong><br>是一种通信传输协议，利用<code>Origin</code>字段，若字段的值在白名单内，即可跨域传输。</p>
 <h3 id="8-transition-和-animation-区别"><a href="#8-transition-和-animation-区别" class="headerlink" title="8.transition 和 animation 区别"></a>8.transition 和 animation 区别</h3><p>都是随着时间改变元素的属性值。<br>transition需要触发一个事件才能改变  2帧<br>animation不需要触发任何事件的情况下 1帧1帧的  </p>
 <h3 id="9-css动画与js动画"><a href="#9-css动画与js动画" class="headerlink" title="9.css动画与js动画"></a>9.css动画与js动画</h3><ul>
 <li>功能涵盖面 js比css大  </li>
@@ -683,7 +686,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -793,7 +796,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共84.6k字</span>
+  <span class="post-count">博客全站共85.9k字</span>
 </div>  
 
         
