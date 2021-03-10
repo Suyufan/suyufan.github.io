@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1.找出数组中重复的数字。【简单】 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。 示例 1： 输入：[2, 3, 1, 0, 2, 5, 3]输出：2 或 3  思路：1.使用new map,遍历arr2.如果map.has()为true,这个元素就是之前出">
+<meta name="description" content="1.找出数组中重复的数字。【简单】 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。 示例 1： 输入：[2, 3, 1, 0, 2, 5, 3]输出：2 或 3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指offer-Day1">
 <meta property="og:url" content="http://suyufan.github.io/2021/03/08/%E5%89%91%E6%8C%87offer-Day1/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="1.找出数组中重复的数字。【简单】 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。 示例 1： 输入：[2, 3, 1, 0, 2, 5, 3]输出：2 或 3  思路：1.使用new map,遍历arr2.如果map.has()为true,这个元素就是之前出">
+<meta property="og:description" content="1.找出数组中重复的数字。【简单】 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。 示例 1： 输入：[2, 3, 1, 0, 2, 5, 3]输出：2 或 3">
 <meta property="og:image" content="http://suyufan.github.io/2021/03/08/%E5%89%91%E6%8C%87offer-Day1/%E6%8F%90%E4%BA%A41.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/03/08/%E5%89%91%E6%8C%87offer-Day1/%E6%8F%90%E4%BA%A43.png">
 <meta property="article:published_time" content="2021-03-08T12:08:45.000Z">
-<meta property="article:modified_time" content="2021-03-09T07:36:00.818Z">
+<meta property="article:modified_time" content="2021-03-10T09:13:06.300Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="Java">
@@ -386,9 +386,10 @@
 <p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
 <p>示例 1：</p>
 <p>输入：<br>[2, 3, 1, 0, 2, 5, 3]<br>输出：2 或 3 </p>
+<a id="more"></a>
 <p><strong>思路：</strong><br>1.使用new map,遍历arr<br>2.如果map.has()为true,这个元素就是之前出现过的,返回这个元素。否则map.set()</p>
 <p>js实现：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> findRepeatNumber = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!map.has(nums[i]))&#123;</span><br><span class="line">            map.set(nums[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> nums[i]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> findRepeatNumber = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!map.has(nums[i]))&#123;</span><br><span class="line">            map.set(nums[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> nums[i]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/08/%E5%89%91%E6%8C%87offer-Day1/%E6%8F%90%E4%BA%A41.png" alt></p>
 <hr>
 <p>2.在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。【中等】</p>
@@ -461,6 +462,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/03/10/%E5%89%91%E6%8C%87offer-Day2/" rel="prev" title="剑指offer-Day2">
+                剑指offer-Day2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -527,7 +532,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +626,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共85.9k字</span>
+  <span class="post-count">博客全站共86.3k字</span>
 </div>  
 
         
