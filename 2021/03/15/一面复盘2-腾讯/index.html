@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="这次时间较短，30分钟结束。问的东西也很基础  cookie和session区别   都是会话技术    - 工作原理    cookie的工作原理是：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器，如果浏览器再次访问服务器，会携带着cookie，服务器根据浏览器发送来的cookie，区分不同的用户，权限   session的工作原理：浏览器首次发送请求到服务器，">
+<meta name="description" content="这次时间较短，30分钟结束。问的东西也很基础  cookie和session区别   都是会话技术    - 工作原理      cookie的工作原理是：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器，如果浏览器再次访问服务器，会携带着cookie，服务器根据浏览器发送来的cookie，区分不同的用户，权限     session的工作原理：浏览器首次发送请求到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一面复盘2-腾讯">
 <meta property="og:url" content="http://suyufan.github.io/2021/03/15/%E4%B8%80%E9%9D%A2%E5%A4%8D%E7%9B%982-%E8%85%BE%E8%AE%AF/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="这次时间较短，30分钟结束。问的东西也很基础  cookie和session区别   都是会话技术    - 工作原理    cookie的工作原理是：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器，如果浏览器再次访问服务器，会携带着cookie，服务器根据浏览器发送来的cookie，区分不同的用户，权限   session的工作原理：浏览器首次发送请求到服务器，">
+<meta property="og:description" content="这次时间较短，30分钟结束。问的东西也很基础  cookie和session区别   都是会话技术    - 工作原理      cookie的工作原理是：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器，如果浏览器再次访问服务器，会携带着cookie，服务器根据浏览器发送来的cookie，区分不同的用户，权限     session的工作原理：浏览器首次发送请求到">
 <meta property="article:published_time" content="2021-03-15T07:16:26.000Z">
-<meta property="article:modified_time" content="2021-03-15T08:44:49.219Z">
+<meta property="article:modified_time" content="2021-04-03T13:51:53.845Z">
 <meta property="article:author" content="苏玉璠">
 <meta name="twitter:card" content="summary">
 
@@ -380,20 +380,21 @@
 <ul>
 <li>cookie和session区别 </li>
 </ul>
-<p><strong>都是会话技术</strong><br>    - 工作原理<br>    cookie的工作原理是：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器，如果浏览器再次访问服务器，会携带着cookie，服务器根据浏览器发送来的cookie，区分不同的用户，权限  </p>
-<pre><code>session的工作原理：浏览器首次发送请求到服务器，服务器端创建一个session，同时创建一个cookie,发送到浏览器；浏览器再次访问服务器，会携带有特殊id的cookie,服务器根据cookie中的sesssionid查看对应的session对象，区别用户  </code></pre><a id="more"></a>
+<p><strong>都是会话技术</strong><br>    - 工作原理<br>      cookie的工作原理是：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器，如果浏览器再次访问服务器，会携带着cookie，服务器根据浏览器发送来的cookie，区分不同的用户，权限  </p>
+<p>  session的工作原理：浏览器首次发送请求到服务器，服务器端创建一个session，同时创建一个cookie,发送到浏览器；浏览器再次访问服务器，会携带有特殊id的cookie,服务器根据cookie中的sesssionid查看对应的session对象，区别用户  </p>
+<a id="more"></a>
 <pre><code>- 存储位置
-cookie数据存在客户端  
-session存在服务端  
+  cookie数据存在客户端  
+  session存在服务端  
 
 - 数据大小限制 
-cookie存储的数据大小有限，而session没有大小限制，跟服务端内存有关  
+  cookie存储的数据大小有限，而session没有大小限制，跟服务端内存有关  
 
 - 安全  
-cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻击，而session运行在服务端，安全性高  
+  cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻击，而session运行在服务端，安全性高  
 
 - 禁用  
-如果浏览器禁用了cookie，那么cookie不能用，而session不能禁用  </code></pre><ul>
+  如果浏览器禁用了cookie，那么cookie不能用，而session不能禁用  </code></pre><ul>
 <li>cookie的有限时间  </li>
 </ul>
 <p><strong>语速可以慢一点，想清楚再回答</strong><br>关浏览器之后，就没了</p>
@@ -476,6 +477,10 @@ cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻�
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/04/03/JS%E5%9B%9E%E9%A1%BE/" rel="prev" title="js回顾">
+                js回顾 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -542,7 +547,7 @@ cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻�
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,7 +569,7 @@ cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -636,7 +641,7 @@ cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共88.5k字</span>
+  <span class="post-count">博客全站共107.3k字</span>
 </div>  
 
         

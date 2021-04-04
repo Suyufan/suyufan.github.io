@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/DNS%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84.jpg">
 <meta property="og:image" content="http://suyufan.github.io/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B.jpg">
 <meta property="article:published_time" content="2021-02-24T10:30:04.000Z">
-<meta property="article:modified_time" content="2021-03-02T13:39:24.237Z">
+<meta property="article:modified_time" content="2021-04-03T15:55:17.203Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="计网">
 <meta name="twitter:card" content="summary">
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.6k
+                  4k
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13
+                  14
                 </span>
               
             </div>
@@ -537,6 +537,13 @@
 <p>6.本地 DNS 于是转向问权威 DNS 服务器：“老三，<code>www.server.com</code>对应的IP是啥呀？” server.com 的权威 DNS 服务器，它是域名解析结果的原出处。为啥叫权威呢？就是我的域名我做主。  </p>
 <p>7.权威 DNS 服务器查询后将对应的 IP 地址 X.X.X.X 告诉本地 DNS。</p>
 <p>8.本地 DNS 再将 IP 地址返回客户端，客户端和目标建立连接。<br><img src="/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B.jpg" alt>    </p>
+<h3 id="12-跨域"><a href="#12-跨域" class="headerlink" title="12. 跨域"></a>12. 跨域</h3><h4 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h4><p>协议相同<br>域名相同<br>端口相同  </p>
+<p>之所以需要跨域，是因为浏览器同源策略的约束  </p>
+<p>同源策略拦截的是<strong>跨源请求</strong>，原因：CORS缺少 <code>Access-Control-Allow-Origin头</code>  </p>
+<p><strong>JSONP</strong>：ajax请求受同源策略影响，不允许进行跨域请求，而script标签src属性中的链接却可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。  </p>
+<h5 id="JSONP的缺点"><a href="#JSONP的缺点" class="headerlink" title="JSONP的缺点"></a>JSONP的缺点</h5><p>JSON只支持get，因为script标签只能使用get请求；<br>JSONP需要后端配合返回指定格式的数据。</p>
+<p><strong>CORS(跨域资源共享)</strong><br>    它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>    - 整个CORS通信过程，都是浏览器自动完成<br>        - 一旦发现AJAX请求跨源，就会自动添加一些附加的头信息<br>        - 实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+<p><strong>web scoket</strong><br>是一种通信传输协议，利用<code>Origin</code>字段，若字段的值在白名单内，即可跨域传输。</p>
 <p><strong>http篇参考:</strong><br>    <a href="https://mp.weixin.qq.com/s/tH8RFmjrveOmgLvk9hmrkw" target="_blank" rel="noopener">TCP三次握手四次挥手</a><br>    <a href="https://mp.weixin.qq.com/s/bUy220-ect00N4gnO0697A" target="_blank" rel="noopener">HTTP常见面试题</a><br>    <a href="https://mp.weixin.qq.com/s/iSZp41SRmh5b2bXIvzemIw" target="_blank" rel="noopener">一个数据包在网络中的心路历程</a></p>
 <h1 id="二-IP篇"><a href="#二-IP篇" class="headerlink" title="二.IP篇"></a>二.IP篇</h1><h1 id="三-TCP篇"><a href="#三-TCP篇" class="headerlink" title="三.TCP篇"></a>三.TCP篇</h1><h1 id="四-ping命令篇"><a href="#四-ping命令篇" class="headerlink" title="四.ping命令篇"></a>四.ping命令篇</h1>
       
@@ -657,7 +664,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">103</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -679,7 +686,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -722,7 +729,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HTTP篇"><span class="nav-number">1.</span> <span class="nav-text">一.HTTP篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTP与HTTPS"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.HTTP与HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-https证书有了解过吗"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.https证书有了解过吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-可以讲一讲tcp-ip的3次握手，4次挥手吗？为什么是3次，不是2次-4次？"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.可以讲一讲tcp&#x2F;ip的3次握手，4次挥手吗？为什么是3次，不是2次 4次？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-说到了TCP，那可以再一下TCP与UDP的区别吗？"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.说到了TCP，那可以再一下TCP与UDP的区别吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-网络的分层结构了解过吗"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.网络的分层结构了解过吗?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HTTP各个版本清楚吗"><span class="nav-number">1.0.7.</span> <span class="nav-text">7.HTTP各个版本清楚吗?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Http常见字段有哪些"><span class="nav-number">1.0.8.</span> <span class="nav-text">8.Http常见字段有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-HTTP的状态码"><span class="nav-number">1.0.9.</span> <span class="nav-text">9.HTTP的状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-get和post"><span class="nav-number">1.0.10.</span> <span class="nav-text">10.get和post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-浏览器输入-url-的过程"><span class="nav-number">1.0.11.</span> <span class="nav-text">11.浏览器输入 url 的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-DNS查询工作过程"><span class="nav-number">1.0.12.</span> <span class="nav-text">12.DNS查询工作过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-IP篇"><span class="nav-number">2.</span> <span class="nav-text">二.IP篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-TCP篇"><span class="nav-number">3.</span> <span class="nav-text">三.TCP篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-ping命令篇"><span class="nav-number">4.</span> <span class="nav-text">四.ping命令篇</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HTTP篇"><span class="nav-number">1.</span> <span class="nav-text">一.HTTP篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTP与HTTPS"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.HTTP与HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-https证书有了解过吗"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.https证书有了解过吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-可以讲一讲tcp-ip的3次握手，4次挥手吗？为什么是3次，不是2次-4次？"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.可以讲一讲tcp&#x2F;ip的3次握手，4次挥手吗？为什么是3次，不是2次 4次？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-说到了TCP，那可以再一下TCP与UDP的区别吗？"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.说到了TCP，那可以再一下TCP与UDP的区别吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.为什么HTTP的缓存比较高效，可以说一下它的缓存机制吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-网络的分层结构了解过吗"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.网络的分层结构了解过吗?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HTTP各个版本清楚吗"><span class="nav-number">1.0.7.</span> <span class="nav-text">7.HTTP各个版本清楚吗?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Http常见字段有哪些"><span class="nav-number">1.0.8.</span> <span class="nav-text">8.Http常见字段有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-HTTP的状态码"><span class="nav-number">1.0.9.</span> <span class="nav-text">9.HTTP的状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-get和post"><span class="nav-number">1.0.10.</span> <span class="nav-text">10.get和post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-浏览器输入-url-的过程"><span class="nav-number">1.0.11.</span> <span class="nav-text">11.浏览器输入 url 的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-DNS查询工作过程"><span class="nav-number">1.0.12.</span> <span class="nav-text">12.DNS查询工作过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-跨域"><span class="nav-number">1.0.13.</span> <span class="nav-text">12. 跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同源"><span class="nav-number">1.0.13.1.</span> <span class="nav-text">同源</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JSONP的缺点"><span class="nav-number">1.0.13.1.1.</span> <span class="nav-text">JSONP的缺点</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-IP篇"><span class="nav-number">2.</span> <span class="nav-text">二.IP篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-TCP篇"><span class="nav-number">3.</span> <span class="nav-text">三.TCP篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-ping命令篇"><span class="nav-number">4.</span> <span class="nav-text">四.ping命令篇</span></a></li></ol></div>
             
 
           </div>
@@ -767,7 +774,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共88.5k字</span>
+  <span class="post-count">博客全站共107.3k字</span>
 </div>  
 
         
