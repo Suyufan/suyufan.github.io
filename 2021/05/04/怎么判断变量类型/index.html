@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="JavaScript的变量类型：usonb  ES5中 undefined string obiect null number boolean ES6新增Symbol 谷歌67版本中还出现了bigInt(但是多数人不把这个当作一个类型)  注意：NaN是Number中的特殊数值,不是Number类型  JS的引用类型有哪些？Object(Object包含了Data，function,Array，N">
 <meta property="article:published_time" content="2021-05-04T03:14:25.000Z">
-<meta property="article:modified_time" content="2021-05-04T04:33:08.776Z">
+<meta property="article:modified_time" content="2021-05-04T05:13:11.981Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  255
+                  259
                 </span>
               
 
@@ -393,20 +393,20 @@
 <a id="more"></a>
 
 <ul>
-<li><p>isNaN():用来判断是否是非数值类型<br>基本上除了自身NaN返回true,其他都flase。以下2种特殊<br>  isNaN(1) //false<br>  isNaN(‘1’)   //false 将’1‘进行了转换<br>  isNaN(‘1,2’)  //true<br>  Number.isNaN(‘1,2’) //false</p>
-<p>  Number(‘as’)    //NaN<br>  Number(‘as’) == NaN //false<br>  isNaN(Number(‘as’)) //true<br>  Number.isNaN(Number(‘as’)) //true</p>
+<li><p>isNaN():用来判断是否是非数值类型<br>基本上除了自身NaN返回true,其他都flase。以下2种特殊</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(<span class="number">1</span>) <span class="comment">//false</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="string">'1'</span>)   <span class="comment">//false 将’1‘进行了转换</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="string">'1,2'</span>)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="string">'1,2'</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'as'</span>)    <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'as'</span>) == <span class="literal">NaN</span> <span class="comment">//false</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="built_in">Number</span>(<span class="string">'as'</span>)) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>.isNaN(<span class="built_in">Number</span>(<span class="string">'as'</span>)) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对于分母为0数据</span></span><br><span class="line"><span class="number">123</span>/<span class="number">0</span>   <span class="comment">//Infinity</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">123</span>/<span class="number">0</span>    <span class="comment">//NaN</span></span><br><span class="line"><span class="number">123</span>/<span class="number">0</span> == <span class="literal">NaN</span>    <span class="comment">//false</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="number">123</span>/<span class="number">0</span>)    <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断是否是数字？<br>typeof(n) == “number” &amp;&amp; n != Infinity &amp;&amp; !isNaN(n)</p>
 </li>
 </ul>
-<p>123/0   //Infinity<br>typeof 123/0    //NaN<br>123/0 == NaN    //false<br>isNaN(123/0)    //false</p>
 <ul>
-<li>判断是否是数字？<br>typeof(n) == “number” &amp;&amp; n != Infinity &amp;&amp; !isNaN(n)</li>
-</ul>
-<ul>
-<li>如何判断数据类型？</li>
-</ul>
-<p>1.typeof<br>2.toString()<br>    null，undefined 不支持<br>3.判断数组<br>    instanceof，constructor,Array.isArray()<br>    1 instanceof Number //false String一样返回flase<br>    “1”.constructor == String //true</p>
-<ul>
-<li>对象可以比较吗？<br>可以，Object.is(value1,value2)</li>
+<li><p>如何判断数据类型？<br>  1.typeof<br>  2.toString()</p>
+<pre><code>null，undefined 不支持</code></pre><p>  3.判断数组</p>
+<pre><code>instanceof，constructor,Array.isArray()
+1 instanceof Number //false String一样返回flase
+&quot;1&quot;.constructor == String //true</code></pre></li>
+<li><p>对象可以比较吗？<br>可以，Object.is(value1,value2)</p>
+</li>
 </ul>
 
       
