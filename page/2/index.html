@@ -250,6 +250,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/04/03/HTML-CSS%E5%9B%9E%E9%A1%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/03/HTML-CSS%E5%9B%9E%E9%A1%BE/" itemprop="url">面试题之三剑客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-03T21:58:14+08:00">
+                2021-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一-HTML篇"><a href="#一-HTML篇" class="headerlink" title="一.HTML篇"></a>一.HTML篇</h1><h3 id="1-回流，重绘"><a href="#1-回流，重绘" class="headerlink" title="1.回流，重绘"></a>1.回流，重绘</h3><p>回流和重绘区别&amp;减少回流重绘次数的方法</p>
+<p>区别：回流指当前窗口发生改变，发生滚动操作，或者元素的位置大小相关属性被更新时会触发布局过程，发生在render树，比如元素的几何尺寸变化，就需要重新验证并计算Render Tree<br>重绘指当前视觉样式属性被更新时触发的绘制过程，发生在渲染层render layer<br>所以相比之下，回流的成本要比重绘高得多<br>减少回流重绘次数的方法：<br>1）避免一条一条的修改DOM样式，而是修改className或者style.classText<br>2）对元素进行一个复杂的操作，可以先隐藏它，操作完成后在显示<br>3）在需要经常获取那些引起浏览器回流的属性值时，要缓存到变量中<br>4）不使用table布局，一个小的改动可能就会引起整个table重新布局<br>5）在内存中多次操作节点，完成后在添加到文档中</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/03/HTML-CSS%E5%9B%9E%E9%A1%BE/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/04/03/JS%E5%9B%9E%E9%A1%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1879,222 +2057,6 @@ num1 和num2 都不包含任何前导零
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E4%B8%89%E5%89%91%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E4%B8%89%E5%89%91%E5%AE%A2/" itemprop="url">面试题之三剑客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-25T17:54:08+08:00">
-                2021-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3.4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  12
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-HTML篇"><a href="#一-HTML篇" class="headerlink" title="一.HTML篇"></a>一.HTML篇</h1><h3 id="1-HTML5-drag-api"><a href="#1-HTML5-drag-api" class="headerlink" title="1.HTML5 drag api"></a>1.HTML5 drag api</h3><table>
-<thead>
-<tr>
-<th>dragstart</th>
-<th>事件主体为被拖放元素</th>
-<th>开始时触放</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>drag</td>
-<td>事件主体为被拖放元素</td>
-<td>正在拖</td>
-</tr>
-<tr>
-<td>dragenter</td>
-<td>事件主体为目标元素</td>
-<td>进入</td>
-</tr>
-<tr>
-<td>dragover</td>
-<td>事件主体为目标元素</td>
-<td>被拖元素在某元素内移动</td>
-</tr>
-<tr>
-<td>dragleave</td>
-<td>事件主体为目标元素</td>
-<td>被拖元素离开某元素</td>
-</tr>
-<tr>
-<td>drop</td>
-<td>事件主体为目标元素</td>
-<td>目标元素完全接受被拖放元素</td>
-</tr>
-<tr>
-<td>dragend</td>
-<td>事件主体为被拖元素</td>
-<td>整个拖放操作结束</td>
-</tr>
-<tr>
-<td></td></tr></tbody></table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E4%B8%89%E5%89%91%E5%AE%A2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2143,7 +2105,7 @@ num1 和num2 都不包含任何前导零
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">104</span>
+                  <span class="site-state-item-count">105</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2237,7 +2199,7 @@ num1 和num2 都不包含任何前导零
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共107.8k字</span>
+  <span class="post-count">博客全站共108.1k字</span>
 </div>  
 
         
