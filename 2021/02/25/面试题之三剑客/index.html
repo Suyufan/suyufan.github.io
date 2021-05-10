@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="一.HTML篇1.HTML5 drag api   dragstart 事件主体为被拖放元素 开始时触放    drag 事件主体为被拖放元素 正在拖   dragenter 事件主体为目标元素 进入   dragover 事件主体为目标元素 被拖元素在某元素内移动   dragleave 事件主体为目标元素 被拖元素离开某元素   drop 事件主体为目标元素 目标元素完全接受被拖放元素   d">
 <meta property="article:published_time" content="2021-02-25T09:54:08.000Z">
-<meta property="article:modified_time" content="2021-05-10T09:16:44.215Z">
+<meta property="article:modified_time" content="2021-05-10T12:49:29.171Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="HTML">
@@ -342,7 +342,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.4k
+                  3.6k
                 </span>
               
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12
+                  13
                 </span>
               
             </div>
@@ -423,9 +423,28 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="2-HTML5的语义化标签"><a href="#2-HTML5的语义化标签" class="headerlink" title="2.HTML5的语义化标签"></a>2.HTML5的语义化标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">header  footer  article  nav section .....  </span><br><span class="line">表单：为input增加了color,email,data...  </span><br><span class="line">存储：SessionStorage，LocalStorage和离线  </span><br><span class="line">多媒体：音频和视频。audio,vedio</span><br><span class="line">canvas画布，地理定位，拖放</span><br></pre></td></tr></table></figure>
+<h3 id="2-语义化标签"><a href="#2-语义化标签" class="headerlink" title="2.语义化标签"></a>2.语义化标签</h3><ul>
+<li>hgroup用来标题分组，将一组相关的标题同时放入到hgroup </li>
+<li>blockquote用来表示引用别人的话,长引用。q表示短引用</li>
+<li>注意：p元素里不能写块元素<br>块级：h,p,blockquote,<br>行内：em,strong,q<br>替换元素：img</li>
+<li>结构化语义标签<ul>
+<li>header 网页头部</li>
+<li>main 主体（一个网页只有一个）</li>
+<li>footer 底部</li>
+<li>nav 导航</li>
+<li>aside 和主体相关（常用于侧边栏）</li>
+<li>articel 文章</li>
+<li>section 一个独立的区块</li>
+</ul>
+</li>
+<li>dl,dt（一级）,dd（二级） 定义列表</li>
+<li>a可以嵌套除了他自身以外的任意元素</li>
+<li>快捷生成任意英语lorem</li>
+<li>图片格式：jpg色彩丰富不支持透明和动图，gif颜色少支持透明动图，png颜色丰富支持透明不支持动图，webp谷歌新推表示网页中的图片有所有优点，base64将图片使用base64进行编码将图片转化为字符通过字符来引入（当网页和图片一起加载的时候用）<br>其实主要用div，span</li>
+</ul>
+<h3 id="3-meta"><a href="#3-meta" class="headerlink" title="3.meta"></a>3.meta</h3><p>meta 主要用于设置网页中的一些元数据（不给用户看）<br>    - charset 指定网页的字符集<br>    - name 数据名称<br>                 - keywords 表示网站的关键字<br>                 - description 用于指定网站的描述<br>                 - title 作为搜素结果上的文字显示<br>    - content 指定的数据内容<br>    - 重定向</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SEO会爬取到</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"网上购物,家电,手机,计算机,服装,国际,海外,居家,母婴,美妆,个护,食品,京东,集运,全球"</span> /&gt;</span> </span><br><span class="line"></span><br><span class="line">3秒后跳到百度</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"3;url=https://www.baidu.com"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="3-iframe是什么？有什么优缺点？"><a href="#3-iframe是什么？有什么优缺点？" class="headerlink" title="3.iframe是什么？有什么优缺点？"></a>3.iframe是什么？有什么优缺点？</h3><p>iframe会创建包含另一个文档的内联框架<br>缺点：<br>    - 阻碍主页面的Onload事件<br>    - 搜索引擎无法解读这种页面，不利于SEO（搜索引擎优化） </p>
 <h3 id="4-SEO"><a href="#4-SEO" class="headerlink" title="4.SEO"></a>4.SEO</h3><p>原理：<br>    - 页面抓取：蜘蛛向服务器请求页面，获取页面的线程编程的web worker,web socket协议内容<br>    - 分析入库：对获取到的内容进行分析，优质收录<br>    - 检索排序：当用户输关键词，从收录中按一定规则排序返回  </p>
 <p>蜘蛛：爬取页面的程序<br>工作方式：<br>    - 深度优先<br>    - 广度优先  </p>
 <p>如何利用蜘蛛优化？<br>    - 在更有名的网站放自己的外链<br>    - 经常更新<br>    - 增加外链<br>    - 首页做好导航  </p>
@@ -464,14 +483,15 @@
 <p>defer(脚本代码依赖页面中的DOM)评论框，代码语法高亮<br>async(脚本并不关心页面中的DOM)百度统计　　<br>defer更稳定  </p>
 <h3 id="7-css为什么要放在html文档的-lt-head-gt-标签内"><a href="#7-css为什么要放在html文档的-lt-head-gt-标签内" class="headerlink" title="7.css为什么要放在html文档的&lt;head&gt;标签内"></a>7.css为什么要放在html文档的<code>&lt;head&gt;</code>标签内</h3><p>如果把css文件引用放在HTML文档的底部，浏览器为了防止无样式,内容闪烁，会在css文件下载并解析完毕之前什么都不显示，这也就会造成白屏现象。<br>当css文件放在<head>中时，虽然css解析也会阻塞后续dom的渲染，但是在解析css的同时也在解析dom，所以等到css解析完毕就会逐步的渲染页面了。</head></p>
 <ul>
-<li>怎么优化？<br>  因为Css的解析会阻塞页面的渲染，为了让页面尽早的呈现处理，那么就要避免一些无用的css文件。<br>  使用媒体查询可以让css文件只在必要的时候解析，进而避免不必需的渲染阻塞，加快页面呈现时间。<h3 id="8-语音功能是如何实现的？"><a href="#8-语音功能是如何实现的？" class="headerlink" title="8.语音功能是如何实现的？"></a>8.语音功能是如何实现的？</h3></li>
+<li>怎么优化？<br>  因为Css的解析会阻塞页面的渲染，为了让页面尽早的呈现处理，那么就要避免一些无用的css文件。<br>  使用媒体查询可以让css文件只在必要的时候解析，进而避免不必需的渲染阻塞，加快页面呈现时间。<h3 id="8-H5引入了哪些新特性？"><a href="#8-H5引入了哪些新特性？" class="headerlink" title="8.H5引入了哪些新特性？"></a>8.H5引入了哪些新特性？</h3></li>
 </ul>
-<h3 id="9-H5引入了哪些新特性？"><a href="#9-H5引入了哪些新特性？" class="headerlink" title="9.H5引入了哪些新特性？"></a>9.H5引入了哪些新特性？</h3><p>（1）8个语义元素 hearder section footer aside nav main article figure<br>内容元素 mark高亮，progress进度<br>新的表单控件 calander,date,time,email,url,search<br>新的input类型 color，date，datetime，datetime-local,email<br>移除过时标签 big font frame frameset  </p>
+<p>（1）8个语义元素 hearder section footer aside nav main article figure<br>内容元素 mark高亮，progress进度<br>新的表单控件 calander,date,time,email,url,search<br>新的input类型 color，date，datetime，datetime-local,email<br>移除过时标签 big font frame frameset  </p>
 <p>(2)canvas绘图，支持内联svg  </p>
 <p>(3)多媒体audio,video,source,embed,track  </p>
 <p>(4)本地离线存储，将文件列在一个配置文件  </p>
 <p>(5)web存储。localstorage,sessionstorage</p>
-<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><h1 id="二-CSS篇"><a href="#二-CSS篇" class="headerlink" title="二.CSS篇"></a>二.CSS篇</h1><h3 id="1-CSS3新特性"><a href="#1-CSS3新特性" class="headerlink" title="1.CSS3新特性"></a>1.CSS3新特性</h3><p>css边框：border-radius，border-shadow<br>css背景：background-origin，background-size<br>css 2D 3D转换，动画：transform，animation</p>
+<h1 id="二-CSS篇"><a href="#二-CSS篇" class="headerlink" title="二.CSS篇"></a>二.CSS篇</h1><h3 id="1-CSS3新特性"><a href="#1-CSS3新特性" class="headerlink" title="1.CSS3新特性"></a>1.CSS3新特性</h3><p>css边框：border-radius，border-shadow<br>css背景：background-origin，background-size<br>css 2D 3D转换，动画：transform，animation</p>
+<p><a href="https://suyufan.github.io/2021/02/19/css%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">css媒体查询</a></p>
 <h3 id="2-box-sizing的语法和基本用处"><a href="#2-box-sizing的语法和基本用处" class="headerlink" title="2.box-sizing的语法和基本用处"></a>2.box-sizing的语法和基本用处</h3><p>box-sizing规定两个并排的带边框的框<br>    ：content-box / border-box /inherit  </p>
 <ul>
 <li>content-box：宽度和高度分别应用到元素的内容框，在宽度和高度之外绘制元素的内边距和边框  </li>
@@ -483,12 +503,42 @@
 <li><code>visibility: hidden</code>  不改变布局，不触发事件</li>
 <li><code>opacity: 0</code> 该元素隐藏起来了，不会改变布局，如果绑定了事件如click，点击仍会触发  </li>
 </ul>
-<h3 id="4-CSS选择器-伪类-伪元素"><a href="#4-CSS选择器-伪类-伪元素" class="headerlink" title="4.CSS选择器 伪类 伪元素"></a>4.CSS选择器 伪类 伪元素</h3><p>选择器：id &gt; class &gt; 标签<br>后代定义与祖先一样的样式，祖先被覆盖  </p>
-<h3 id="5-实现三栏布局"><a href="#5-实现三栏布局" class="headerlink" title="5.实现三栏布局"></a>5.实现三栏布局</h3><h3 id="6-CSS3-实现瀑布流布局"><a href="#6-CSS3-实现瀑布流布局" class="headerlink" title="6.CSS3 实现瀑布流布局"></a>6.CSS3 实现瀑布流布局</h3><h3 id="7-重排和重绘"><a href="#7-重排和重绘" class="headerlink" title="7.重排和重绘"></a>7.重排和重绘</h3><p>浏览器渲染页面默认采用的是流式布局模型，某一个DOM节点信息更改了，就要对DOM结构重新计算，重新布局界面。全局范围是从根节点html开始，局部从渲染树的某部分或某一个渲染对象进行重新布局。  </p>
+<h3 id="4-重排和重绘"><a href="#4-重排和重绘" class="headerlink" title="4.重排和重绘"></a>4.重排和重绘</h3><p>浏览器渲染页面默认采用的是流式布局模型，某一个DOM节点信息更改了，就要对DOM结构重新计算，重新布局界面。全局范围是从根节点html开始，局部从渲染树的某部分或某一个渲染对象进行重新布局。  </p>
 <p>引起重排的操作（DOM对象位置和大小）<br>    - 1.页面首次渲染<br>    - 2.浏览器窗口大小改变<br>    - 3.元素尺寸或位置改变<br>    - 4.元素内容变化（图片大小）<br>    - 5.元素字体大小的改变<br>    - 6.添加或删除可见的DOM元素<br><code>width,display,clientwidth,scrollwidth,offsettop</code>  </p>
 <p>重绘（页面中元素的样式）<br><code>color,border-style,outline,background</code></p>
-<h3 id="8-BFC"><a href="#8-BFC" class="headerlink" title="8.BFC"></a>8.BFC</h3><p>BFC块级格式化上下文形成独立的渲染区域,内部的元素渲染不会影响外界<br>可以形成bfc的元素浮动元素:absolute,flex,块级元素, overflow不为visibleinline- block元素</p>
-<h3 id="9-link-与-import"><a href="#9-link-与-import" class="headerlink" title="9.link 与 @import"></a>9.link 与 @import</h3><ul>
+<h3 id="5-position属性"><a href="#5-position属性" class="headerlink" title="5.position属性"></a>5.position属性</h3><p>取值：static，relative，absolute，fixed，sticky  </p>
+<ul>
+<li>static 默认<br>当position为static的时候，<br>left | right | top | bottom 属性无效  </li>
+<li>relative<br>当 position 为 relative 的时候，如果设置了 left 、right、top、bottom 属性，它们会生效，发生偏移时的参照为 position 属性取 static 时盒子的位置  </li>
+<li>absolute<br>当 position 为 absolute 的时候，元素会被移出正常文档流，并不为元素预留空间，元素相对于最近的非 static 定位祖先元素发生偏移<br>当元素没有非 static 定位祖先时，会相对 html 发生偏移</li>
+<li>fixed<br>当 position 为 fixed 的时候，元素会被移出正常文档流，并不为元素预留空间，元素相对于屏幕视口（viewport）的 位置来发生偏移, 元素的位置在屏幕滚动时不会改变，这一点与 absolute 不同，<strong>absolute 在屏幕滚动时会跟着一起滚动</strong>  </li>
+<li>sticky<br>relative 和 fixed 的混合，元素在跨越特定阈值前为相对定位，之后为固定定位</li>
+</ul>
+<h3 id="6-像素"><a href="#6-像素" class="headerlink" title="6.像素"></a>6.像素</h3><ul>
+<li>css像素</li>
+<li>物理像素</li>
+</ul>
+<p>可以通过改变视口的大小来改变css像素和物理像素的比值  </p>
+<p>在不同屏幕下，单位像素是不同的，像素越小屏幕越清晰  </p>
+<p>默认情况下，移动端网页都会将视口设置为980像素（css像素），确保pc端可在移动端正常访问</p>
+<p>将网页视口设置为完美视口<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></p>
+<p>vw表示的是视口宽度（100vw == 1个视口宽度）</p>
+<h3 id="7-字体"><a href="#7-字体" class="headerlink" title="7.字体"></a>7.字体</h3><p>不会失真，是矢量<br>对于电脑中没有的字体，下载字体到font  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    //指定字体名字</span><br><span class="line">    font-family: 'myFont';</span><br><span class="line">    src: url('路径')；</span><br></pre></td></tr></table></figure>
+
+<p>font-face可以将服务器中的字体直接提供给用户去使用<br>问题：1.加载速度   2.版权 3.格式   </p>
+<ul>
+<li><p>图标字体</p>
+<ul>
+<li>问题：图片本身比较大，且非常不灵活</li>
+<li>使用font-face的样式来引入</li>
+</ul>
+<p>fontawesome使用<br>  下载，解压，将css和webfonts移动到项目中，将all.css引入，使用</p>
+<pre><code>- 直接通过类名使用`&lt;i class=&quot;类名&quot;&gt;&lt;/i&gt;`fas/fab
+        - 通过伪元素（到all.css中查content,font-family,font-weight）
+        - 通过实体（&amp;#x图片的编码）</code></pre></li>
+</ul>
+<h3 id="8-link-与-import"><a href="#8-link-与-import" class="headerlink" title="8.link 与 @import"></a>8.link 与 @import</h3><ul>
 <li>link属于xhtml标签，而@import是由css提供  </li>
 <li>加载顺序：  <ul>
 <li>link引用的css会在页面加载时，同时加载。</li>
@@ -501,7 +551,7 @@
 </li>
 <li>只能使用link标签去控制dom样式  </li>
 </ul>
-<h3 id="10-px，em，rem"><a href="#10-px，em，rem" class="headerlink" title="10.px，em，rem"></a>10.px，em，rem</h3><p>都是css中的单位长度  </p>
+<h3 id="9-px，em，rem"><a href="#9-px，em，rem" class="headerlink" title="9.px，em，rem"></a>9.px，em，rem</h3><p>都是css中的单位长度  </p>
 <p>px 是固定像素，一旦设置就无法改变<br>em 和 rem 都是相对长度单位，是适应于响应式布局<br>em相对父元素  rem相对于html元素  </p>
 <h1 id="三-JavaScript篇"><a href="#三-JavaScript篇" class="headerlink" title="三.JavaScript篇"></a>三.JavaScript篇</h1><h3 id="1-为什么JS执行的时候要阻塞HTML解析"><a href="#1-为什么JS执行的时候要阻塞HTML解析" class="headerlink" title="1.为什么JS执行的时候要阻塞HTML解析"></a>1.为什么JS执行的时候要阻塞HTML解析</h3><p>如果把JavaScript放在页面顶部，下载和解析JavaScript的时间里面，dom迟迟得不到解析和渲染，浏览器一直处于白屏，所以把JavaScript文件放在页面底部更有利于页面快速呈现。</p>
 <h3 id="2-BOM"><a href="#2-BOM" class="headerlink" title="2.BOM"></a>2.BOM</h3><p>浏览器对象：<br>    - location<br>    - history<br>    - navigator</p>
@@ -511,8 +561,7 @@
 <h3 id="3-Cookie，SessionStorage，LocalStorage的区别-前端四大存储方式"><a href="#3-Cookie，SessionStorage，LocalStorage的区别-前端四大存储方式" class="headerlink" title="3.Cookie，SessionStorage，LocalStorage的区别/前端四大存储方式"></a>3.Cookie，SessionStorage，LocalStorage的区别/前端四大存储方式</h3><p>共同：保存在浏览器前端<br>区别：<br>    cookie数据在同源的http请求中携带，过期前时间有效。可以在浏览器和服务器来回传递，存储容量小，大约为4kb<br>    SessionStorage：仅在当前窗口关闭前有效<br>    LocalStorage：始终有效  </p>
 <p><strong>IndexedDB：</strong>被纳入HTML5标准的数据库存储方案，它是一个NoSql数据库，用<strong>键值对</strong>进行存储，可以快速读取操作，适合web场景和JavaScript操作   </p>
 <p>cookie的作用<br>    - 保存用户登录状态<br>    - 跟踪用户行为</p>
-<h3 id="4-cookie与session"><a href="#4-cookie与session" class="headerlink" title="4.cookie与session"></a>4.cookie与session</h3><p>（这个说错了，把这个跟存储方式混了。在此之前，一直记的是错的）</p>
-<p>  - 工作原理：</p>
+<h3 id="4-cookie与session"><a href="#4-cookie与session" class="headerlink" title="4.cookie与session"></a>4.cookie与session</h3><p>  - 工作原理：</p>
 <p>  <strong><em>\</em>cookie的工作原理**</strong>：浏览器第一次发送请求到服务器，服务器创建cookie，将cookie发送到浏览器；如果浏览器再次访问服务器，会携带着cookie；服务器根据浏览器发送过来的cookie，区分不同的用户、权限等</p>
 <p>  <strong><em>\</em>session的工作原理**</strong>：浏览器首次发送请求到服务器，服务器端创建一个session，同时创建一个cookie，发送到浏览器；浏览器再次访问服务器，会携带带有特殊id的cookie，服务器根据cookie中的sessionid，查看对应的session对象，区别用户</p>
 <p>  - 存储位置： </p>
@@ -523,30 +572,6 @@
 <p>  cookie安全性差，可以通过拦截或本地文件可以对cookie进行攻击；而session运行在服务端，安全性高 </p>
 <p>  - 禁用 </p>
 <p>  如果浏览器禁用了cookie，那么cookie就不能使用，而session不能禁用 </p>
-<h3 id="4-Restful"><a href="#4-Restful" class="headerlink" title="4.Restful"></a>4.Restful</h3><p>用url定义资源，http描述操作</p>
-<h3 id="5-Cookie如何防范XSS攻击-CSRF攻击？"><a href="#5-Cookie如何防范XSS攻击-CSRF攻击？" class="headerlink" title="5.Cookie如何防范XSS攻击? CSRF攻击？"></a>5.Cookie如何防范XSS攻击? CSRF攻击？</h3><ul>
-<li><p>csrf攻击<br>  跨站点伪装请求，盗用你的身份以你的名义发送恶意请求，是单向的。成功的前提是用户必须登录到目标站点，且浏览了攻击者控制的站点  </p>
-<ul>
-<li>防御  <ul>
-<li>验证http refever字段</li>
-<li>请求地址中添加token并验证  </li>
-<li>在HTTP头中自定义属性并验证  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>xss攻击<br>  跨站脚本攻击，攻击者在返回的HTML中嵌入js脚本  </p>
-<ul>
-<li>防御<br>  在http头部配上set-cookie  </li>
-</ul>
-</li>
-</ul>
-<h3 id="6-Promise"><a href="#6-Promise" class="headerlink" title="6.Promise"></a>6.Promise</h3><h3 id="7-JS跨域"><a href="#7-JS跨域" class="headerlink" title="7.JS跨域"></a>7.JS跨域</h3><p>之所以需要跨域，是因为浏览器同源策略的约束  </p>
-<p>同源策略拦截的是<strong>跨源请求</strong>，原因：CORS缺少 <code>Access-Control-Allow-Origin头</code>  </p>
-<p><strong>JSONP</strong>：ajax请求受同源策略影响，不允许进行跨域请求，而script标签src属性中的链接却可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。  </p>
-<p><strong>CORS(跨域资源共享)</strong><br>    它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>    - 整个CORS通信过程，都是浏览器自动完成<br>    - 一旦发现AJAX请求跨源，就会自动添加一些附加的头信息<br>    - 实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
-<p><strong>web scoket</strong><br>是一种通信传输协议，利用<code>Origin</code>字段，若字段的值在白名单内，即可跨域传输。</p>
-<h3 id="8-transition-和-animation-区别"><a href="#8-transition-和-animation-区别" class="headerlink" title="8.transition 和 animation 区别"></a>8.transition 和 animation 区别</h3><p>都是随着时间改变元素的属性值。<br>transition需要触发一个事件才能改变  2帧<br>animation不需要触发任何事件的情况下 1帧1帧的  </p>
 <h3 id="9-css动画与js动画"><a href="#9-css动画与js动画" class="headerlink" title="9.css动画与js动画"></a>9.css动画与js动画</h3><ul>
 <li>功能涵盖面 js比css大  </li>
 <li>css 3 比 js 简单  </li>
@@ -683,7 +708,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">111</span>
+                  <span class="site-state-item-count">106</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -705,7 +730,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -748,7 +773,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HTML篇"><span class="nav-number">1.</span> <span class="nav-text">一.HTML篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML5-drag-api"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.HTML5 drag api</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTML5的语义化标签"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.HTML5的语义化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-iframe是什么？有什么优缺点？"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.iframe是什么？有什么优缺点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-SEO"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.SEO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-web-socket和web-worker"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.web socket和web worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-HTML的async和defer"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.HTML的async和defer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-css为什么要放在html文档的-lt-head-gt-标签内"><span class="nav-number">1.0.7.</span> <span class="nav-text">7.css为什么要放在html文档的&lt;head&gt;标签内</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-语音功能是如何实现的？"><span class="nav-number">1.0.8.</span> <span class="nav-text">8.语音功能是如何实现的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-H5引入了哪些新特性？"><span class="nav-number">1.0.9.</span> <span class="nav-text">9.H5引入了哪些新特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10"><span class="nav-number">1.0.10.</span> <span class="nav-text">10.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-CSS篇"><span class="nav-number">2.</span> <span class="nav-text">二.CSS篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS3新特性"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.CSS3新特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-box-sizing的语法和基本用处"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.box-sizing的语法和基本用处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何让一个元素消失？"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.如何让一个元素消失？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-CSS选择器-伪类-伪元素"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.CSS选择器 伪类 伪元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-实现三栏布局"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.实现三栏布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-CSS3-实现瀑布流布局"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.CSS3 实现瀑布流布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-重排和重绘"><span class="nav-number">2.0.7.</span> <span class="nav-text">7.重排和重绘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-BFC"><span class="nav-number">2.0.8.</span> <span class="nav-text">8.BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-link-与-import"><span class="nav-number">2.0.9.</span> <span class="nav-text">9.link 与 @import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-px，em，rem"><span class="nav-number">2.0.10.</span> <span class="nav-text">10.px，em，rem</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-JavaScript篇"><span class="nav-number">3.</span> <span class="nav-text">三.JavaScript篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-为什么JS执行的时候要阻塞HTML解析"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.为什么JS执行的时候要阻塞HTML解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-BOM"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.BOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Cookie，SessionStorage，LocalStorage的区别-前端四大存储方式"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.Cookie，SessionStorage，LocalStorage的区别&#x2F;前端四大存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-cookie与session"><span class="nav-number">3.0.4.</span> <span class="nav-text">4.cookie与session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Restful"><span class="nav-number">3.0.5.</span> <span class="nav-text">4.Restful</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Cookie如何防范XSS攻击-CSRF攻击？"><span class="nav-number">3.0.6.</span> <span class="nav-text">5.Cookie如何防范XSS攻击? CSRF攻击？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Promise"><span class="nav-number">3.0.7.</span> <span class="nav-text">6.Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-JS跨域"><span class="nav-number">3.0.8.</span> <span class="nav-text">7.JS跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-transition-和-animation-区别"><span class="nav-number">3.0.9.</span> <span class="nav-text">8.transition 和 animation 区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-css动画与js动画"><span class="nav-number">3.0.10.</span> <span class="nav-text">9.css动画与js动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-乐观锁和悲观锁"><span class="nav-number">3.0.11.</span> <span class="nav-text">10.乐观锁和悲观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-死锁"><span class="nav-number">3.0.12.</span> <span class="nav-text">11.死锁</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-HTML篇"><span class="nav-number">1.</span> <span class="nav-text">一.HTML篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTML5-drag-api"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.HTML5 drag api</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-语义化标签"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.语义化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-meta"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.meta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-SEO"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.SEO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-web-socket和web-worker"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.web socket和web worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-HTML的async和defer"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.HTML的async和defer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-css为什么要放在html文档的-lt-head-gt-标签内"><span class="nav-number">1.0.7.</span> <span class="nav-text">7.css为什么要放在html文档的&lt;head&gt;标签内</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-H5引入了哪些新特性？"><span class="nav-number">1.0.8.</span> <span class="nav-text">8.H5引入了哪些新特性？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-CSS篇"><span class="nav-number">2.</span> <span class="nav-text">二.CSS篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS3新特性"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.CSS3新特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-box-sizing的语法和基本用处"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.box-sizing的语法和基本用处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何让一个元素消失？"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.如何让一个元素消失？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-重排和重绘"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.重排和重绘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-position属性"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.position属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-像素"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-字体"><span class="nav-number">2.0.7.</span> <span class="nav-text">7.字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-link-与-import"><span class="nav-number">2.0.8.</span> <span class="nav-text">8.link 与 @import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-px，em，rem"><span class="nav-number">2.0.9.</span> <span class="nav-text">9.px，em，rem</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-JavaScript篇"><span class="nav-number">3.</span> <span class="nav-text">三.JavaScript篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-为什么JS执行的时候要阻塞HTML解析"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.为什么JS执行的时候要阻塞HTML解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-BOM"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.BOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Cookie，SessionStorage，LocalStorage的区别-前端四大存储方式"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.Cookie，SessionStorage，LocalStorage的区别&#x2F;前端四大存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-cookie与session"><span class="nav-number">3.0.4.</span> <span class="nav-text">4.cookie与session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-css动画与js动画"><span class="nav-number">3.0.5.</span> <span class="nav-text">9.css动画与js动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-乐观锁和悲观锁"><span class="nav-number">3.0.6.</span> <span class="nav-text">10.乐观锁和悲观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-死锁"><span class="nav-number">3.0.7.</span> <span class="nav-text">11.死锁</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -793,7 +818,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共110.9k字</span>
+  <span class="post-count">博客全站共102.3k字</span>
 </div>  
 
         

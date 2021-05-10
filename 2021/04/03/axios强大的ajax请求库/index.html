@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="前言要发ajax请求1.xhr对象2.fetch函数 cookie是浏览器发请求 json-server用来搭建REST API的工具包   XHRXMLHttpRequest允许无需让整个页面刷新，更新局部内容   区别一般http请求与ajax请求ajax请求是一种特别的http请求对服务器端来说，没有区别。区别在浏览器端，浏览器端发请求：只有XHR或fetch发出的才是ajax请求，其他所有">
+<meta name="description" content="前言json-server用来搭建REST API的工具包   XHRXMLHttpRequest允许无需让整个页面刷新，更新局部内容   区别一般http请求与ajax请求ajax请求是一种特别的http请求对服务器端来说，没有区别。区别在浏览器端，浏览器端发请求：只有XHR或fetch发出的才是ajax请求，其他所有都是非ajax请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="axios强大的ajax请求库">
 <meta property="og:url" content="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="前言要发ajax请求1.xhr对象2.fetch函数 cookie是浏览器发请求 json-server用来搭建REST API的工具包   XHRXMLHttpRequest允许无需让整个页面刷新，更新局部内容   区别一般http请求与ajax请求ajax请求是一种特别的http请求对服务器端来说，没有区别。区别在浏览器端，浏览器端发请求：只有XHR或fetch发出的才是ajax请求，其他所有">
+<meta property="og:description" content="前言json-server用来搭建REST API的工具包   XHRXMLHttpRequest允许无需让整个页面刷新，更新局部内容   区别一般http请求与ajax请求ajax请求是一种特别的http请求对服务器端来说，没有区别。区别在浏览器端，浏览器端发请求：只有XHR或fetch发出的才是ajax请求，其他所有都是非ajax请求">
 <meta property="og:image" content="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/%E6%8B%A6%E6%88%AA%E5%99%A8.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/Image.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/Promise%E9%93%BE.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/Promise%E9%93%BE.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="article:published_time" content="2021-04-03T15:32:52.000Z">
-<meta property="article:modified_time" content="2021-04-03T15:44:35.913Z">
+<meta property="article:modified_time" content="2021-05-10T12:24:14.721Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="axios">
 <meta name="twitter:card" content="summary">
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  1.2k
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -383,9 +383,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>要发ajax请求<br>1.xhr对象<br>2.fetch函数</p>
-<p>cookie是浏览器发请求</p>
-<h3 id="json-server"><a href="#json-server" class="headerlink" title="json-server"></a>json-server</h3><p>用来搭建REST API的工具包  </p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="json-server"><a href="#json-server" class="headerlink" title="json-server"></a>json-server</h3><p>用来搭建REST API的工具包  </p>
 <h3 id="XHR"><a href="#XHR" class="headerlink" title="XHR"></a>XHR</h3><p>XMLHttpRequest允许无需让整个页面刷新，更新局部内容  </p>
 <h3 id="区别一般http请求与ajax请求"><a href="#区别一般http请求与ajax请求" class="headerlink" title="区别一般http请求与ajax请求"></a>区别一般http请求与ajax请求</h3><p>ajax请求是一种特别的http请求<br>对服务器端来说，没有区别。区别在浏览器端，<br>浏览器端发请求：只有XHR或fetch发出的才是ajax请求，其他所有都是非ajax请求</p>
 <a id="more"></a>
@@ -553,7 +551,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">111</span>
+                  <span class="site-state-item-count">106</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +573,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -663,7 +661,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共110.9k字</span>
+  <span class="post-count">博客全站共102.3k字</span>
 </div>  
 
         
