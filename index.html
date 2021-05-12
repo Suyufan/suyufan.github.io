@@ -250,6 +250,683 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/13/512/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/13/512/" itemprop="url">512</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-13T00:17:52+08:00">
+                2021-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  980
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="从url到页面渲染的过程"><a href="#从url到页面渲染的过程" class="headerlink" title="从url到页面渲染的过程"></a>从url到页面渲染的过程</h1><ul>
+<li><p>DNS解析获取对应的ip: 根级，域级，权威</p>
+</li>
+<li><p>建立TCP连接：3次握手过程</p>
+</li>
+<li><p>发HTTP请求到服务器</p>
+</li>
+<li><p>服务器处理请求并得到响应报文</p>
+</li>
+<li><p>浏览器去渲染解析页面</p>
+<ul>
+<li>先根据HTML生成DOM树 再根据CSS生成CSS规则树  DOM树和CSS规则树生成Render树 根据渲染树去计算每一个节点的信息，根据计算好的信息绘制页面</li>
+</ul>
+</li>
+<li><p>断开连接：4次挥手</p>
+</li>
+</ul>
+<h1 id="XMall商城登录的过程"><a href="#XMall商城登录的过程" class="headerlink" title="XMall商城登录的过程"></a>XMall商城登录的过程</h1><ul>
+<li>前端发api/login请求给后端</li>
+<li>后端通过JWT插件生成一个唯一标识token返回给前端</li>
+<li>前端再点击首页/全部商品的时候 携带上这个token发api/valite请求到后端</li>
+<li>后端对比前端传来的token和它发出去的是不是同一个<ul>
+<li>一样 返回数据</li>
+<li>不一样 未登录</li>
+</ul>
+</li>
+</ul>
+<h1 id="XMall加入购物车"><a href="#XMall加入购物车" class="headerlink" title="XMall加入购物车"></a>XMall加入购物车</h1><ul>
+<li>MallGoods.vue里有一个button @click一个addCart()方法</li>
+<li>点击这个button 会通过isLogin判断用户是否登录 <ul>
+<li>isLogin这个变量是存在Vuex.store里面的state中，所以要拿到的话，要导入Vuex的mapState</li>
+</ul>
+</li>
+<li>登录了的话 发post请求将getStore(“id”),商品id,商品数量（默认1）传到api/addcart。此处是建立了一个假数据文件，将数据写到了carList.json里面。   </li>
+<li>在Vuex.stroe的mutations中写ADDCART()方法  然后addCart去调这个方法，给他传商品id,商品价格等一些数据</li>
+<li>ADDCART()去得到这些数据，然后先判断cartList.json里面是否有值，没有的话 直接将获取到的数据push到对应的用户id下的cartList就好了；如果有值的话 就先去遍历cartList中的商品id，找到了就将这个商品的数量+现在得到的新加入的数量。最后重新更新这个cart<code>state.cartList = cart</code>再通过setStore(‘buycart’,cart)将数据存起来</li>
+<li>购物车的组件就去在li里面<code>v-for=&quot;(goods,index) in cartList&quot;</code>遍历cartList</li>
+</ul>
+<h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><p>多组件共享状态</p>
+<p>之前：</p>
+<pre><code>将数据以及操作数据的行为都定义在父组件
+
+将数据以及操作数据的行为传递给各个子组件，可能需要**多级传递**</code></pre><h1 id="vue-route"><a href="#vue-route" class="headerlink" title="vue-route"></a>vue-route</h1><p>$route(当前组件)</p>
+<p>$router(路径)    $router.push(path)</p>
+<p>路由传数据：</p>
+<pre><code>- 路由链接
+- roter-view 传props</code></pre><h1 id="小程序登陆过程"><a href="#小程序登陆过程" class="headerlink" title="小程序登陆过程"></a>小程序登陆过程</h1><ul>
+<li>收集表单项数据，小程序用的是bindinput一个事件，通过data-或者id的形式给事件传参区分不同的输入框</li>
+<li>前端验证</li>
+<li>后端验证<ul>
+<li>将收集到的数据作为参数发/login/cellphone去验证，返回code为200的时候登陆成功，然后把用户音系转化为JSON存起来</li>
+<li>wx.switchTab跳转到个人中心</li>
+<li>返回的状态码不是200的时候，wx.showToast一个提示信息 登陆失败</li>
+</ul>
+</li>
+</ul>
+<h1 id="视频页面"><a href="#视频页面" class="headerlink" title="视频页面"></a>视频页面</h1><p>发请求需要携带cookie</p>
+<ul>
+<li>对登陆的请求进行修改，再让它传一个isLogin：true的参数，然后在request.js中发请求之前先判断data.isLogin如果为真的话 就是一个登陆请求</li>
+<li>登陆请求，将res.cookie存到key为cookie的字段里 此时就存到了本地 appdata中可以看到</li>
+<li>这个时候视频去拿cookie就轻而易举了</li>
+</ul>
+<ul>
+<li><p>播放视频的时候 播放一个 自动关闭上一个</p>
+<ul>
+<li><p>单例模式：需要创建多个对象的场景下，通过一个变量的接收，始终保持只有一个对象</p>
+</li>
+<li><p>如何关闭上一个视频 且不保证关的不是自己（通过判断vid）设计巧妙的哦😀单例模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vid = event.currentTarget.id</span><br><span class="line">    <span class="comment">//关闭第一个视频 </span></span><br><span class="line"><span class="keyword">this</span>.vid!=vid &amp;&amp; <span class="keyword">this</span>.videoContext &amp;&amp; <span class="keyword">this</span>.videoContext.stop()</span><br><span class="line">    <span class="comment">//当第二个视频进来的时候 通过上一行待码关闭第一个视频</span></span><br><span class="line">    <span class="comment">//创建了this.vid 确保关的不是自己</span></span><br><span class="line"><span class="keyword">this</span>.vid = vid</span><br><span class="line">    <span class="comment">//创建了第一个视频的videoContext </span></span><br><span class="line"><span class="keyword">this</span>.videoContext = wx.createVideoContext(vid)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/13/511/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/13/511/" itemprop="url">511</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-13T00:17:43+08:00">
+                2021-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  829
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h1><ul>
+<li><p>每个函数都有一个prototype，即显示原型。在函数定义时自动添加，默认值是一个空的Object对象</p>
+</li>
+<li><p>每个实例对象都有一个<code>__proto__</code>,即隐式原型。创建函数的时候自动添加，默认值为构造函数的prototype属性值</p>
+</li>
+<li><p>对象的隐式原型的值为其对应构造函数的显式原型的值</p>
+<p><code>console.log(fn.__proto__===Fn.prototype) //true</code></p>
+</li>
+</ul>
+<p>原型对象也是对象，所以它有原型，当我们使用一个对象的属性或方法时，会先在自身中寻找。</p>
+<pre><code>自身如果有，则直接使用，
+
+自身没有则去原型对象中找，如果原型对象中有，则使用
+
+                                                如果原型对象中没有，就去原型的原型中寻找，直到找到Object对象的原型</code></pre><p>Object对象的原型没有原型，如果Object原型中依然，没有找到，则返回undefined</p>
+<h1 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h1><ul>
+<li>在全局代码执行前，JS引擎就会创建一个栈来存储管理所有的执行上下文对象</li>
+<li>在全局执行上下文window确定之后，将其添加到栈中（压栈）</li>
+<li>在函数执行上下文创建后，将其添加到栈中（压栈）</li>
+<li>在当前函数执行完之后，将栈顶的对象移除（出栈）</li>
+<li>当所有的代码执行完之后，栈中就剩下了window</li>
+</ul>
+<h1 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h1><p>匿名函数自调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">3</span></span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>作用：</p>
+<pre><code>- 隐藏实现
+- 不会污染外部（全局）命名空间
+- 用它来编码js模块</code></pre><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>你定义了 你没有调 但是最终执行了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//定时器回调函数</span></span><br><span class="line">    alert(<span class="string">"到点了"</span>)</span><br><span class="line">&#125;,<span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>当一个嵌套的内部函数引用了嵌套的外部函数的变量时，就产生了闭包</p>
+<ul>
+<li>产生条件<ul>
+<li>函数嵌套</li>
+<li>内部函数引用外部</li>
+</ul>
+</li>
+<li>理解<ul>
+<li>包含被引用的对象</li>
+<li>使用chrome查看</li>
+<li>闭包存在于嵌套的函数内部</li>
+</ul>
+</li>
+<li>作用<ul>
+<li>使用函数内部的变量在函数执行完后，仍然存活在内存中（延长了局部变量的生命周期）</li>
+<li>让函数外部可以操作到函数内部的数据</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数作为参数传递的时候</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">    fn();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>,a)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(fn)	<span class="comment">//a 2</span></span><br><span class="line">作为参数传递的时候 会先去fn()定义的地方查找 而不是执行的地方</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><p>this 的值是在 函数执行时 决定的，不是在 函数定义时 决定</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">asyncTest() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this'</span>,<span class="keyword">this</span>)	<span class="comment">//this 张三 20</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'setTimeout 回调中的 this'</span>,<span class="keyword">this</span>)</span><br><span class="line">    &#125;,<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> zhangsan = <span class="keyword">new</span> Person(<span class="string">'张三'</span>,<span class="number">20</span>);</span><br><span class="line">zhangsan.asyncTest()	<span class="comment">//setTimeout 回调中的 this window</span></span><br></pre></td></tr></table></figure>
+
+<p>因为function是在全局下执行的 而不是通过zhangsan.执行的。</p>
+<p>它是通过定时器异步执行，时间到了并且 没有同步任务的时候 去执行。</p>
+<p>如果改成箭头函数，则this指向的是 张三</p>
+<ul>
+<li>bind() <ul>
+<li>返回的是一个函数</li>
+<li>第一个参数是this的值，后面的参数是 函数接收的参数的值</li>
+<li>原函数return的值不变</li>
+</ul>
+</li>
+</ul>
+<p><strong>手写bind</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">const</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">    <span class="keyword">const</span> thisVal = args.shift()</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> self.apply(thisVal,args)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/12/Vue2%E4%B8%8EVue3%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/12/Vue2%E4%B8%8EVue3%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">Vue2与Vue3的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-12T23:32:09+08:00">
+                2021-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  525
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最大的区别是在响应式，所以我们先来说说响应式</p>
+<h1 id="响应式的区别"><a href="#响应式的区别" class="headerlink" title="响应式的区别"></a>响应式的区别</h1><ul>
+<li><p>Vue2</p>
+<ul>
+<li>基于Object.defineProperty()只能监听到已有属性，对象直接添加或删除属性，界面是不会自动更新。并且它会为每一个属性添加上get set方法</li>
+<li>如果是数组的话，通过重写数组更新数组一系列更新元素的方法来实现元素修改的劫持</li>
+</ul>
+</li>
+<li><p>Vue3</p>
+<ul>
+<li><p>通过Proxy和Reflect实现，而且是深层次的监视</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数1：user-----》target目标对象  </span></span><br><span class="line">        <span class="comment">//参数2:handler-----&gt;处理器对象，用来监视数据，及数据的操作</span></span><br><span class="line">        <span class="keyword">const</span> proxyUser = <span class="keyword">new</span> <span class="built_in">Proxy</span>(user,&#123;</span><br><span class="line">            <span class="keyword">get</span>(target,prop)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target,prop)</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="keyword">set</span>(target,prop,val)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"set方法执行了"</span>)</span><br><span class="line">                <span class="built_in">Reflect</span>.set(target,prop,val)</span><br><span class="line">            &#125;,</span><br><span class="line">            deleteProperty(target,prop) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"delet方法调用了"</span>)  </span><br><span class="line">                <span class="built_in">Reflect</span>.deleteProperty(target,prop)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></li></ul></li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/05/12/Vue2%E4%B8%8EVue3%E7%9A%84%E5%8C%BA%E5%88%AB/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/10/Less%E5%92%8CSass%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1532,543 +2209,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/04/06/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/04/06/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87/" itemprop="url">动态规划篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-06T15:55:24+08:00">
-                2021-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">程序设计</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  422
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>动态规划解题一般分为3步：<br>1.表示状态<br>每一种状态都是使用数组的维数来表示的<br>一般我们会使用数组的第一位来表示阶段，然后再根据需要通过增加数组维数，来添加其它状态<br>2.找出状态转移方程<br>状态转移指的是，当前阶段的状态如何通过之前计算过的阶段状态得到<br>3.初始化边界<br>初始化边角状态，以及第一阶段的状态<br>参考连接：<a href>小小算法</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/04/06/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AF%87/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/04/03/Grunt-Gulp-Webpack%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/04/03/Grunt-Gulp-Webpack%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" itemprop="url">Grunt,Gulp,Webpack自动化构建工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-03T23:46:38+08:00">
-                2021-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.8k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一-Grunt"><a href="#一-Grunt" class="headerlink" title="一.Grunt"></a>一.Grunt</h1><p>使用插件进行处理 比如grunt-contrib-concat（进行js合并），grunt-contrib-uglify（进行js压缩），grunt-contrib-jshint（js语法检查），grunt-contrib-cssmin（对css任务进行合并压缩），grunt-contrib-watch（对任务进行监视）<br>插件使用步骤：<br>先下载npm install grunt-contrib-concat –save-dev<br>复制代码到Gruntfile.js<br>执行grunt concat(或者多个命令的时候，都写在默认任务中，使用grunt一次执行)  </p>
-<p>在使用watch的时候 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grunt.registerTask(<span class="string">'default'</span>, [<span class="string">'concat'</span>,<span class="string">'uglify'</span>,<span class="string">'jshint'</span>]);</span><br><span class="line">grunt.registerTask(<span class="string">'myWatch'</span>,[<span class="string">'watch'</span>]);</span><br></pre></td></tr></table></figure>
-<p>在进行代码监视的时候执行grunt myWatch<br>在打包上线的时候执行 grunt  </p>
-<p>执行的时候，grunt执行任务是<strong>同步</strong>的。注意顺序问题</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/04/03/Grunt-Gulp-Webpack%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/" itemprop="url">axios强大的ajax请求库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-03T23:32:52+08:00">
-                2021-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="json-server"><a href="#json-server" class="headerlink" title="json-server"></a>json-server</h3><p>用来搭建REST API的工具包  </p>
-<h3 id="XHR"><a href="#XHR" class="headerlink" title="XHR"></a>XHR</h3><p>XMLHttpRequest允许无需让整个页面刷新，更新局部内容  </p>
-<h3 id="区别一般http请求与ajax请求"><a href="#区别一般http请求与ajax请求" class="headerlink" title="区别一般http请求与ajax请求"></a>区别一般http请求与ajax请求</h3><p>ajax请求是一种特别的http请求<br>对服务器端来说，没有区别。区别在浏览器端，<br>浏览器端发请求：只有XHR或fetch发出的才是ajax请求，其他所有都是非ajax请求</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/04/03/axios%E5%BC%BA%E5%A4%A7%E7%9A%84ajax%E8%AF%B7%E6%B1%82%E5%BA%93/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2117,7 +2257,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">109</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2211,7 +2351,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共102.3k字</span>
+  <span class="post-count">博客全站共104.7k字</span>
 </div>  
 
         
