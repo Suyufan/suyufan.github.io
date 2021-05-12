@@ -335,7 +335,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.9k
+                  3.8k
                 </span>
               
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14
+                  13
                 </span>
               
             </div>
@@ -375,13 +375,11 @@
         
           <h1 id="一-HTTP篇"><a href="#一-HTTP篇" class="headerlink" title="一.HTTP篇"></a>一.HTTP篇</h1><h3 id="1-HTTP与HTTPS"><a href="#1-HTTP与HTTPS" class="headerlink" title="1.HTTP与HTTPS"></a>1.HTTP与HTTPS</h3><ul>
 <li>概念：<br>  http:超文本传输协议，用于从服务器传输超文本到本地浏览器的传输协议<strong>明文</strong> 端口：80<br>  https：http+ssl <strong>加密</strong>  端口：443</li>
-<li>工作流程：  <ul>
-<li>https: （包含了tcp/ip的3次握手）<br>  1.客户端发url给服务端，要求建立连接<br>  2.服务端接受请求后，将网站证书（含公钥）返回给客户端<br>  3.客户端产生<strong>随机值Key</strong>,key对公钥进行加密后传给服务端<br>  4.服务端用私钥解密key，再用key对传输内容加密后传给客户端<br>  5.客户端用key解密数据，获得数据 </li>
-<li>加密算法：<br>  对称加密和非对称加密：对称加密算法比非对称加密要快，但是对称加密要求密钥对等。导致易被解获，在n结点的传输网络中要n-1个密钥，非常繁琐。非对称不存在这些问题，被广泛应用。 </li>
+<li>对比  <ul>
+<li>https不足<br>  1.证书问题–》费用高<br>  3.缓存不如http高效 <h3 id="2-https证书有了解过吗"><a href="#2-https证书有了解过吗" class="headerlink" title="2.https证书有了解过吗"></a>2.https证书有了解过吗</h3>由CA颁布<br>分3个级别：域名型，企业型，增强型<br>又根据保护域名的数量分为：单域名版，多域名版，通配版（*.abc.com）  </li>
 </ul>
 </li>
-<li>对比  <ul>
-<li>https不足<br>  1.证书问题–》费用高<br>  2.握手费时<br>  3.缓存不如http高效</li></ul></li></ul>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/02/24/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%BD%91/#more" rel="contents">
@@ -2207,7 +2205,7 @@ tty                 不适用像素的设备</code></pre>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共104.7k字</span>
+  <span class="post-count">博客全站共104.6k字</span>
 </div>  
 
         
