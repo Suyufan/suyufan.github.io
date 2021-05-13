@@ -250,6 +250,240 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/13/513/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏玉璠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笑笑の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/13/513/" itemprop="url">513</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-13T13:08:15+08:00">
+                2021-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  608
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h1><ul>
+<li>全局执行上下文<ul>
+<li>在执行全局代码前将window确定为全局执行上下文</li>
+<li>对全局数据进行预处理<ul>
+<li>var—》undefined  添加为window的属性</li>
+<li>function—-&gt;赋值，添加为window的属性</li>
+<li>this—&gt;赋值为window</li>
+</ul>
+</li>
+<li>开始执行全局代码</li>
+</ul>
+</li>
+<li>函数执行上下文<ul>
+<li>在调用函数，准备执行函数体之前，创建对应的函数执行上下文对象（虚拟的，存在于栈中）</li>
+<li>对局部数据进行预处理<ul>
+<li>形参变量—–》赋值（实参） 添加为执行上下文的属性</li>
+<li>arguments—-&gt;赋值（实参列表）  添加为执行上下文的属性</li>
+<li>var定义的局部变量—-》undefined  添加为执行上下文的属性</li>
+<li>function声明的函数—-》赋值   添加为执行上下文的方法</li>
+<li>this—-&gt;赋值（调用函数的对象）</li>
+</ul>
+</li>
+<li>开始执行函数体代码</li>
+</ul>
+</li>
+</ul>
+<h1 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h1><ul>
+<li>在全局代码执行前，JS引擎就会创建一个栈来存储管理所有的执行上下文对象</li>
+<li>在全局执行上下文（window）确定后，将其添加到栈中（压栈）</li>
+<li>在函数执行上下文创建后，将其添加到栈中（压栈）</li>
+<li>在当前函数执行完后，将栈顶的对象移除（出栈）</li>
+<li>当所有的代码都执行完成之后，栈中只剩下了window</li>
+</ul>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p>作用：隔离变量，不同作用域下同名变量不会有冲突</p>
+<p>之前有全局作用域，函数作用域</p>
+<p>ES6出现了块级作用域</p>
+<ul>
+<li><p>作用域与执行上下文的区别</p>
+<ul>
+<li><p>区别1</p>
+<ul>
+<li>全局作用域之外，每个函数都会创建自己的作用域，作用域在函数定义时就已经确定了，而不是函数调用的时候</li>
+<li>全局执行上下文是在全局作用域确定之后，js代码就会马上执行之前创建</li>
+<li>函数执行上下文是在调用函数的时候，函数体代码执行之前创建</li>
+</ul>
+</li>
+<li><p>区别2</p>
+<ul>
+<li>作用域是一个静态的，只要函数定义好了就一直存在，且不会再变化</li>
+<li>执行上下文是动态的，调用函数时创建，函数调用结束时就会自动释放</li>
+</ul>
+</li>
+<li><p>联系：</p>
+<ul>
+<li>上下文是从属于所在的作用域</li>
+<li>全局上下文—》全局作用域</li>
+<li>函数上下文—》对应的函数使用域</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/13/512/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2020,195 +2254,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://suyufan.github.io/2021/05/04/%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏玉璠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笑笑の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/05/04/%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/" itemprop="url">怎么判断变量类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-04T11:14:25+08:00">
-                2021-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  259
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>JavaScript的变量类型：usonb</p>
-<ul>
-<li>ES5中 undefined string obiect null number boolean</li>
-<li>ES6新增Symbol</li>
-<li>谷歌67版本中还出现了bigInt(但是多数人不把这个当作一个类型)</li>
-</ul>
-<p><strong>注意：</strong>NaN是Number中的特殊数值,不是Number类型</p>
-<ul>
-<li><p>JS的引用类型有哪些？<br>Object(Object包含了Data，function,Array，Null等)</p>
-</li>
-<li><p>JS中的typeof输出分别是什么？<br>基本类型输出对应类型<br>Null–&gt;Object<br>NaN–&gt;Number<br>{},[]—&gt;object</p>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/05/04/%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2257,7 +2302,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">109</span>
+                  <span class="site-state-item-count">110</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2351,7 +2396,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共104.6k字</span>
+  <span class="post-count">博客全站共105.2k字</span>
 </div>  
 
         
