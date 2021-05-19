@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -89,9 +89,9 @@
 <meta property="og:image" content="http://suyufan.github.io/2021/05/08/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1-%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E5%8D%95%E4%B8%AA-vue%E6%96%87%E4%BB%B6/%E7%88%B6%E7%BB%99%E5%AD%90%E4%BC%A0%E5%80%BC.png">
 <meta property="og:image" content="http://suyufan.github.io/2021/05/08/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1-%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E5%8D%95%E4%B8%AA-vue%E6%96%87%E4%BB%B6/%E5%AD%90%E7%BB%99%E7%88%B6%E4%BC%A0%E5%80%BC.png">
 <meta property="article:published_time" content="2021-05-08T06:21:15.000Z">
-<meta property="article:modified_time" content="2021-05-13T17:03:31.558Z">
+<meta property="article:modified_time" content="2021-05-19T15:31:02.858Z">
 <meta property="article:author" content="苏玉璠">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://suyufan.github.io/2021/05/08/vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1-%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E5%8D%95%E4%B8%AA-vue%E6%96%87%E4%BB%B6/%E6%88%90%E5%8A%9F%E6%88%AA%E5%9B%BE.png">
 
@@ -344,7 +344,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  688
+                  1.1k
                 </span>
               
 
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -418,6 +418,25 @@
 <p><strong>小结：</strong><br>相信大家也发现了，子组件在给父组件传值的时候，是通过事件驱动的。那么，如果不利用事件驱动，可以进行传值吗？可以（vuex或者异步）</p>
 <h3 id="2-兄弟组件之间"><a href="#2-兄弟组件之间" class="headerlink" title="2.兄弟组件之间"></a>2.兄弟组件之间</h3><p>方式一：创建一个共同中间组件，太麻烦<br>方式二：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新建一个Vue实例</span></span><br><span class="line"><span class="keyword">let</span> event = <span class="keyword">new</span> Vue()</span><br><span class="line"></span><br><span class="line"><span class="comment">//监听事件</span></span><br><span class="line">event.$on(<span class="string">'eventname'</span>,(val) =&gt; &#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//触发事件</span></span><br><span class="line">event.$emit(<span class="string">'eventname'</span>,<span class="string">'this is a message'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="中央事件总线插件vue-bus"><a href="#中央事件总线插件vue-bus" class="headerlink" title="中央事件总线插件vue-bus"></a>中央事件总线插件vue-bus</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vue-bus.js</span></span><br><span class="line"><span class="keyword">const</span> install = <span class="function"><span class="keyword">function</span> (<span class="params">Vue</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> Bus = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        methods: &#123;</span><br><span class="line">            emit (event,...args) &#123;</span><br><span class="line">                <span class="keyword">this</span>.$emit(event,...args)</span><br><span class="line">            &#125;,</span><br><span class="line">            on (event,callback) &#123;</span><br><span class="line">                <span class="keyword">this</span>.$on(event,callback)</span><br><span class="line">            &#125;,</span><br><span class="line">            off (event,callback) &#123;</span><br><span class="line">                <span class="keyword">this</span>.$off(event,callback)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    Vue.prototype.$bus = Bus</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> install</span><br></pre></td></tr></table></figure>
+
+<p>使用vue-bus有两点注意</p>
+<ul>
+<li><p>$bus.on写在created钩子内</p>
+<p>因为写在mounted内使用，可能接收不到其他组件来自created钩子内发出的事件</p>
+</li>
+<li><p>使用了$bus.on，在beforeDestroy钩子里应该用$bus.off解除</p>
+<p>因为组件销毁后，没必要把监听的句柄存储在vue-bus里</p>
+</li>
+</ul>
+<h1 id="父链和子组件索引"><a href="#父链和子组件索引" class="headerlink" title="父链和子组件索引"></a>父链和子组件索引</h1><p>在子组件中，使用this.$parent可以直接访问该组件的父实例或组件，父组件也可以通过this.$children访问它所有的子组件，而且可以递归向上或向下无限访问，直到根实例或最内层的组件</p>
+<p>当子组件较多时，通过this.$children来一一遍历出我们需要的组件实例是困难的，尤其组件渲染的时候，它们的序列不固定。Vue提供子组件索引的方法，用特殊的属性ref来为子组件指定一个索引名称。</p>
+<p>在父组件模板中，子组件标签上使用ref指定一个名称，并在父组件内通过this.$refs来访问指定名称的子组件。</p>
+<p><strong>$refs</strong>只在组件渲染完成之后才填充，并且它是非响应式的</p>
+
       
     </div>
     
@@ -434,7 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
           
         </div>
       
@@ -536,7 +555,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">109</span>
+                  <span class="site-state-item-count">114</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,7 +577,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -601,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#组件通信"><span class="nav-number">1.</span> <span class="nav-text">组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-父子组件之间"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.父子组件之间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-兄弟组件之间"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.兄弟组件之间</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#组件通信"><span class="nav-number">1.</span> <span class="nav-text">组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-父子组件之间"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.父子组件之间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-兄弟组件之间"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.兄弟组件之间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中央事件总线插件vue-bus"><span class="nav-number">2.</span> <span class="nav-text">中央事件总线插件vue-bus</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#父链和子组件索引"><span class="nav-number">3.</span> <span class="nav-text">父链和子组件索引</span></a></li></ol></div>
             
 
           </div>
@@ -646,7 +665,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共106.6k字</span>
+  <span class="post-count">博客全站共109k字</span>
 </div>  
 
         
