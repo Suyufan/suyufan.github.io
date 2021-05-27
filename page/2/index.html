@@ -884,7 +884,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  442
+                  470
                 </span>
               
 
@@ -923,7 +923,7 @@
       
         
           <p><strong>浅拷贝</strong>：藕断丝连<br><strong>深拷贝</strong>：老死不相往来</p>
-<p>浅拷贝：arr.slice()   arr.concat() </p>
+<p>浅拷贝：arr.slice()   arr.concat()   还有ES6定义的Object.assign() 第一个参数为目标参数，之后跟一个或多个源对象</p>
 <ul>
 <li><p>赋值号对于基本类型是深拷贝，对于引用类型是浅拷贝</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = a</span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(a,b);<span class="comment">//1 2 深拷贝</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> brr = arr</span><br><span class="line">brr.push(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr,brr); <span class="comment">//[1,2,3,4] [1,2,3,4] 浅拷贝</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">            name: <span class="string">"ni"</span>,</span><br><span class="line">            age: <span class="number">18</span>,</span><br><span class="line">            attr: &#123;<span class="attr">sex</span>:<span class="string">'女'</span>,<span class="attr">x</span>:<span class="string">"student"</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> newObj = obj</span><br><span class="line">newObj.age = <span class="number">28</span></span><br><span class="line">newObj.attr.x = <span class="string">'teach'</span></span><br><span class="line"><span class="built_in">console</span>.log(obj,newObj);  <span class="comment">//都改变 浅拷贝</span></span><br></pre></td></tr></table></figure></li></ul>
@@ -2213,7 +2213,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共109.4k字</span>
+  <span class="post-count">博客全站共109.6k字</span>
 </div>  
 
         
