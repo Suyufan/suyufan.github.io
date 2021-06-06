@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="GitHub特殊的查找资源小技巧常用前缀后缀 - 找百科大全 awesome xxx - 找例子 xxx sample - 找空项目架子 xxx starter &#x2F; xxx boilerplate - 找教程 xxx tutorial在vim编辑器中显示行号，在命令中输入:set nu 单行注释 # 多行注释">
+<meta name="description" content="GitHub特殊的查找资源小技巧常用前缀后缀 - 找百科大全 awesome xxx - 找例子 xxx sample - 找空项目架子 xxx starter &#x2F; xxx boilerplate - 找教程 xxx tutorial 正文在vim编辑器中显示行号，在命令中输入:set nu 单行注释 #多行注释 123:&lt;&lt;!多行注释!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习之Shell">
 <meta property="og:url" content="http://suyufan.github.io/2021/06/04/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8BShell/index.html">
 <meta property="og:site_name" content="笑笑の博客">
-<meta property="og:description" content="GitHub特殊的查找资源小技巧常用前缀后缀 - 找百科大全 awesome xxx - 找例子 xxx sample - 找空项目架子 xxx starter &#x2F; xxx boilerplate - 找教程 xxx tutorial在vim编辑器中显示行号，在命令中输入:set nu 单行注释 # 多行注释">
+<meta property="og:description" content="GitHub特殊的查找资源小技巧常用前缀后缀 - 找百科大全 awesome xxx - 找例子 xxx sample - 找空项目架子 xxx starter &#x2F; xxx boilerplate - 找教程 xxx tutorial 正文在vim编辑器中显示行号，在命令中输入:set nu 单行注释 #多行注释 123:&lt;&lt;!多行注释!">
 <meta property="article:published_time" content="2021-06-03T18:00:53.000Z">
-<meta property="article:modified_time" content="2021-06-03T18:04:07.632Z">
+<meta property="article:modified_time" content="2021-06-06T07:42:46.616Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k
+                  1.4k
                 </span>
               
 
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  5
                 </span>
               
             </div>
@@ -381,12 +381,12 @@
 <pre><code>- 找百科大全 awesome xxx
 - 找例子 xxx sample
 - 找空项目架子 xxx starter / xxx boilerplate
-- 找教程 xxx tutorial</code></pre><p>在vim编辑器中显示行号，在命令中输入:set nu</p>
-<p>单行注释 #</p>
-<p>多行注释</p>
-<a id="more"></a>
-
+- 找教程 xxx tutorial</code></pre><hr>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>在vim编辑器中显示行号，在命令中输入:set nu</p>
+<p>单行注释 #<br>多行注释</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:&lt;&lt;!</span><br><span class="line">多行注释</span><br><span class="line">!</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>后台运行脚本 <code>./myShell.sh &amp;</code></p>
 <p>位置参数 $* 和 $@ 都是将后面的参数当作整体，但是在for中有区别，$*会返回一个整体语句 执行一次；$@会遍历执行多次 打印多行结果</p>
@@ -407,7 +407,7 @@
 <pre><code>或者用`set | more` 命令分页显示</code></pre></li>
 <li><p>自定义变量</p>
 <p>变量名称一般习惯为大写，等号两侧不能有空格</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A &#x3D; 100</span><br><span class="line">echo &quot;A&#x3D;$A&quot;</span><br><span class="line">unset A </span><br><span class="line">echo &quot;A&#x3D;$A&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = 100</span><br><span class="line">echo "A=$A"</span><br><span class="line">unset A </span><br><span class="line">echo "A=$A"</span><br></pre></td></tr></table></figure>
 
 <p>readonly 变量 不能 unset</p>
 <ul>
@@ -480,10 +480,10 @@
 <li><p>案例</p>
 <ul>
 <li><p>案例一：“OK”是否等于”OK”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if [ &quot;ok&quot; &#x3D; &quot;ok&quot; ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;equal&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if [ "ok" = "ok" ]</span><br><span class="line">then</span><br><span class="line">	echo "equal"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>案例二：23是否大于等于22</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [23 -gt 22]</span><br><span class="line">then</span><br><span class="line">	echo &quot;大于&quot;</span><br><span class="line">elif [23 -eq 22]</span><br><span class="line">then</span><br><span class="line">    echo &quot;等于&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [23 -gt 22]</span><br><span class="line">then</span><br><span class="line">	echo "大于"</span><br><span class="line">elif [23 -eq 22]</span><br><span class="line">then</span><br><span class="line">    echo "等于"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -492,7 +492,7 @@
 <li><p>case语句</p>
 <ul>
 <li><p>案例：当命令行参数是1时，输出”周一”，是2时，就输出“周二”，其他情况输出”other“</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">case $1 in</span><br><span class="line">&quot;1&quot;)</span><br><span class="line">echo &quot;周一&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;2&quot;)</span><br><span class="line">echo &quot;周二&quot;</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo &quot;other&quot;</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">case $1 in</span><br><span class="line">"1")</span><br><span class="line">echo "周一"</span><br><span class="line">;;</span><br><span class="line">"2")</span><br><span class="line">echo "周二"</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo "other"</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -501,12 +501,12 @@
 <li><p>案例</p>
 <ul>
 <li><p>案例一：打印命令行输入的参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in &quot;$@&quot;</span><br><span class="line">do</span><br><span class="line">	echo &quot;the num is $i&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in "$@"</span><br><span class="line">do</span><br><span class="line">	echo "the num is $i"</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
 <p>遍历的是$@  </p>
 </li>
 <li><p>案例二：从1加到100</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SUM&#x3D;0</span><br><span class="line">for((i&#x3D;1;i&lt;&#x3D;100;i++))</span><br><span class="line">do</span><br><span class="line">	SUM&#x3D;$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">echo &quot;sum&#x3D;$SUM&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SUM=0</span><br><span class="line">for((i=1;i&lt;=100;i++))</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">echo "sum=$SUM"</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -516,7 +516,7 @@
 <p>while后面要有空格</p>
 <ul>
 <li><p>案例一：从命令行输入一个数n,累加1+2+…+n的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SUM&#x3D;0</span><br><span class="line">i&#x3D;0</span><br><span class="line">while [ $i -le $1 ]</span><br><span class="line">do</span><br><span class="line">	SUM&#x3D;$[$SUM+$i]</span><br><span class="line">	i&#x3D;$[$i+1]</span><br><span class="line">done</span><br><span class="line">echo &quot;sum&#x3D;$SUM&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SUM=0</span><br><span class="line">i=0</span><br><span class="line">while [ $i -le $1 ]</span><br><span class="line">do</span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">	i=$[$i+1]</span><br><span class="line">done</span><br><span class="line">echo "sum=$SUM"</span><br></pre></td></tr></table></figure>
 
 
 
@@ -537,7 +537,7 @@
 <li><p>案例</p>
 <ul>
 <li><p>案例一：读取控制台输入一个num值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -p &quot;请输入一个数num&#x3D;&quot; NUM</span><br><span class="line">echo &quot;你输入的是num&#x3D;$NUM&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -p "请输入一个数num=" NUM</span><br><span class="line">echo "你输入的是num=$NUM"</span><br></pre></td></tr></table></figure>
 
 
 
@@ -549,7 +549,7 @@
 </ul>
 <pre><code>- 案例二：读取控制台输入一个num,在10秒内输入
 
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -t 10 -p &quot;请输入一个数num&#x3D;&quot; NUM</span><br><span class="line">echo &quot;你输入的值是num&#x3D;$NUM&quot;</span><br></pre></td></tr></table></figure></code></pre><h3 id="shell函数"><a href="#shell函数" class="headerlink" title="shell函数"></a>shell函数</h3><ul>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -t 10 -p "请输入一个数num=" NUM</span><br><span class="line">echo "你输入的值是num=$NUM"</span><br></pre></td></tr></table></figure></code></pre><h3 id="shell函数"><a href="#shell函数" class="headerlink" title="shell函数"></a>shell函数</h3><ul>
 <li><p>系统函数</p>
 <ul>
 <li>diranme 得到路径</li>
@@ -565,7 +565,7 @@
 <li><p>案例</p>
 <ul>
 <li><p>案例一：计算两个参数的和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function sum()&#123;</span><br><span class="line">	SUM&#x3D;$[$n1+$n2]</span><br><span class="line">	echo &quot;和是&#x3D;$SUM&quot;</span><br><span class="line">&#125;</span><br><span class="line">read -p &quot;请输入第一个数n1&quot; n1</span><br><span class="line">read -p &quot;请输入第二个数n2&quot; n2</span><br><span class="line"></span><br><span class="line">#调用</span><br><span class="line">sum $n1 $n2</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function sum()&#123;</span><br><span class="line">	SUM=$[$n1+$n2]</span><br><span class="line">	echo "和是=$SUM"</span><br><span class="line">&#125;</span><br><span class="line">read -p "请输入第一个数n1" n1</span><br><span class="line">read -p "请输入第二个数n2" n2</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">调用</span></span><br><span class="line">sum $n1 $n2</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -581,7 +581,7 @@
 <p>脚本：（其实直接调用现成的截取字符串的方法就可以，老师不让）</p>
 <p>vim cuts.sh</p>
 <p>chmod 744 cuts.sh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">read -p &quot;请输入字符串str：&quot; STR</span><br><span class="line">n&#x3D;$1</span><br><span class="line">m&#x3D;$2</span><br><span class="line">RESULT&#x3D;&quot;&quot;</span><br><span class="line">#echo $n $m $STR</span><br><span class="line"></span><br><span class="line">#字符串检验</span><br><span class="line">if [ -z $STR ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;The string &#39;$STR&#39; is empty.&quot;</span><br><span class="line">elif [ $STR ]</span><br><span class="line">then </span><br><span class="line">	LEN&#x3D;$&#123;#STR&#125;   # 或者LEN&#x3D;&#96;expr length $&#123;STR&#125;&#96;</span><br><span class="line">fi</span><br><span class="line">#echo $LEN</span><br><span class="line"></span><br><span class="line">#n,m合法性判断</span><br><span class="line">if [ $n -lt 1]</span><br><span class="line">then</span><br><span class="line">	n&#x3D;1</span><br><span class="line">elif [ $n -gt $LEN ]</span><br><span class="line">then</span><br><span class="line">	m&#x3D;$LEN</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $m -lt 1]</span><br><span class="line">then </span><br><span class="line">	m&#x3D;1</span><br><span class="line">elif [ $m -gt $LEN]</span><br><span class="line">then</span><br><span class="line">	m&#x3D;$LEN</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $m -lt $n ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;error 请重新输入n,m&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#截取操作</span><br><span class="line">function getStr()&#123;</span><br><span class="line">	for((i&#x3D;$n;i&lt;&#x3D;$m;i++))</span><br><span class="line">	do</span><br><span class="line">		RESULT&#x3D;$RESULT$&#123;STR:$[$i-1]:1&#125;</span><br><span class="line">	done</span><br><span class="line">	echo $RESULT</span><br><span class="line">&#125;</span><br><span class="line">getStr $n $m $STR</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">read -p "请输入字符串str：" STR</span><br><span class="line">n=$1</span><br><span class="line">m=$2</span><br><span class="line">RESULT=""</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$n</span> <span class="variable">$m</span> <span class="variable">$STR</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">字符串检验</span></span><br><span class="line">if [ -z $STR ]</span><br><span class="line">then</span><br><span class="line">	echo "The string '$STR' is empty."</span><br><span class="line">elif [ $STR ]</span><br><span class="line">then </span><br><span class="line">	LEN=$&#123;#STR&#125;   # 或者LEN=`expr length $&#123;STR&#125;`</span><br><span class="line">fi</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$LEN</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">n,m合法性判断</span></span><br><span class="line">if [ $n -lt 1]</span><br><span class="line">then</span><br><span class="line">	n=1</span><br><span class="line">elif [ $n -gt $LEN ]</span><br><span class="line">then</span><br><span class="line">	m=$LEN</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $m -lt 1]</span><br><span class="line">then </span><br><span class="line">	m=1</span><br><span class="line">elif [ $m -gt $LEN]</span><br><span class="line">then</span><br><span class="line">	m=$LEN</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ $m -lt $n ]</span><br><span class="line">then</span><br><span class="line">	echo "error 请重新输入n,m"</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">截取操作</span></span><br><span class="line">function getStr()&#123;</span><br><span class="line">	for((i=$n;i&lt;=$m;i++))</span><br><span class="line">	do</span><br><span class="line">		RESULT=$RESULT$&#123;STR:$[$i-1]:1&#125;</span><br><span class="line">	done</span><br><span class="line">	echo $RESULT</span><br><span class="line">&#125;</span><br><span class="line">getStr $n $m $STR</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -620,6 +620,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/06/06/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" rel="prev" title="Linux学习之基础理论">
+                Linux学习之基础理论 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -696,7 +700,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">115</span>
+                  <span class="site-state-item-count">116</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -761,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub特殊的查找资源小技巧"><span class="nav-number">1.</span> <span class="nav-text">GitHub特殊的查找资源小技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建shell脚本"><span class="nav-number">2.</span> <span class="nav-text">创建shell脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell变量"><span class="nav-number">3.</span> <span class="nav-text">shell变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell运算符"><span class="nav-number">4.</span> <span class="nav-text">shell运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell控制语句"><span class="nav-number">5.</span> <span class="nav-text">shell控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell读取控制台输入"><span class="nav-number">6.</span> <span class="nav-text">shell读取控制台输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell函数"><span class="nav-number">7.</span> <span class="nav-text">shell函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub特殊的查找资源小技巧"><span class="nav-number">1.</span> <span class="nav-text">GitHub特殊的查找资源小技巧</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number"></span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建shell脚本"><span class="nav-number">1.</span> <span class="nav-text">创建shell脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell变量"><span class="nav-number">2.</span> <span class="nav-text">shell变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell运算符"><span class="nav-number">3.</span> <span class="nav-text">shell运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell控制语句"><span class="nav-number">4.</span> <span class="nav-text">shell控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell读取控制台输入"><span class="nav-number">5.</span> <span class="nav-text">shell读取控制台输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell函数"><span class="nav-number">6.</span> <span class="nav-text">shell函数</span></a></li></ol></div>
             
 
           </div>
@@ -806,7 +810,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共111.1k字</span>
+  <span class="post-count">博客全站共112k字</span>
 </div>  
 
         
