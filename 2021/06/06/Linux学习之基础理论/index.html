@@ -85,11 +85,13 @@
 <meta property="og:url" content="http://suyufan.github.io/2021/06/06/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/index.html">
 <meta property="og:site_name" content="笑笑の博客">
 <meta property="og:description" content="一.Linux目录结构 &#x2F;bin 存放最常用的命令  &#x2F;sbin  super user 系统管理员使用的系统管理程序  &#x2F;home  存放普通用户的主目录  &#x2F;root    系统管理员，超级权限的用户主目录  &#x2F;lib  系统开机所需要最基本的动态连接共享库，作用类似于windowx里的DLL文件。几乎所有的应用程序都需要这些共享库  &#x2F;lost+found  一般是空的 当系统非法关机，就存">
+<meta property="og:image" content="http://suyufan.github.io/2021/06/06/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.png">
 <meta property="article:published_time" content="2021-06-06T07:34:26.000Z">
-<meta property="article:modified_time" content="2021-06-09T05:11:43.379Z">
+<meta property="article:modified_time" content="2021-06-10T15:04:26.451Z">
 <meta property="article:author" content="苏玉璠">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://suyufan.github.io/2021/06/06/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.png">
 
 
 
@@ -340,7 +342,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k
+                  3.4k
                 </span>
               
 
@@ -356,7 +358,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  12
                 </span>
               
             </div>
@@ -671,6 +673,111 @@
 </ul>
 </li>
 </ul>
+<h3 id="六-组管理"><a href="#六-组管理" class="headerlink" title="六.组管理"></a>六.组管理</h3><p>在Linux中的每个用户必须属于一个组，不能独立于组外。</p>
+<p>文件：</p>
+<p>1.所有者</p>
+<p>2.所在组</p>
+<p>3.其他组。除了文件的所有者和所在组的用户外，系统的其他用户都是文件的其他组。</p>
+<h5 id="6-1-文件-目录-所有者"><a href="#6-1-文件-目录-所有者" class="headerlink" title="6.1  文件/目录 所有者"></a>6.1  文件/目录 所有者</h5><ul>
+<li>ls -ahl   查看文件的所有者，所在组</li>
+<li>chown  用户名  文件名    修改文件所有者</li>
+<li>groupadd 组名   组的创建</li>
+</ul>
+<h5 id="6-2-文件-目录-所在组"><a href="#6-2-文件-目录-所在组" class="headerlink" title="6.2 文件/目录 所在组"></a>6.2 文件/目录 所在组</h5><ul>
+<li><p>chgrp 组名 文件名   修改文件所在组</p>
+<p><strong>所有者和所在组同时改变：</strong>chown newowner:newgroup file</p>
+</li>
+</ul>
+<h5 id="6-3-改变用户所在组"><a href="#6-3-改变用户所在组" class="headerlink" title="6.3 改变用户所在组"></a>6.3 改变用户所在组</h5><ul>
+<li>usermod -g 组名 用户名</li>
+<li>usermod -d 目录名 用户名   改变该用户登陆的初始目录</li>
+</ul>
+<h3 id="七-权限管理"><a href="#七-权限管理" class="headerlink" title="七.权限管理"></a>七.权限管理</h3><p><img src="/2021/06/06/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.png" alt="权限管理"></p>
+<h5 id="7-1-rwx权限详解"><a href="#7-1-rwx权限详解" class="headerlink" title="7.1 rwx权限详解"></a>7.1 rwx权限详解</h5><p>（1）rwx作用到文件</p>
+<ul>
+<li>[r]  可以读取，查看</li>
+<li>[w]  可以修改，但是不代表可以删除该文件，删除一个文件的前提条件是对该文件所在的目录有写的权限，才能删除该文件。</li>
+<li><code>[x]</code>  可以被执行</li>
+</ul>
+<p>（2）rwx作用到目录</p>
+<ul>
+<li>[r]  可以读取，ls查看目录内容</li>
+<li>[w]  可以修改，目录内创建+删除+重命名目录</li>
+<li><code>[x]</code>  可以进入该目录</li>
+</ul>
+<h5 id="7-2-修改权限-chmod"><a href="#7-2-修改权限-chmod" class="headerlink" title="7.2 修改权限 chmod"></a>7.2 修改权限 chmod</h5><ul>
+<li><p>方式一：+,-,= 变更权限</p>
+<ul>
+<li><p>案例：给abc.txt的所有者rwx权限，给所在组rx权限，给其他组用户rx权限</p>
+<p>u:所有者  g:所在组  o:其他  a:所有人（u,g,o的总和）</p>
+<p><code>chmod u=rwx,g=rx,o=rx abc</code></p>
+</li>
+</ul>
+</li>
+<li><p>方式二：通过数字变更权限</p>
+<p>r=4 w=2 x=1    rwx=4+2+1=7</p>
+<p>chmod u=rwx,g=rx,o=x  文件目录名</p>
+<p>相当于 chmod 751 文件目录名</p>
+</li>
+</ul>
+<p>###　八.任务调度</p>
+<p>任务调度：是指系统在某个时间执行的特定的命令或程序</p>
+<p>分类：</p>
+<p>1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描</p>
+<p>2.个别用户工作：个别用户可能希望执行某些程序。比如对mysql数据库的备份</p>
+<h5 id="8-1-crond-任务调度"><a href="#8-1-crond-任务调度" class="headerlink" title="8.1 crond 任务调度"></a>8.1 crond 任务调度</h5><ul>
+<li><p>crontab [选项]</p>
+<ul>
+<li><p>-e  编辑crontab定时任务</p>
+</li>
+<li><p>-l   列出当前有哪些任务调度</p>
+</li>
+<li><p>-r   终止任务调度</p>
+</li>
+<li><p>service crond restar [重启任务调度]</p>
+</li>
+<li><p>参数说明：5个占位符</p>
+<p>第一个*  一小时当中的第几分钟   0-59</p>
+<p>第二个*   一天当中的第几个小时   0-23</p>
+<p>第三个*    一个月当中的第几天   1-31</p>
+<p>第四个*    一年当中的第几个月  1-12</p>
+<p>第五个*      一周当中的星期几    0-7</p>
+<ul>
+<li><p>案例1：设置任务调度文件：/etc/crontab，设置个人任务调度，执行crontab -e命令，接着输入任务到调度文件，如：<code>*/1****ls -l /etc/ &gt; /tmp/to.txt</code></p>
+<p>每分钟执行<code>ls -l /etc/ &gt; /tmp/to.txt</code></p>
+</li>
+<li><p>案例二 每隔一分钟，就将当前日期信息，追加到/tmp/mydate文件中</p>
+<p>①先编写一个文件 /home/mytask1.sh</p>
+<p>写入date&gt;&gt;/tmp/mydate</p>
+<p>②给mytask1.sh一个可以执行权限</p>
+<p>③crontab -e</p>
+<p>④<code>*/**** /home/mytask1.sh</code>  每间隔一分钟去执行mytask1.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;home&#x2F;</span><br><span class="line">vim mytask1.sh</span><br><span class="line">写入 date &gt;&gt; &#x2F;tmp&#x2F;mydate</span><br><span class="line">ls -l</span><br><span class="line">chmod 744 mytask1.sh</span><br><span class="line">ls</span><br><span class="line">crontab -e</span><br><span class="line">写入 &#96;*&#x2F;**** &#x2F;home&#x2F;mytask1.sh&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="九-磁盘分区及挂载"><a href="#九-磁盘分区及挂载" class="headerlink" title="九.磁盘分区及挂载"></a>九.磁盘分区及挂载</h3><ul>
+<li><p>lsblk -f  查看系统的分区和挂载情况 （老师不离开）</p>
+<p>分区情况 分区类型 唯一标识分区的40位不重复的字符串  挂载点</p>
+</li>
+<li><p>如何增加一块硬盘</p>
+<p>1.虚拟机添加硬盘</p>
+<p>2.分区  <code>fdisk/dev/sdb</code></p>
+<p>3.格式化  <code>mkfs -t ext4 /dev/sdb1</code></p>
+<p>4.挂载   先创建一个/home/newdisk ，挂载mount  /dev/sdb1  /home/newdisk</p>
+<p>5.设置可以自动挂载(永久挂载，当你重启系统，仍然可以)</p>
+</li>
+<li><p>df -lh   查询系统整体磁盘使用情况</p>
+</li>
+<li><p>du -h /目录   查看指定目录的磁盘占用情况</p>
+</li>
+</ul>
 
       
     </div>
@@ -851,7 +958,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Linux目录结构"><span class="nav-number">1.</span> <span class="nav-text">一.Linux目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-vim编辑器"><span class="nav-number">2.</span> <span class="nav-text">二.vim编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-开机-amp-重启"><span class="nav-number">3.</span> <span class="nav-text">三. 开机&amp;重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-用户管理"><span class="nav-number">4.</span> <span class="nav-text">四.用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-用户登陆-amp-注销"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 用户登陆&amp;注销</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-用户和组的配置文件"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 用户和组的配置文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-实用指令"><span class="nav-number">5.</span> <span class="nav-text">五.实用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-运行级别和找回root密码"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 运行级别和找回root密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-帮助指令"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2 帮助指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3文件目录类指令"><span class="nav-number">5.0.3.</span> <span class="nav-text">5.3文件目录类指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-4-时间日期类"><span class="nav-number">5.0.4.</span> <span class="nav-text">5.4 时间日期类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-5-搜索查找类"><span class="nav-number">5.0.5.</span> <span class="nav-text">5.5 搜索查找类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-6-压缩和解压缩类"><span class="nav-number">5.0.6.</span> <span class="nav-text">5.6 压缩和解压缩类</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Linux目录结构"><span class="nav-number">1.</span> <span class="nav-text">一.Linux目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-vim编辑器"><span class="nav-number">2.</span> <span class="nav-text">二.vim编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-开机-amp-重启"><span class="nav-number">3.</span> <span class="nav-text">三. 开机&amp;重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-用户管理"><span class="nav-number">4.</span> <span class="nav-text">四.用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-用户登陆-amp-注销"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 用户登陆&amp;注销</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-用户和组的配置文件"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 用户和组的配置文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-实用指令"><span class="nav-number">5.</span> <span class="nav-text">五.实用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-运行级别和找回root密码"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 运行级别和找回root密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-帮助指令"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2 帮助指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3文件目录类指令"><span class="nav-number">5.0.3.</span> <span class="nav-text">5.3文件目录类指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-4-时间日期类"><span class="nav-number">5.0.4.</span> <span class="nav-text">5.4 时间日期类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-5-搜索查找类"><span class="nav-number">5.0.5.</span> <span class="nav-text">5.5 搜索查找类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-6-压缩和解压缩类"><span class="nav-number">5.0.6.</span> <span class="nav-text">5.6 压缩和解压缩类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-组管理"><span class="nav-number">6.</span> <span class="nav-text">六.组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-文件-目录-所有者"><span class="nav-number">6.0.1.</span> <span class="nav-text">6.1  文件&#x2F;目录 所有者</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-2-文件-目录-所在组"><span class="nav-number">6.0.2.</span> <span class="nav-text">6.2 文件&#x2F;目录 所在组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-3-改变用户所在组"><span class="nav-number">6.0.3.</span> <span class="nav-text">6.3 改变用户所在组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七-权限管理"><span class="nav-number">7.</span> <span class="nav-text">七.权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-1-rwx权限详解"><span class="nav-number">7.0.1.</span> <span class="nav-text">7.1 rwx权限详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-2-修改权限-chmod"><span class="nav-number">7.0.2.</span> <span class="nav-text">7.2 修改权限 chmod</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-1-crond-任务调度"><span class="nav-number">7.0.3.</span> <span class="nav-text">8.1 crond 任务调度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九-磁盘分区及挂载"><span class="nav-number">8.</span> <span class="nav-text">九.磁盘分区及挂载</span></a></li></ol></div>
             
 
           </div>
@@ -896,7 +1003,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共113.4k字</span>
+  <span class="post-count">博客全站共114.4k字</span>
 </div>  
 
         
